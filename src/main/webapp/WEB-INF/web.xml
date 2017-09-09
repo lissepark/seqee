@@ -33,4 +33,8 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
     <servlet-name>default</servlet-name>
     <url-pattern>*.jpg</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>default</servlet-name>
+    <url-pattern>*.png</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -43,6 +43,11 @@ body {
     }
 }
 
+@media (max-width: 575px) {
+    .masthead {
+        margin-top: 50px !important;
+    }
+}
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
     /* Remove the padding we set earlier */
