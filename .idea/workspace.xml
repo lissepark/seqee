@@ -1,27 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6bab637c-c3bf-47ce-8296-4fd3ec37ee1b" name="Default" comment="logo and carousel were added">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/002.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/008.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/019.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/seq_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jstl_jstl_1_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_25.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_postgresql_postgresql_9_2_1003_jdbc4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/dao/OfferDAO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/daoImpl/OfferDAOImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/model/Category.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/model/Offer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/offers.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-3.2.1.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/SampleApp_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/SampleApp_war_exploded.xml" />
+    <list default="true" id="6bab637c-c3bf-47ce-8296-4fd3ec37ee1b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SampleApp.iml" afterPath="$PROJECT_DIR$/SampleApp.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/css/style.css" afterPath="$PROJECT_DIR$/src/main/webapp/css/style.css" />
     </list>
     <ignored path="SampleApp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -1075,7 +1056,7 @@
       <updated>1504938276064</updated>
       <workItem from="1504938279371" duration="1897000" />
       <workItem from="1504943379619" duration="1020000" />
-      <workItem from="1504953034795" duration="9490000" />
+      <workItem from="1504953034795" duration="9514000" />
     </task>
     <task id="LOCAL-00001" summary="commit id">
       <created>1504943768887</created>
@@ -1091,11 +1072,18 @@
       <option name="project" value="LOCAL" />
       <updated>1504943790886</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="logo and carousel were added">
+      <created>1504963911758</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1504963911758</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12407000" />
+    <option name="totallyTimeSpent" value="12431000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="743" extended-state="0" />
