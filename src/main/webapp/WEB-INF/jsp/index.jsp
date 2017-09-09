@@ -128,6 +128,7 @@
     <!-- Site footer -->
     <footer class="footer">
         <p>&copy; Family joinery workshop Sequoia 2017</p>
+        <p>nw</p>
     </footer>
 
 </div> <!-- /container -->
