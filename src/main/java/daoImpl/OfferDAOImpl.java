@@ -22,7 +22,7 @@ public class OfferDAOImpl implements OfferDAO {
         String port = System.getenv("OPENSHIFT_MYSQL_DB_PORT");
         String url = String.format("jdbc:mysql://%s:%s/sequoia", host, port);
         return DriverManager.getConnection(url,
-                "adminavnVA73", "enCFJVl8g98w");
+                "userC8N", "AuclGGuTEUFX14Gf");
         //return DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/bookstore","root","");
     }
     private void closeConnection(Connection connection) {
