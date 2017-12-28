@@ -18,8 +18,8 @@ public class OfferDAOImpl implements OfferDAO {
         }
     }
     private Connection getConnection() throws SQLException {
-        String host = System.getenv("OPENSHIFT_MYSQL_DB_HOST");
-        String port = System.getenv("OPENSHIFT_MYSQL_DB_PORT");
+        String host = System.getenv("MYSQL_SERVICE_HOST");
+        int port = 3306;
         String url = String.format("jdbc:mysql://%s:%s/sequoia", host, port);
         return DriverManager.getConnection(url,
                 "userC8N", "AuclGGuTEUFX14Gf");
