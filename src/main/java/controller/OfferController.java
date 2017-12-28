@@ -16,6 +16,10 @@ import java.util.List;
  * Created by incrit.com on 8/21/17.
  */
 public class OfferController extends HttpServlet{
+
+    public OfferController() {
+        super();
+    }
 /*
     public void init(ServletConfig config) throws ServletException {
         super.init(config);
@@ -42,9 +46,9 @@ public class OfferController extends HttpServlet{
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         //findAllOffers(req, resp);
-        RequestDispatcher requestDispatcher;
-        requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/offers.jsp");
-        requestDispatcher.forward(req, resp);
+        resp.getWriter().append("Served at : ").append(req.getContextPath());
+        //RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/offers.jsp");
+        //requestDispatcher.forward(req, resp);
     }
 
     @Override
@@ -64,8 +68,8 @@ public class OfferController extends HttpServlet{
                     url = base + "category.jsp?category=" + category;
                     break;*/
                 //}
-
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/offers.jsp");
-        requestDispatcher.forward(req, resp);
+        doGet(req,resp);
+        //RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/offers.jsp");
+        //requestDispatcher.forward(req, resp);
     }
 }
