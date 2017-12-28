@@ -25,8 +25,8 @@ public class Titul extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
 
-        RequestDispatcher requestDispatcher;
-        requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/index.jsp");
-        requestDispatcher.forward(req, resp);
+        //RequestDispatcher requestDispatcher;
+        //requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/index.jsp");
+        //requestDispatcher.forward(req, resp);
     }
 }
