@@ -65,8 +65,7 @@ public class OfferController extends HttpServlet{
                     break;*/
                 //}
 
-        RequestDispatcher requestDispatcher;
-        requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/offers.jsp");
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/offers.jsp");
         requestDispatcher.forward(req, resp);
     }
 }
