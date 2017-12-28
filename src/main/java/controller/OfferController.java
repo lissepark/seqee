@@ -46,9 +46,9 @@ public class OfferController extends HttpServlet{
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         //findAllOffers(req, resp);
-        resp.getWriter().append("Served at : ").append(req.getContextPath());
-        //RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/offers.jsp");
-        //requestDispatcher.forward(req, resp);
+
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/offers.jsp");
+        requestDispatcher.forward(req, resp);
     }
 
     @Override
