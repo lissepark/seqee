@@ -24,14 +24,14 @@ public class OfferController extends HttpServlet{
         List<Category> categoryList = categoryDao.findAllCategories();
         ServletContext context = config.getServletContext();
         context.setAttribute("categoryList", categoryList);
-    }*/
+    }
 
     private void findAllOffers(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
         OfferDAO offerDAO = new OfferDAOImpl();
         List<Offer> offerList = offerDAO.findAllOffers();
         req.setAttribute("offerList", offerList);
     }
-/*
+
     private void findAllCategories(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         OfferDAO offerDAO = new OfferDAOImpl();
         List<Category> categoryList = offerDAO.findAllCategories();
@@ -41,7 +41,7 @@ public class OfferController extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        findAllOffers(req, resp);
+        //findAllOffers(req, resp);
         RequestDispatcher requestDispatcher;
         requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/offers.jsp");
         requestDispatcher.forward(req, resp);
@@ -51,7 +51,7 @@ public class OfferController extends HttpServlet{
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
 
-        String url = "/jsp/offers.jsp";
+        //String url = "/jsp/offers.jsp";
         //String action = req.getParameter("action");
         //String category = req.getParameter("category");
         //if (action != null) {
