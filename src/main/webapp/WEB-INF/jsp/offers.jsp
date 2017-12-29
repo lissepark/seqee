@@ -7,6 +7,16 @@
 </head>
 <body>
 <div><span class="label" style="margin-left:15px;">Offers</span></div>
-    
+     <ul>
+-        <%
+-            List<Offer> offerList1 = (List<Offer>) request.getAttribute("offerList");
+-            Iterator<Offer> iterator1 = offerList1.iterator();
+-            while (iterator1.hasNext()) {
+-                Offer offer1 = (Offer) iterator1.next();%>
+-        <li><%=offer1.getId()%>, offering=<%=offer1.getOfferName()%>
+-            <span class="label" style="margin-left: 30px;"><%=offer1.getOfferDescription()%></span>
+-        </li>
+-        <%}%>
+-    </ul>
 </body>
 </html>
