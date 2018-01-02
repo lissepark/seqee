@@ -10,6 +10,7 @@ public class Offer {
     private String offerDescription;
     private String offerName;
     private List<Category> categories;
+    private String offerImagePath;
 
     public Long getId() {
         return id;
@@ -33,6 +34,14 @@ public class Offer {
 
     public void setOfferName(String offerName) {
         this.offerName = offerName;
+    }
+
+    public String getOfferImagePath() {
+        return offerImagePath;
+    }
+
+    public void setOfferImagePath(String offerImagePath) {
+        this.offerImagePath = offerImagePath;
     }
 
     public String toString() {

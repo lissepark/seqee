@@ -8,7 +8,6 @@ import org.apache.commons.fileupload.FileItemFactory;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -16,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -36,9 +36,9 @@ public class OfferController extends HttpServlet{
         context.setAttribute("categoryList", categoryList);
     }
 */
-    private void findAllOffers(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+    private void getAllOffers(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
         OfferDAO offerDAO = new OfferDAOImpl();
-        List<Offer> offerList = offerDAO.findAllOffers();
+        List<Offer> offerList = offerDAO.getAllOffers();
         req.setAttribute("offerList", offerList);
     }
 /*
@@ -51,7 +51,7 @@ public class OfferController extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        findAllOffers(req, resp);
+        getAllOffers(req, resp);
 
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/offers.jsp");
         requestDispatcher.forward(req, resp);
@@ -83,7 +83,7 @@ public class OfferController extends HttpServlet{
         }
         FileItemFactory itemFactory = new DiskFileItemFactory();
         ServletFileUpload upload = new ServletFileUpload(itemFactory);
-        //ArrayList pathList = new ArrayList();
+        ArrayList pathList = new ArrayList();
         try {
             List<FileItem> items = upload.parseRequest(req);
             for (FileItem item : items) {
@@ -95,7 +95,7 @@ public class OfferController extends HttpServlet{
                 File uploadDir = new File("/opt/app-root/src/src/main/webapp/images");
                 File file = File.createTempFile("img", ".png", uploadDir);
                 item.write(file);
-                //pathList.add(file.getPath());
+                pathList.add(file.getPath());
                 System.out.println(file.getPath());
             }
         } catch (FileUploadException e) {
