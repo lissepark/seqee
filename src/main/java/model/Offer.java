@@ -44,6 +44,14 @@ public class Offer {
         this.offerImagePath = offerImagePath;
     }
 
+    public List<Category> getOfferCategories() {
+        return categories;
+    }
+
+    public void setOfferCategories(List<Category> categories) {
+        this.categories = categories;
+    }
+
     public String toString() {
         return "Offer - Id: " + id + ", Offer Title: " + offerName + ", Offer Description: " + offerDescription;
     }

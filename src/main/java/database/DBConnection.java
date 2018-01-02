@@ -37,7 +37,7 @@ public class DBConnection {
     private static PreparedStatement changeDiscipline;
     */
     private static PreparedStatement getAllOffers;
-    //private static PreparedStatement insertDiscipline;
+    private static PreparedStatement insertOffering;
     /*
     private static PreparedStatement deleteDiscipline;
     private static PreparedStatement selectDisciplineById;
@@ -79,7 +79,7 @@ public class DBConnection {
             changeDiscipline = conn.prepareStatement("UPDATE `discipline` SET `name`=? WHERE `id`=?");
             */
             getAllOffers = conn.prepareStatement("SELECT * FROM offering");
-            //insertDiscipline = conn.prepareStatement("INSERT INTO discipline (name) VALUES (?)");
+            insertOffering = conn.prepareStatement("INSERT INTO offering SET `offering_name`=?, `offering_description`=?, `offer_image_path`=?");
             /*
             deleteDiscipline = conn.prepareStatement("DELETE FROM `discipline` WHERE `id`=?");
             selectDisciplineById = conn.prepareStatement("SELECT * FROM discipline WHERE id = ?");
@@ -113,7 +113,7 @@ public class DBConnection {
             getListTerms.close();
             */
             getAllOffers.close();
-            //insertDiscipline.close();
+            insertOffering.close();
             /*
             selectDisciplineById.close();
             changeDiscipline.close();
@@ -157,15 +157,18 @@ public class DBConnection {
         }
         return result;
     }
-/*
-    public int insertDiscipline(Discipline discipline) throws SQLException {
+
+    public int insertOffer(Offer offer) throws SQLException {
         try {
-            insertDiscipline.setString(1, discipline.getName());
-            return insertDiscipline.executeUpdate();
+            insertOffering.setString(1, offer.getOfferName());
+            insertOffering.setString(2, offer.getOfferDescription());
+            //insertOffering.setArray(3,offer.getOfferCategories());
+            insertOffering.setString(3, offer.getOfferImagePath());
+            return insertOffering.executeUpdate();
         } catch (SQLException e) {
             LOGGER.debug("insertDiscipline - SQLException");
             return -1;
         }
     }
-*/
+
 }

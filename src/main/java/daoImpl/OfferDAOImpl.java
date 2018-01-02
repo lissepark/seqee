@@ -23,7 +23,7 @@ public class OfferDAOImpl implements OfferDAO {
         return null;
     }
 
-    public void insert(Offer offering) throws SQLException {
+    public void insertOffer(Offer offering) throws SQLException {
     }
     public void update(Offer offering) {
     }

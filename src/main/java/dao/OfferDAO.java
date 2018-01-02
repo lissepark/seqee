@@ -12,7 +12,7 @@ public interface OfferDAO {
     public List<Offer> getAllOffers();
     public List<Offer>searchOffersByKeyword(String keyWord);
     //public List<Category>findAllCategories();
-    public void insert(Offer offer) throws SQLException;
+    public void insertOffer(Offer offer) throws SQLException;
     public void update(Offer offer);
     public void delete(Long offerId);
 }

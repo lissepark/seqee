@@ -57,18 +57,17 @@ public class DataService {
         return result;
     }
 
+    public int insertOffer(Offer offer) throws SQLException {
+        DBConnection conn = getDBConnection();
+        int result = conn.insertOffer(offer);
+        this.putDBConnection(conn);
+        return result;
+    }
 
 /*
     public List<Discipline> getAllDisciplines(){
         DBConnection conn = getDBConnection();
         List <Discipline> result = conn.getAllDisciplines();
-        this.putDBConnection(conn);
-        return result;
-    }
-
-    public int insertDiscipline(Discipline discipline) throws SQLException {
-        DBConnection conn = getDBConnection();
-        int result = conn.insertDiscipline(discipline);
         this.putDBConnection(conn);
         return result;
     }
