@@ -22,5 +22,14 @@
     </li>
     <%}%>
 </ul>
+	<div class="row marketing">
+      <h4>Please, fill the image path</h4>
+      <form action="offers" method="post" enctype="multipart/form-data">
+          <h3 style="color:blue">Select image to upload:</h3>
+          <br/>
+          <input type="file" name="file"><br/>
+          <input class="btn btn-primary btn-lg" type="submit" value="Upload Image">
+      </form>
+    </div>
 </body>
 </html>

@@ -68,6 +68,37 @@ public class OfferController extends HttpServlet{
                     url = base + "category.jsp?category=" + category;
                     break;*/
                 //}
+				
+				
+		if (!ServletFileUpload.isMultipartContent(request)) {
+            System.out.println("Nothing to upload");
+			doGet(req,resp);
+            return;
+        }
+        FileItemFactory itemFactory = new DiskFileItemFactory();
+        ServletFileUpload upload = new ServletFileUpload(itemFactory);
+        //ArrayList pathList = new ArrayList();
+        try {
+            List<FileItem> items = upload.parseRequest(request);
+            for (FileItem item : items) {
+                String contentType = item.getContentType();
+                if (!contentType.equals("image/png")) {
+                        System.out.println("Error. Only png or jpg format image files supported");
+                        continue;
+                }
+                File uploadDir = new File("images");
+                File file = File.createTempFile("img", ".png", uploadDir);
+                item.write(file);
+                //pathList.add(file.getPath());
+                System.out.println(file.getPath());
+            }
+        } catch (FileUploadException e) {
+            System.out.println("FileUpload Exception");
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            System.out.println("Other Exception in doPost of Analysis servlet");
+        }
+		
         doGet(req,resp);
         //RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/offers.jsp");
         //requestDispatcher.forward(req, resp);
