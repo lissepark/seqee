@@ -30,8 +30,7 @@ public class AddOffer extends HttpServlet {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/WEB-INF/jsp/offers.jsp");
-        requestDispatcher.forward(request, response);
+        doGet(request,response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
