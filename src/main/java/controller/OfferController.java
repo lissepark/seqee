@@ -9,8 +9,15 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
+
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.FileItemFactory;
+import org.apache.commons.fileupload.FileUploadException;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 /**
  * Created by incrit.com on 8/21/17.
@@ -70,7 +77,7 @@ public class OfferController extends HttpServlet{
                 //}
 				
 				
-		if (!ServletFileUpload.isMultipartContent(request)) {
+		if (!ServletFileUpload.isMultipartContent(req)) {
             System.out.println("Nothing to upload");
 			//doGet(req,resp);
             return;
@@ -79,7 +86,7 @@ public class OfferController extends HttpServlet{
         ServletFileUpload upload = new ServletFileUpload(itemFactory);
         //ArrayList pathList = new ArrayList();
         try {
-            List<FileItem> items = upload.parseRequest(request);
+            List<FileItem> items = upload.parseRequest(req);
             for (FileItem item : items) {
                 String contentType = item.getContentType();
                 if (!contentType.equals("image/png")) {
