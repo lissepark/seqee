@@ -72,7 +72,7 @@ public class OfferController extends HttpServlet{
 				
 		if (!ServletFileUpload.isMultipartContent(request)) {
             System.out.println("Nothing to upload");
-			doGet(req,resp);
+			//doGet(req,resp);
             return;
         }
         FileItemFactory itemFactory = new DiskFileItemFactory();
@@ -86,7 +86,7 @@ public class OfferController extends HttpServlet{
                         System.out.println("Error. Only png or jpg format image files supported");
                         continue;
                 }
-                File uploadDir = new File("images");
+                File uploadDir = new File("/opt/app-root/src/src/main/webapp/images");
                 File file = File.createTempFile("img", ".png", uploadDir);
                 item.write(file);
                 //pathList.add(file.getPath());
