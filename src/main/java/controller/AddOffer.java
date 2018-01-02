@@ -17,6 +17,7 @@ public class AddOffer extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String name = request.getParameter("offerName");
         String description = request.getParameter("offerDescription");
+
         String imgPath = "testPath";
         Offer offer = new Offer();
         offer.setOfferName(name);

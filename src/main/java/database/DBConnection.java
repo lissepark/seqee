@@ -164,6 +164,7 @@ public class DBConnection {
             insertOffering.setString(2, offer.getOfferDescription());
             //insertOffering.setArray(3,offer.getOfferCategories());
             insertOffering.setString(3, offer.getOfferImagePath());
+            System.out.println(offer.getOfferName());
             return insertOffering.executeUpdate();
         } catch (SQLException e) {
             LOGGER.debug("insertDiscipline - SQLException");
