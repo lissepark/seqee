@@ -10,7 +10,7 @@
 </head>
 <body>
 <div><span class="label" style="margin-left:15px;">Offers</span></div>
-<div>it works</div>
+<div><span class="label" style="margin-left:15px;"><a href="/">Main</a></span></div>
 <ul>
     <%
         List<Offer> offerList1 = (List<Offer>) request.getAttribute("offerList");
