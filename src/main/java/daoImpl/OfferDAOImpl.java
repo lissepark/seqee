@@ -24,6 +24,7 @@ public class OfferDAOImpl implements OfferDAO {
     }
 
     public void insertOffer(Offer offering) throws SQLException {
+        dataService.insertOffer(offering);
     }
     public void update(Offer offering) {
     }
