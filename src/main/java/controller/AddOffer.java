@@ -31,22 +31,19 @@ public class AddOffer extends HttpServlet {
         FileItemFactory itemFactory = new DiskFileItemFactory();
         ServletFileUpload upload = new ServletFileUpload(itemFactory);
         ArrayList pathList = new ArrayList();
-        //String imgPath = "";
+        String imgPath = "";
         try {
             List<FileItem> items = upload.parseRequest(request);
             for (FileItem item : items) {
                 String contentType = item.getContentType();
-                System.out.println("contentType"+contentType);
-                //if (!contentType.equals("image/png")) {
-                //    System.out.println("Error. Only png or jpg format image files supported");
-                //    continue;
-                //}
-                File uploadDir = new File("/opt/app-root/src/src/main/webapp/images");
-                File file = File.createTempFile("img", ".png", uploadDir);
-                item.write(file);
-                pathList.add(file.getPath());
-                //imgPath = file.getPath();
-                System.out.println("file.getPath()"+file.getPath());
+                if (contentType.equals("image/png")) {
+                    File uploadDir = new File("/opt/app-root/src/src/main/webapp/images");
+                    File file = File.createTempFile("img", ".png", uploadDir);
+                    item.write(file);
+                    pathList.add(file.getPath());
+                    //imgPath = file.getPath();
+                    System.out.println("file.getPath()"+file.getPath());
+                }
             }
         } catch (FileUploadException e) {
             System.out.println("FileUpload Exception");
@@ -54,10 +51,12 @@ public class AddOffer extends HttpServlet {
             ex.printStackTrace();
             System.out.println("Other Exception in doPost of Analysis servlet");
         }
-
         String name = request.getParameter("offerName");
         String description = request.getParameter("offerDescription");
-        String imgPath = (String) pathList.get(0);
+        if (!pathList.isEmpty()) {
+            imgPath = (String) pathList.get(0);
+            //set cycle if images are few
+        }
         Offer offer = new Offer();
         offer.setOfferName(name);
         offer.setOfferDescription(description);
