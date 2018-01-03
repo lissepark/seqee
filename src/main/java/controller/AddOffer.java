@@ -30,7 +30,8 @@ public class AddOffer extends HttpServlet {
         }
         FileItemFactory itemFactory = new DiskFileItemFactory();
         ServletFileUpload upload = new ServletFileUpload(itemFactory);
-        ArrayList pathList = new ArrayList();
+        //ArrayList pathList = new ArrayList();
+        String imgPath = "";
         try {
             List<FileItem> items = upload.parseRequest(request);
             for (FileItem item : items) {
@@ -42,7 +43,8 @@ public class AddOffer extends HttpServlet {
                 File uploadDir = new File("/opt/app-root/src/src/main/webapp/images");
                 File file = File.createTempFile("img", ".png", uploadDir);
                 item.write(file);
-                pathList.add(file.getPath());
+                //pathList.add(file.getPath());
+                imgPath = file.getPath();
                 System.out.println(file.getPath());
             }
         } catch (FileUploadException e) {
@@ -54,7 +56,7 @@ public class AddOffer extends HttpServlet {
 
         String name = request.getParameter("offerName");
         String description = request.getParameter("offerDescription");
-        String imgPath = (String) pathList.get(0);
+        //String imgPath = (String) pathList.get(0);
         Offer offer = new Offer();
         offer.setOfferName(name);
         offer.setOfferDescription(description);
