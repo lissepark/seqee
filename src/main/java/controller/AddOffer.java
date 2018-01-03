@@ -35,7 +35,8 @@ public class AddOffer extends HttpServlet {
         try {
             List<FileItem> items = upload.parseRequest(request);
             for (FileItem item : items) {
-                //String contentType = item.getContentType();
+                String contentType = item.getContentType();
+                System.out.println("contentType"+contentType);
                 //if (!contentType.equals("image/png")) {
                 //    System.out.println("Error. Only png or jpg format image files supported");
                 //    continue;
