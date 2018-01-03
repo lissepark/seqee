@@ -16,7 +16,6 @@ public class DBConnection {
     private static final Logger LOGGER = Logger.getLogger(DBConnection.class);
     private Connection conn = null;
     private ResultSet rs = null;
-    private ResultSet rs2 = null;
 /*
     private static PreparedStatement loadAllRoles;
     private static PreparedStatement loadRolesById;
@@ -164,7 +163,6 @@ public class DBConnection {
             insertOffering.setString(2, offer.getOfferDescription());
             //insertOffering.setArray(3,offer.getOfferCategories());
             insertOffering.setString(3, offer.getOfferImagePath());
-            System.out.println(offer.getOfferName());
             return insertOffering.executeUpdate();
         } catch (SQLException e) {
             LOGGER.debug("insertDiscipline - SQLException");

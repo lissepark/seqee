@@ -5,12 +5,18 @@
     <title>Sequoia</title>
 </head>
 <body>
-    <form method="post" action="addoffer">
-        <p><b>Fill the fields</b></p>
-        <p><input type="text" name="offerName"><Br>
-            <input type="text" name="offerDescription" ><Br>
-            <input type="text" name="imgPath"></p>
-        <p><input type="submit"></p>
-    </form>
+    <div class="row marketing">
+        <h4>Please, fill the data and load an image</h4>
+        <form action="addoffer" method="post" enctype="multipart/form-data">
+            <p>
+                <input type="text" name="offerName"><Br>
+                <input type="text" name="offerDescription" ><Br>
+            </p>
+            <h3 style="color:blue">Select image to upload:</h3>
+            <br/>
+            <input type="file" name="file"><br/>
+            <input class="btn btn-primary btn-lg" type="submit" value="Upload Image">
+        </form>
+    </div>
 </body>
 </html>

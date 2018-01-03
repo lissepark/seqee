@@ -19,17 +19,9 @@
             Offer offer1 = (Offer) iterator1.next();%>
     <li><%=offer1.getId()%>, offering=<%=offer1.getOfferName()%>
         <span class="label" style="margin-left: 30px;"><%=offer1.getOfferDescription()%></span>
+        <span class="label" style="margin-left: 30px;"><%=offer1.getOfferImagePath()%></span>
     </li>
     <%}%>
 </ul>
-	<div class="row marketing">
-      <h4>Please, fill the image path</h4>
-      <form action="offers" method="post" enctype="multipart/form-data">
-          <h3 style="color:blue">Select image to upload:</h3>
-          <br/>
-          <input type="file" name="file"><br/>
-          <input class="btn btn-primary btn-lg" type="submit" value="Upload Image">
-      </form>
-    </div>
 </body>
 </html>
