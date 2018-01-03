@@ -149,6 +149,7 @@ public class DBConnection {
                 offer.setId(rs.getLong("offering_id"));
                 offer.setOfferName(rs.getString("offering_name"));
                 offer.setOfferDescription(rs.getString("offering_description"));
+                offer.setOfferImagePath(rs.getString("offer_image_path"));
                 result.add(offer);
             }
         } catch (SQLException e) {
