@@ -48,8 +48,8 @@
       <file leaf-file-name="AddOffer.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/AddOffer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="32" column="26" lean-forward="false" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="26" />
+            <state relative-caret-position="476">
+              <caret line="61" column="8" lean-forward="false" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -938,7 +938,7 @@
       <workItem from="1514487474421" duration="4938000" />
       <workItem from="1514805235615" duration="1024000" />
       <workItem from="1514882732255" duration="22415000" />
-      <workItem from="1514990340277" duration="3300000" />
+      <workItem from="1514990340277" duration="4167000" />
     </task>
     <task id="LOCAL-00001" summary="commit id">
       <created>1504943768887</created>
@@ -979,7 +979,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64148000" />
+    <option name="totallyTimeSpent" value="65015000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-2" y="306" width="1312" height="687" extended-state="0" />
@@ -1472,8 +1472,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controller/AddOffer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="32" column="26" lean-forward="false" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="26" />
+        <state relative-caret-position="476">
+          <caret line="61" column="8" lean-forward="false" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

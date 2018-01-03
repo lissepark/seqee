@@ -43,7 +43,6 @@ public class AddOffer extends HttpServlet {
                         item.write(file);
                         pathList.add(file.getPath());
                         //imgPath = file.getPath();
-                        System.out.println("file.getPath()" + file.getPath());
                     }
                 }
             }
@@ -58,7 +57,12 @@ public class AddOffer extends HttpServlet {
         if (!pathList.isEmpty()) {
             imgPath = (String) pathList.get(0);
             //set cycle if images are few
+            System.out.println("imgPath" + imgPath);
         }
+        
+        System.out.println("name" + name);
+        System.out.println("description" + description);
+
         Offer offer = new Offer();
         offer.setOfferName(name);
         offer.setOfferDescription(description);
