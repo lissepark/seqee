@@ -43,12 +43,12 @@ public class AddOffer extends HttpServlet {
             while (iter.hasNext()) {
                 FileItem item = (FileItem) iter.next();
                 if (item.isFormField()) {
-                    System.out.println("field name " + item.getFieldName());
-                    System.out.println("field value " + item.getString());
-                    if ((item.getFieldName()) == "offerName"){
+                    if ((item.getFieldName()).compareTo("offerName") == 1){
                         name = item.getString();
-                    } else if ((item.getFieldName()) == "offerDescription"){
+                        System.out.println("name " + name);
+                    } else if ((item.getFieldName()).equals("offerDescription")){
                         description = item.getString();
+                        System.out.println("description " + description);
                     }
                 } else {
                     String contentType = item.getContentType();
