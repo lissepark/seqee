@@ -36,7 +36,7 @@ public class AddOffer extends HttpServlet {
             List<FileItem> items = upload.parseRequest(request);
             for (FileItem item : items) {
                 String contentType = item.getContentType();
-                if (contentType.equals("image/png")) {
+                if (contentType.equals("image/png") && contentType != null) {
                     File uploadDir = new File("/opt/app-root/src/src/main/webapp/images");
                     File file = File.createTempFile("img", ".png", uploadDir);
                     item.write(file);
