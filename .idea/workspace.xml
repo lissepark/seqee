@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6bab637c-c3bf-47ce-8296-4fd3ec37ee1b" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/AddOffer.java" afterPath="$PROJECT_DIR$/src/main/java/controller/AddOffer.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/offers.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/offers.jsp" />
     </list>
     <ignored path="SampleApp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,10 +45,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AddOffer.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AddOffer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/AddOffer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
+            <state relative-caret-position="14">
               <caret line="43" column="55" lean-forward="true" selection-start-line="43" selection-start-column="55" selection-end-line="43" selection-end-column="55" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -77,11 +77,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="offers.jsp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="offers.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/offers.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="93" lean-forward="false" selection-start-line="21" selection-start-column="93" selection-end-line="21" selection-end-column="93" />
+            <state relative-caret-position="408">
+              <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -208,9 +208,9 @@
         <option value="$PROJECT_DIR$/src/main/java/daoImpl/OfferDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/addoffer.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/controller/OfferController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/offers.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/database/DBConnection.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/AddOffer.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/offers.jsp" />
       </list>
     </option>
   </component>
@@ -228,8 +228,8 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="505" />
-    <option name="y" value="274" />
+    <option name="x" value="154" />
+    <option name="y" value="171" />
     <option name="width" value="1404" />
     <option name="height" value="752" />
   </component>
@@ -938,7 +938,7 @@
       <workItem from="1514487474421" duration="4938000" />
       <workItem from="1514805235615" duration="1024000" />
       <workItem from="1514882732255" duration="22415000" />
-      <workItem from="1514990340277" duration="8614000" />
+      <workItem from="1514990340277" duration="9024000" />
     </task>
     <task id="LOCAL-00001" summary="commit id">
       <created>1504943768887</created>
@@ -979,10 +979,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69462000" />
+    <option name="totallyTimeSpent" value="69872000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="505" y="274" width="1404" height="752" extended-state="0" />
+    <frame x="154" y="171" width="1404" height="752" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1396,14 +1396,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/offers.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="93" lean-forward="false" selection-start-line="21" selection-start-column="93" selection-end-line="21" selection-end-column="93" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/database/DataService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="663">
@@ -1472,11 +1464,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controller/AddOffer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
+        <state relative-caret-position="14">
           <caret line="43" column="55" lean-forward="true" selection-start-line="43" selection-start-column="55" selection-end-line="43" selection-end-column="55" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/offers.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
