@@ -23,6 +23,9 @@ import java.util.List;
 public class AddOffer extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        String name = request.getParameter("offerName");
+        String description = request.getParameter("offerDescription");
+
         if (!ServletFileUpload.isMultipartContent(request)) {
             System.out.println("Nothing to upload");
             //doGet(req,resp);
@@ -52,14 +55,13 @@ public class AddOffer extends HttpServlet {
             ex.printStackTrace();
             System.out.println("Other Exception in doPost of Analysis servlet");
         }
-        String name = request.getParameter("offerName");
-        String description = request.getParameter("offerDescription");
+
         if (!pathList.isEmpty()) {
             imgPath = (String) pathList.get(0);
             //set cycle if images are few
             System.out.println("imgPath" + imgPath);
         }
-        
+
         System.out.println("name" + name);
         System.out.println("description" + description);
 
