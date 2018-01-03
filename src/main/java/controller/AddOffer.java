@@ -23,32 +23,27 @@ import java.util.List;
 
 public class AddOffer extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
         String name = null;
         String description = null;
-
         if (!ServletFileUpload.isMultipartContent(request)) {
             System.out.println("Nothing to upload");
             //doGet(req,resp);
             return;
         }
-
         FileItemFactory itemFactory = new DiskFileItemFactory();
         ServletFileUpload upload = new ServletFileUpload(itemFactory);
         ArrayList pathList = new ArrayList();
         String imgPath = "";
         try {
-            List items = upload.parseRequest(request);
+            List<FileItem> items = upload.parseRequest(request);
             Iterator iter = items.iterator();
             while (iter.hasNext()) {
                 FileItem item = (FileItem) iter.next();
                 if (item.isFormField()) {
                     if ((item.getFieldName()).equals("offerName")){
                         name = item.getString();
-                        System.out.println("name " + name);
                     } else if ((item.getFieldName()).equals("offerDescription")){
                         description = item.getString();
-                        System.out.println("description " + description);
                     }
                 } else {
                     String contentType = item.getContentType();
@@ -58,7 +53,6 @@ public class AddOffer extends HttpServlet {
                             File file = File.createTempFile("img", ".png", uploadDir);
                             item.write(file);
                             pathList.add(file.getPath());
-                            //imgPath = file.getPath();
                         }
                     }
                 }
@@ -73,12 +67,7 @@ public class AddOffer extends HttpServlet {
         if (!pathList.isEmpty()) {
             imgPath = (String) pathList.get(0);
             //set cycle if images are few
-            System.out.println("imgPath" + imgPath);
         }
-
-        System.out.println("name" + name);
-        System.out.println("description" + description);
-
         Offer offer = new Offer();
         offer.setOfferName(name);
         offer.setOfferDescription(description);
