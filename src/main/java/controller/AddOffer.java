@@ -18,34 +18,46 @@ import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class AddOffer extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String name = request.getParameter("offerName");
-        String description = request.getParameter("offerDescription");
+        String name = null;
+        String description = null;
 
         if (!ServletFileUpload.isMultipartContent(request)) {
             System.out.println("Nothing to upload");
             //doGet(req,resp);
             return;
         }
+
         FileItemFactory itemFactory = new DiskFileItemFactory();
         ServletFileUpload upload = new ServletFileUpload(itemFactory);
         ArrayList pathList = new ArrayList();
         String imgPath = "";
         try {
-            List<FileItem> items = upload.parseRequest(request);
-            for (FileItem item : items) {
-                String contentType = item.getContentType();
-                if (contentType != null) {
-                    if (contentType.equals("image/png")) {
-                        File uploadDir = new File("/opt/app-root/src/src/main/webapp/images");
-                        File file = File.createTempFile("img", ".png", uploadDir);
-                        item.write(file);
-                        pathList.add(file.getPath());
-                        //imgPath = file.getPath();
+            List items = upload.parseRequest(request);
+            Iterator iter = items.iterator();
+            while (iter.hasNext()) {
+                FileItem item = (FileItem) iter.next();
+                if (item.isFormField()) {
+                    if ((item.getFieldName()).toString() == "offerName"){
+                        name = item.getString();
+                    } else if ((item.getFieldName()).toString() == "offerDescription"){
+                        description = item.getString();
+                    }
+                } else {
+                    String contentType = item.getContentType();
+                    if (contentType != null) {
+                        if (contentType.equals("image/png")) {
+                            File uploadDir = new File("/opt/app-root/src/src/main/webapp/images");
+                            File file = File.createTempFile("img", ".png", uploadDir);
+                            item.write(file);
+                            pathList.add(file.getPath());
+                            //imgPath = file.getPath();
+                        }
                     }
                 }
             }
