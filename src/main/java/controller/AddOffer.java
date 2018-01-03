@@ -36,13 +36,15 @@ public class AddOffer extends HttpServlet {
             List<FileItem> items = upload.parseRequest(request);
             for (FileItem item : items) {
                 String contentType = item.getContentType();
-                if (contentType.equals("image/png") && contentType != null) {
-                    File uploadDir = new File("/opt/app-root/src/src/main/webapp/images");
-                    File file = File.createTempFile("img", ".png", uploadDir);
-                    item.write(file);
-                    pathList.add(file.getPath());
-                    //imgPath = file.getPath();
-                    System.out.println("file.getPath()"+file.getPath());
+                if (contentType != null) {
+                    if (contentType.equals("image/png")) {
+                        File uploadDir = new File("/opt/app-root/src/src/main/webapp/images");
+                        File file = File.createTempFile("img", ".png", uploadDir);
+                        item.write(file);
+                        pathList.add(file.getPath());
+                        //imgPath = file.getPath();
+                        System.out.println("file.getPath()" + file.getPath());
+                    }
                 }
             }
         } catch (FileUploadException e) {
