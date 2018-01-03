@@ -60,7 +60,6 @@ public class OfferController extends HttpServlet{
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-
         //String url = "/jsp/offers.jsp";
         //String action = req.getParameter("action");
         //String category = req.getParameter("category");
@@ -74,7 +73,6 @@ public class OfferController extends HttpServlet{
                     url = base + "category.jsp?category=" + category;
                     break;*/
                 //}
-
         if (!ServletFileUpload.isMultipartContent(req)) {
             System.out.println("Nothing to upload");
             //doGet(req,resp);
