@@ -8,13 +8,15 @@ import org.apache.commons.fileupload.FileItemFactory;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
+
+import javax.activation.MimetypesFileTypeMap;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.File;
-import java.io.IOException;
+import javax.servlet.http.Part;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,6 +24,8 @@ import java.util.List;
  * Created by incrit.com on 8/21/17.
  */
 public class OfferController extends HttpServlet{
+
+    int BUFFER_LENGTH = 4096;
 
     public OfferController() {
         super();
@@ -51,10 +55,42 @@ public class OfferController extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
+
+        String filePath = req.getRequestURI();
+
+        File file = new File(System.getenv("PWD") + filePath.replace("/offers",""));
+        System.out.println("System.getenv(PWD) "+System.getenv("PWD") + filePath.replace("/offers",""));
+        InputStream input = new FileInputStream(file);
+
+        resp.setContentLength((int) file.length());
+        System.out.println("file.length() "+file.length());
+        resp.setContentType(new MimetypesFileTypeMap().getContentType(file));
+
+        OutputStream output = resp.getOutputStream();
+        byte[] bytes = new byte[BUFFER_LENGTH];
+        int read = 0;
+        while ((read = input.read(bytes, 0, BUFFER_LENGTH)) != -1) {
+            output.write(bytes, 0, read);
+            output.flush();
+        }
+
+        input.close();
+        output.close();
+
         getAllOffers(req, resp);
 
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/offers.jsp");
         requestDispatcher.forward(req, resp);
+    }
+
+    private String getFileName(Part part) {
+        for (String cd : part.getHeader("content-disposition").split(";")) {
+            if (cd.trim().startsWith("filename")) {
+                return cd.substring(cd.indexOf('=') + 1).trim()
+                        .replace("\"", "");
+            }
+        }
+        return null;
     }
 
     @Override
