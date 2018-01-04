@@ -26,8 +26,8 @@
       <file leaf-file-name="OfferController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/OfferController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="398">
-              <caret line="159" column="22" lean-forward="false" selection-start-line="159" selection-start-column="22" selection-end-line="159" selection-end-column="22" />
+            <state relative-caret-position="279">
+              <caret line="137" column="73" lean-forward="true" selection-start-line="137" selection-start-column="73" selection-end-line="137" selection-end-column="73" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -219,9 +219,9 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="21" />
-    <option name="y" value="78" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="5" />
+    <option name="y" value="165" />
     <option name="width" value="1312" />
     <option name="height" value="687" />
   </component>
@@ -938,7 +938,7 @@
       <workItem from="1514487474421" duration="4938000" />
       <workItem from="1514805235615" duration="1024000" />
       <workItem from="1514882732255" duration="22415000" />
-      <workItem from="1514990340277" duration="25269000" />
+      <workItem from="1514990340277" duration="27194000" />
     </task>
     <task id="LOCAL-00001" summary="commit id">
       <created>1504943768887</created>
@@ -979,10 +979,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86117000" />
+    <option name="totallyTimeSpent" value="88042000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="21" y="78" width="1312" height="687" extended-state="1" />
+    <frame x="5" y="165" width="1312" height="687" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1480,8 +1480,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controller/OfferController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="159" column="22" lean-forward="false" selection-start-line="159" selection-start-column="22" selection-end-line="159" selection-end-column="22" />
+        <state relative-caret-position="279">
+          <caret line="137" column="73" lean-forward="true" selection-start-line="137" selection-start-column="73" selection-end-line="137" selection-end-column="73" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

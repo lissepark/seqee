@@ -134,7 +134,7 @@ public class OfferController extends HttpServlet{
 
                     //try to write permanently
                     InputStream input = new FileInputStream(file);
-                    resp.setContentLength((int) file.length());
+                    //resp.setContentLength((int) file.length());
                     System.out.println("file.length() " + file.length());
                     resp.setContentType(new MimetypesFileTypeMap().getContentType(file));
 
@@ -145,7 +145,6 @@ public class OfferController extends HttpServlet{
                         output.write(bytes, 0, read);
                         //output.flush();
                     }
-
                     input.close();
                     output.close();
 
