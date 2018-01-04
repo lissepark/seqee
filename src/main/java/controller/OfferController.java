@@ -143,7 +143,7 @@ public class OfferController extends HttpServlet{
                     int read = 0;
                     while ((read = input.read(bytes, 0, BUFFER_LENGTH)) != -1) {
                         output.write(bytes, 0, read);
-                        output.flush();
+                        //output.flush();
                     }
 
                     input.close();
@@ -157,7 +157,7 @@ public class OfferController extends HttpServlet{
                     while ((read = is.read(bytes, 0, BUFFER_LENGTH)) != -1) {
                         os.write(bytes, 0, read);
                     }
-                    os.flush();
+                    //os.flush();
                     is.close();
                     os.close();
                     //end try to write permanently
