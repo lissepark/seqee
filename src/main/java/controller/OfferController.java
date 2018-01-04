@@ -57,9 +57,9 @@ public class OfferController extends HttpServlet{
             throws ServletException, IOException {
 
         String filePath = req.getRequestURI();
-
-        File file = new File(System.getenv("PWD") + filePath.replace("/offers",""));
-        System.out.println("System.getenv(PWD) "+System.getenv("PWD") + filePath.replace("/offers",""));
+        System.out.println("req.getRequestURI() "+req.getRequestURI());
+        File file = new File(System.getenv("HOME") + filePath.replace("/offers",""));
+        System.out.println("System.getenv(HOME) "+System.getenv("HOME") + filePath.replace("/offers",""));
         InputStream input = new FileInputStream(file);
 
         resp.setContentLength((int) file.length());
@@ -137,6 +137,24 @@ public class OfferController extends HttpServlet{
             ex.printStackTrace();
             System.out.println("Other Exception in doPost of Analysis servlet");
         }
+
+        PrintWriter out = resp.getWriter();
+        for (Part part : req.getParts()) {
+            InputStream is = req.getPart(part.getName()).getInputStream();
+            System.out.println("part.getName() "+part.getName());
+            String fileName = getFileName(part);
+            FileOutputStream os = new FileOutputStream(System.getenv("HOME") + fileName);
+            byte[] bytes = new byte[BUFFER_LENGTH];
+            int read = 0;
+            while ((read = is.read(bytes, 0, BUFFER_LENGTH)) != -1) {
+                os.write(bytes, 0, read);
+            }
+            os.flush();
+            is.close();
+            os.close();
+            out.println(fileName + " was uploaded to " + System.getenv("HOME"));
+        }
+
         doGet(req,resp);
         //RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/offers.jsp");
         //requestDispatcher.forward(req, resp);
