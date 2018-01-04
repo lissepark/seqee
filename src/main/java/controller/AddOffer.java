@@ -36,7 +36,7 @@ public class AddOffer extends HttpServlet {
         String imgPath = "";
         try {
             List<FileItem> items = upload.parseRequest(request);
-            Iterator iter = items.iterator();
+            Iterator<FileItem> iter = items.iterator();
             while (iter.hasNext()) {
                 FileItem item = (FileItem) iter.next();
                 if (item.isFormField()) {
