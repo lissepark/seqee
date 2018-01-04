@@ -121,45 +121,47 @@ public class OfferController extends HttpServlet{
             List<FileItem> items = upload.parseRequest(req);
             for (FileItem item : items) {
                 String contentType = item.getContentType();
-                if (!contentType.equals("image/png")) {
-                    System.out.println("Error. Only png or jpg format image files supported");
-                    continue;
+                if (contentType != null) {
+                    if (!contentType.equals("image/png")) {
+                        System.out.println("Error. Only png or jpg format image files supported");
+                        continue;
+                    }
+                    File uploadDir = new File("/opt/app-root/src/src/main/webapp/images");
+                    File file = File.createTempFile("img", ".png", uploadDir);
+                    item.write(file);
+                    pathList.add(file.getPath());
+                    System.out.println(file.getPath());
+
+                    //try to write permanently
+                    InputStream input = new FileInputStream(file);
+                    resp.setContentLength((int) file.length());
+                    System.out.println("file.length() " + file.length());
+                    resp.setContentType(new MimetypesFileTypeMap().getContentType(file));
+
+                    OutputStream output = resp.getOutputStream();
+                    byte[] bytes = new byte[BUFFER_LENGTH];
+                    int read = 0;
+                    while ((read = input.read(bytes, 0, BUFFER_LENGTH)) != -1) {
+                        output.write(bytes, 0, read);
+                        output.flush();
+                    }
+
+                    input.close();
+                    output.close();
+
+                    InputStream is = req.getPart(file.getName()).getInputStream();
+                    System.out.println("part.getName() " + file.getName());
+                    FileOutputStream os = new FileOutputStream(System.getenv("HOME") + file.getName());
+                    System.out.println("System.getenv(HOME) + file.getName() " + System.getenv("HOME") + file.getName());
+                    read = 0;
+                    while ((read = is.read(bytes, 0, BUFFER_LENGTH)) != -1) {
+                        os.write(bytes, 0, read);
+                    }
+                    os.flush();
+                    is.close();
+                    os.close();
+                    //end try to write permanently
                 }
-                File uploadDir = new File("/opt/app-root/src/src/main/webapp/images");
-                File file = File.createTempFile("img", ".png", uploadDir);
-                item.write(file);
-                pathList.add(file.getPath());
-                System.out.println(file.getPath());
-
-                //try to write permanently
-                InputStream input = new FileInputStream(file);
-                resp.setContentLength((int) file.length());
-                System.out.println("file.length() "+file.length());
-                resp.setContentType(new MimetypesFileTypeMap().getContentType(file));
-
-                OutputStream output = resp.getOutputStream();
-                byte[] bytes = new byte[BUFFER_LENGTH];
-                int read = 0;
-                while ((read = input.read(bytes, 0, BUFFER_LENGTH)) != -1) {
-                    output.write(bytes, 0, read);
-                    output.flush();
-                }
-
-                input.close();
-                output.close();
-
-                InputStream is = req.getPart(file.getName()).getInputStream();
-                System.out.println("part.getName() "+file.getName());
-                FileOutputStream os = new FileOutputStream(System.getenv("HOME") + file.getName());
-                read = 0;
-                while ((read = is.read(bytes, 0, BUFFER_LENGTH)) != -1) {
-                    os.write(bytes, 0, read);
-                }
-                os.flush();
-                is.close();
-                os.close();
-                //end try to write permanently
-
             }
         } catch (FileUploadException e) {
             System.out.println("FileUpload Exception");
