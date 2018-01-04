@@ -34,6 +34,6 @@
     </form>
 </div>
 
-<div><img src="/opt/app-root/src/src/main/webapp/images/img5553125286221083223.png"></div>
+<div><img src="/opt/app-root/src/src/main/webapp/images/img7909715953794356496.png"></div>
 </body>
 </html>

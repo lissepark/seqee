@@ -80,8 +80,8 @@
       <file leaf-file-name="offers.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/offers.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+            <state relative-caret-position="212">
+              <caret line="36" column="82" lean-forward="false" selection-start-line="36" selection-start-column="82" selection-end-line="36" selection-end-column="82" />
               <folding>
                 <element signature="n#style#0;n#h3#0;n#form#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -929,7 +929,7 @@
       <workItem from="1514487474421" duration="4938000" />
       <workItem from="1514805235615" duration="1024000" />
       <workItem from="1514882732255" duration="22415000" />
-      <workItem from="1514990340277" duration="13004000" />
+      <workItem from="1514990340277" duration="13627000" />
     </task>
     <task id="LOCAL-00001" summary="commit id">
       <created>1504943768887</created>
@@ -970,7 +970,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73852000" />
+    <option name="totallyTimeSpent" value="74475000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1312" height="687" extended-state="0" />
@@ -1471,8 +1471,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/offers.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+        <state relative-caret-position="212">
+          <caret line="36" column="82" lean-forward="false" selection-start-line="36" selection-start-column="82" selection-end-line="36" selection-end-column="82" />
           <folding>
             <element signature="n#style#0;n#h3#0;n#form#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
