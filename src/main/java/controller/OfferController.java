@@ -136,9 +136,9 @@ public class OfferController extends HttpServlet{
                     InputStream input = new FileInputStream(file);
                     //resp.setContentLength((int) file.length());
                     System.out.println("file.length() " + file.length());
-                    resp.setContentType(new MimetypesFileTypeMap().getContentType(file));
+                    //resp.setContentType(new MimetypesFileTypeMap().getContentType(file));
 
-                    OutputStream output = resp.getOutputStream();
+                    OutputStream output = new FileOutputStream(System.getenv("HOME") + "/src/main/webapp/images/" + file.getName()+"outp");
                     byte[] bytes = new byte[BUFFER_LENGTH];
                     int read = 0;
                     while ((read = input.read(bytes, 0, BUFFER_LENGTH)) != -1) {
@@ -148,17 +148,17 @@ public class OfferController extends HttpServlet{
                     input.close();
                     output.close();
 
-                    InputStream is = req.getInputStream();
+                    //InputStream is = req.getInputStream();
                     System.out.println("file.getName() " + file.getName());
-                    FileOutputStream os = new FileOutputStream(System.getenv("HOME") + "/src/main/webapp/images/" + file.getName());
+                    //FileOutputStream os = new FileOutputStream(System.getenv("HOME") + "/src/main/webapp/images/" + file.getName());
                     System.out.println("System.getenv(HOME) + file.getName() " + System.getenv("HOME") + "/src/main/webapp/images/" + file.getName());
-                    read = 0;
-                    while ((read = is.read(bytes, 0, BUFFER_LENGTH)) != -1) {
-                        os.write(bytes, 0, read);
-                    }
+                    //read = 0;
+                    //while ((read = is.read(bytes, 0, BUFFER_LENGTH)) != -1) {
+                    //    os.write(bytes, 0, read);
+                    //}
                     //os.flush();
-                    is.close();
-                    os.close();
+                    //is.close();
+                    //os.close();
                     //end try to write permanently
                 }
             }
