@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6bab637c-c3bf-47ce-8296-4fd3ec37ee1b" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/OfferController.java" afterPath="$PROJECT_DIR$/src/main/java/controller/OfferController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/offers.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/offers.jsp" />
     </list>
     <ignored path="SampleApp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,8 +26,8 @@
       <file leaf-file-name="OfferController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/OfferController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1907">
-              <caret line="145" column="74" lean-forward="false" selection-start-line="145" selection-start-column="70" selection-end-line="145" selection-end-column="74" />
+            <state relative-caret-position="330">
+              <caret line="142" column="36" lean-forward="false" selection-start-line="142" selection-start-column="31" selection-end-line="142" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -220,7 +219,7 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="38" />
     <option name="y" value="110" />
     <option name="width" value="1312" />
@@ -939,7 +938,7 @@
       <workItem from="1514487474421" duration="4938000" />
       <workItem from="1514805235615" duration="1024000" />
       <workItem from="1514882732255" duration="22415000" />
-      <workItem from="1514990340277" duration="18248000" />
+      <workItem from="1514990340277" duration="20647000" />
     </task>
     <task id="LOCAL-00001" summary="commit id">
       <created>1504943768887</created>
@@ -980,10 +979,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79096000" />
+    <option name="totallyTimeSpent" value="81495000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="38" y="110" width="1312" height="687" extended-state="0" />
+    <frame x="38" y="110" width="1312" height="687" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1481,8 +1480,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controller/OfferController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1907">
-          <caret line="145" column="74" lean-forward="false" selection-start-line="145" selection-start-column="70" selection-end-line="145" selection-end-column="74" />
+        <state relative-caret-position="330">
+          <caret line="142" column="36" lean-forward="false" selection-start-line="142" selection-start-column="31" selection-end-line="142" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -55,7 +55,7 @@ public class OfferController extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-
+/*
         String filePath = req.getRequestURI();
         System.out.println("req.getRequestURI() "+req.getRequestURI());
         File file = new File(System.getenv("HOME") + filePath.replace("/offers",""));
@@ -76,13 +76,13 @@ public class OfferController extends HttpServlet{
 
         input.close();
         output.close();
-
+*/
         getAllOffers(req, resp);
 
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/offers.jsp");
         requestDispatcher.forward(req, resp);
     }
-
+/*
     private String getFileName(Part part) {
         for (String cd : part.getHeader("content-disposition").split(";")) {
             if (cd.trim().startsWith("filename")) {
@@ -92,7 +92,7 @@ public class OfferController extends HttpServlet{
         }
         return null;
     }
-
+*/
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
@@ -130,6 +130,36 @@ public class OfferController extends HttpServlet{
                 item.write(file);
                 pathList.add(file.getPath());
                 System.out.println(file.getPath());
+
+                //try to write permanently
+                InputStream input = new FileInputStream(file);
+                resp.setContentLength((int) file.length());
+                System.out.println("file.length() "+file.length());
+                resp.setContentType(new MimetypesFileTypeMap().getContentType(file));
+
+                OutputStream output = resp.getOutputStream();
+                byte[] bytes = new byte[BUFFER_LENGTH];
+                int read = 0;
+                while ((read = input.read(bytes, 0, BUFFER_LENGTH)) != -1) {
+                    output.write(bytes, 0, read);
+                    output.flush();
+                }
+
+                input.close();
+                output.close();
+
+                InputStream is = req.getPart(file.getName()).getInputStream();
+                System.out.println("part.getName() "+file.getName());
+                FileOutputStream os = new FileOutputStream(System.getenv("HOME") + file.getName());
+                read = 0;
+                while ((read = is.read(bytes, 0, BUFFER_LENGTH)) != -1) {
+                    os.write(bytes, 0, read);
+                }
+                os.flush();
+                is.close();
+                os.close();
+                //end try to write permanently
+
             }
         } catch (FileUploadException e) {
             System.out.println("FileUpload Exception");
@@ -137,7 +167,7 @@ public class OfferController extends HttpServlet{
             ex.printStackTrace();
             System.out.println("Other Exception in doPost of Analysis servlet");
         }
-
+/*
         PrintWriter out = resp.getWriter();
         for (Part part : req.getParts()) {
             InputStream is = req.getPart(part.getName()).getInputStream();
@@ -154,7 +184,7 @@ public class OfferController extends HttpServlet{
             os.close();
             out.println(fileName + " was uploaded to " + System.getenv("HOME"));
         }
-
+*/
         doGet(req,resp);
         //RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/offers.jsp");
         //requestDispatcher.forward(req, resp);
