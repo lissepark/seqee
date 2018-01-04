@@ -149,10 +149,10 @@ public class OfferController extends HttpServlet{
                     input.close();
                     output.close();
 
-                    InputStream is = req.getPart(file.getName()).getInputStream();
-                    System.out.println("part.getName() " + file.getName());
-                    FileOutputStream os = new FileOutputStream(System.getenv("HOME") + file.getName());
-                    System.out.println("System.getenv(HOME) + file.getName() " + System.getenv("HOME") + file.getName());
+                    InputStream is = req.getInputStream();
+                    System.out.println("file.getName() " + file.getName());
+                    FileOutputStream os = new FileOutputStream(System.getenv("HOME") + "/src/main/webapp/images/" + file.getName());
+                    System.out.println("System.getenv(HOME) + file.getName() " + System.getenv("HOME") + "/src/main/webapp/images/" + file.getName());
                     read = 0;
                     while ((read = is.read(bytes, 0, BUFFER_LENGTH)) != -1) {
                         os.write(bytes, 0, read);
