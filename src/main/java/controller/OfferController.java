@@ -68,8 +68,8 @@ public class OfferController extends HttpServlet{
 
                 resp.setContentLength((int) file.length());
                 resp.setContentType(new MimetypesFileTypeMap().getContentType(file));
-                OutputStream output = resp.getOutputStream();
-                
+                resp.getOutputStream().write(b);
+
 
             }
             fos.close();
