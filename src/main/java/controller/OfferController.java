@@ -30,16 +30,7 @@ public class OfferController extends HttpServlet{
     public OfferController() {
         super();
     }
-/*
-    public void init(ServletConfig config) throws ServletException {
-        super.init(config);
-        OfferDAO categoryDao = new OfferDAOImpl();
-        // calling DAO method to retrieve offerList from Database
-        List<Category> categoryList = categoryDao.findAllCategories();
-        ServletContext context = config.getServletContext();
-        context.setAttribute("categoryList", categoryList);
-    }
-*/
+
     private void getAllOffers(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
         OfferDAO offerDAO = new OfferDAOImpl();
         List<Offer> offerList = offerDAO.getAllOffers();
@@ -138,7 +129,7 @@ public class OfferController extends HttpServlet{
                     System.out.println("file.length() " + file.length());
                     //resp.setContentType(new MimetypesFileTypeMap().getContentType(file));
 
-                    OutputStream output = new FileOutputStream(System.getenv("HOME") + "/src/main/webapp/images/" + file.getName()+"outp");
+                    OutputStream output = new FileOutputStream(System.getenv("HOME") + "/src/main/webapp/images/" + file.getName());
                     byte[] bytes = new byte[BUFFER_LENGTH];
                     int read = 0;
                     while ((read = input.read(bytes, 0, BUFFER_LENGTH)) != -1) {
@@ -148,17 +139,8 @@ public class OfferController extends HttpServlet{
                     input.close();
                     output.close();
 
-                    //InputStream is = req.getInputStream();
                     System.out.println("file.getName() " + file.getName());
-                    //FileOutputStream os = new FileOutputStream(System.getenv("HOME") + "/src/main/webapp/images/" + file.getName());
-                    System.out.println("System.getenv(HOME) + file.getName() " + System.getenv("HOME") + "/src/main/webapp/images/" + file.getName());
-                    //read = 0;
-                    //while ((read = is.read(bytes, 0, BUFFER_LENGTH)) != -1) {
-                    //    os.write(bytes, 0, read);
-                    //}
-                    //os.flush();
-                    //is.close();
-                    //os.close();
+                    System.out.println("System.getenv(HOME) + file.getName() " + System.getenv("HOME") + "/images/" + file.getName());
                     //end try to write permanently
                 }
             }
@@ -168,24 +150,7 @@ public class OfferController extends HttpServlet{
             ex.printStackTrace();
             System.out.println("Other Exception in doPost of Analysis servlet");
         }
-/*
-        PrintWriter out = resp.getWriter();
-        for (Part part : req.getParts()) {
-            InputStream is = req.getPart(part.getName()).getInputStream();
-            System.out.println("part.getName() "+part.getName());
-            String fileName = getFileName(part);
-            FileOutputStream os = new FileOutputStream(System.getenv("HOME") + fileName);
-            byte[] bytes = new byte[BUFFER_LENGTH];
-            int read = 0;
-            while ((read = is.read(bytes, 0, BUFFER_LENGTH)) != -1) {
-                os.write(bytes, 0, read);
-            }
-            os.flush();
-            is.close();
-            os.close();
-            out.println(fileName + " was uploaded to " + System.getenv("HOME"));
-        }
-*/
+
         doGet(req,resp);
         //RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/offers.jsp");
         //requestDispatcher.forward(req, resp);
