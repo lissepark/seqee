@@ -14,14 +14,17 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
 public class AddOffer extends HttpServlet {
+
+    int BUFFER_LENGTH = 4096;
+    OfferDAO offerDAO = new OfferDAOImpl();
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String name = null;
         String description = null;
@@ -48,11 +51,32 @@ public class AddOffer extends HttpServlet {
                 } else {
                     String contentType = item.getContentType();
                     if (contentType != null) {
+                        if (!contentType.equals("image/png")) {
+                            System.out.println("Error. Only png or jpg format image files supported");
+                            continue;
+                        }
                         if (contentType.equals("image/png")) {
                             File uploadDir = new File("/opt/app-root/src/src/main/webapp/images");
                             File file = File.createTempFile("img", ".png", uploadDir);
                             item.write(file);
                             pathList.add(file.getPath());
+
+                            InputStream input = new FileInputStream(file);
+
+                            try {
+                                offerDAO.insertOfferingsImage(file.getName(), 55, input, file.length());
+                            } catch (SQLException e) {
+                                e.printStackTrace();
+                            }
+
+                            OutputStream output = new FileOutputStream(System.getenv("HOME") + "/src/main/webapp/images/" + file.getName());
+                            byte[] bytes = new byte[BUFFER_LENGTH];
+                            int read = 0;
+                            while ((read = input.read(bytes, 0, BUFFER_LENGTH)) != -1) {
+                                output.write(bytes, 0, read);
+                            }
+                            input.close();
+                            output.close();
                         }
                     }
                 }
@@ -74,7 +98,6 @@ public class AddOffer extends HttpServlet {
         offer.setOfferImagePath(imgPath);
         //String group = request.getParameter("group");
         //String date = request.getParameter("date");
-        OfferDAO offerDAO = new OfferDAOImpl();
         try {
             offerDAO.insertOffer(offer);
         } catch (SQLException e) {

@@ -3,6 +3,8 @@ package database;
 import model.Offer;
 import org.apache.log4j.Logger;
 
+import java.io.File;
+import java.io.InputStream;
 import java.sql.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -37,6 +39,7 @@ public class DBConnection {
     */
     private static PreparedStatement getAllOffers;
     private static PreparedStatement insertOffering;
+    private static PreparedStatement insertOfferingsImage;
     /*
     private static PreparedStatement deleteDiscipline;
     private static PreparedStatement selectDisciplineById;
@@ -79,6 +82,7 @@ public class DBConnection {
             */
             getAllOffers = conn.prepareStatement("SELECT * FROM offering");
             insertOffering = conn.prepareStatement("INSERT INTO offering SET `offering_name`=?, `offering_description`=?, `offer_image_path`=?");
+            insertOfferingsImage = conn.prepareStatement("INSERT INTO images SET `image_name`=?, `offer_id`=?, `image_nat`=?");
             /*
             deleteDiscipline = conn.prepareStatement("DELETE FROM `discipline` WHERE `id`=?");
             selectDisciplineById = conn.prepareStatement("SELECT * FROM discipline WHERE id = ?");
@@ -113,6 +117,7 @@ public class DBConnection {
             */
             getAllOffers.close();
             insertOffering.close();
+            insertOfferingsImage.close();
             /*
             selectDisciplineById.close();
             changeDiscipline.close();
@@ -166,7 +171,19 @@ public class DBConnection {
             insertOffering.setString(3, offer.getOfferImagePath());
             return insertOffering.executeUpdate();
         } catch (SQLException e) {
-            LOGGER.debug("insertDiscipline - SQLException");
+            LOGGER.debug("insertOffer - SQLException");
+            return -1;
+        }
+    }
+
+    public int insertOfferingsImage(String image_name, int offer_id, InputStream input, long len) throws SQLException {
+        try {
+            insertOfferingsImage.setString(1, image_name);
+            insertOfferingsImage.setInt(2, offer_id);
+            insertOfferingsImage.setBinaryStream(3, input, len);
+            return insertOfferingsImage.executeUpdate();
+        } catch (SQLException e) {
+            LOGGER.debug("insertOfferingsImage - SQLException");
             return -1;
         }
     }

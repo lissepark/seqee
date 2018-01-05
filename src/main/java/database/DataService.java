@@ -1,5 +1,6 @@
 package database;
 
+import java.io.InputStream;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -60,6 +61,13 @@ public class DataService {
     public int insertOffer(Offer offer) throws SQLException {
         DBConnection conn = getDBConnection();
         int result = conn.insertOffer(offer);
+        this.putDBConnection(conn);
+        return result;
+    }
+
+    public int insertOfferingsImage(String image_name, int offer_id, InputStream input, long len) throws SQLException {
+        DBConnection conn = getDBConnection();
+        int result = conn.insertOfferingsImage(image_name, offer_id, input, len);
         this.putDBConnection(conn);
         return result;
     }

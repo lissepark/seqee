@@ -122,7 +122,6 @@ public class OfferController extends HttpServlet{
                     item.write(file);
                     pathList.add(file.getPath());
                     System.out.println(file.getPath());
-
                     //try to write permanently
                     InputStream input = new FileInputStream(file);
                     //resp.setContentLength((int) file.length());
