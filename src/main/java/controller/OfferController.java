@@ -34,7 +34,7 @@ public class OfferController extends HttpServlet{
         super();
     }
 
-    private void getAllOffers(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+    private void getAllOffers(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException, SQLException {
         OfferDAO offerDAO = new OfferDAOImpl();
         List<Offer> offerList = offerDAO.getAllOffers();
 
@@ -49,7 +49,7 @@ public class OfferController extends HttpServlet{
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-
+            // not correct if will be the list
             File file = new File("/opt/app-root/src/src/main/webapp/images/image1.png");
             FileOutputStream fos = new FileOutputStream(file);
 
@@ -57,18 +57,20 @@ public class OfferController extends HttpServlet{
             Iterator<java.sql.Blob> iterBlob = blobs.iterator();
             while (iterBlob.hasNext()) {
                 blob = (Blob) iterBlob.next();
-                byte b[] = new byte[0];
-                try {
-                    b = new byte[(int) blob.length()];
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
+                byte b[] = new byte[(int) blob.length()];
                 try {
                     b = blob.getBytes(1, (int) blob.length());
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
                 fos.write(b);
+
+
+                resp.setContentLength((int) file.length());
+                resp.setContentType(new MimetypesFileTypeMap().getContentType(file));
+                OutputStream output = resp.getOutputStream();
+                
+
             }
             fos.close();
         }
@@ -108,7 +110,11 @@ public class OfferController extends HttpServlet{
         input.close();
         output.close();
 */
-        getAllOffers(req, resp);
+        try {
+            getAllOffers(req, resp);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
 
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/offers.jsp");
