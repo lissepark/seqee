@@ -1,5 +1,6 @@
 package controller;
 
+import com.mysql.jdbc.Blob;
 import dao.OfferDAO;
 import daoImpl.OfferDAOImpl;
 import model.Offer;
@@ -17,7 +18,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 import java.io.*;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -34,6 +37,43 @@ public class OfferController extends HttpServlet{
     private void getAllOffers(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
         OfferDAO offerDAO = new OfferDAOImpl();
         List<Offer> offerList = offerDAO.getAllOffers();
+
+        int offer_id = 0;
+        Iterator<Offer> iter = offerList.iterator();
+        while (iter.hasNext()) {
+            Offer offer = (Offer) iter.next();
+            offer_id = offer.getId().intValue();
+            List<java.sql.Blob> blobs = new ArrayList<>();
+            try {
+                blobs =  offerDAO.selectOfferingsImage(offer_id);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
+            File file = new File("/opt/app-root/src/src/main/webapp/images/image1.png");
+            FileOutputStream fos = new FileOutputStream(file);
+
+            Blob blob;
+            Iterator<java.sql.Blob> iterBlob = blobs.iterator();
+            while (iterBlob.hasNext()) {
+                blob = (Blob) iterBlob.next();
+                byte b[] = new byte[0];
+                try {
+                    b = new byte[(int) blob.length()];
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                try {
+                    b = blob.getBytes(1, (int) blob.length());
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                fos.write(b);
+            }
+            fos.close();
+        }
+
+
         req.setAttribute("offerList", offerList);
     }
 /*
@@ -69,6 +109,7 @@ public class OfferController extends HttpServlet{
         output.close();
 */
         getAllOffers(req, resp);
+
 
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/offers.jsp");
         requestDispatcher.forward(req, resp);

@@ -40,6 +40,7 @@ public class DBConnection {
     private static PreparedStatement getAllOffers;
     private static PreparedStatement insertOffering;
     private static PreparedStatement insertOfferingsImage;
+    private static PreparedStatement selectOfferingsImage;
     /*
     private static PreparedStatement deleteDiscipline;
     private static PreparedStatement selectDisciplineById;
@@ -83,6 +84,7 @@ public class DBConnection {
             getAllOffers = conn.prepareStatement("SELECT * FROM offering");
             insertOffering = conn.prepareStatement("INSERT INTO offering SET `offering_name`=?, `offering_description`=?, `offer_image_path`=?");
             insertOfferingsImage = conn.prepareStatement("INSERT INTO images SET `image_name`=?, `offer_id`=?, `image_nat`=?");
+            selectOfferingsImage = conn.prepareStatement("SELECT * FROM images where `offer_id`=?");
             /*
             deleteDiscipline = conn.prepareStatement("DELETE FROM `discipline` WHERE `id`=?");
             selectDisciplineById = conn.prepareStatement("SELECT * FROM discipline WHERE id = ?");
@@ -118,6 +120,7 @@ public class DBConnection {
             getAllOffers.close();
             insertOffering.close();
             insertOfferingsImage.close();
+            selectOfferingsImage.close();
             /*
             selectDisciplineById.close();
             changeDiscipline.close();
@@ -144,7 +147,6 @@ public class DBConnection {
     }
 
     public List<Offer> getAllOffers() {
-        //getListDisciplines
         rs = null;
         List<Offer> result = new ArrayList<>();
         try {
@@ -186,6 +188,23 @@ public class DBConnection {
             LOGGER.debug("insertOfferingsImage - SQLException");
             return -1;
         }
+    }
+
+    public List<Blob> selectOfferingsImage(int offer_id) throws SQLException {
+        rs = null;
+        List<Blob> blobs = new ArrayList<>();
+        try{
+            rs = selectOfferingsImage.executeQuery();
+            while(rs.next()){
+                Blob blob;
+                blob = rs.getBlob("image_nat");
+                blobs.add(blob);
+            }
+        } catch(Exception e) {
+            LOGGER.error("selectOfferingsImage - > Error; " + e);
+            e.printStackTrace();
+        }
+        return blobs;
     }
 
 }

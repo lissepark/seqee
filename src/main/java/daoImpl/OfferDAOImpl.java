@@ -35,4 +35,8 @@ public class OfferDAOImpl implements OfferDAO {
     public int insertOfferingsImage(String image_name, int offer_id, InputStream input, long len) throws SQLException {
         return dataService.insertOfferingsImage(image_name, offer_id, input, len);
     }
+
+    public List<Blob> selectOfferingsImage(int offer_id) throws SQLException {
+        return dataService.selectOfferingsImage(offer_id);
+    }
 }

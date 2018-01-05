@@ -1,6 +1,7 @@
 package database;
 
 import java.io.InputStream;
+import java.sql.Blob;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -70,6 +71,13 @@ public class DataService {
         int result = conn.insertOfferingsImage(image_name, offer_id, input, len);
         this.putDBConnection(conn);
         return result;
+    }
+
+    public List<Blob> selectOfferingsImage(int offer_id) throws SQLException {
+        DBConnection conn = getDBConnection();
+        List<Blob> blobs = conn.selectOfferingsImage(offer_id);
+        this.putDBConnection(conn);
+        return blobs;
     }
 
 /*

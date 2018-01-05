@@ -3,6 +3,7 @@ package dao;
 import model.Offer;
 
 import java.io.InputStream;
+import java.sql.Blob;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -17,4 +18,5 @@ public interface OfferDAO {
     public void update(Offer offer);
     public void delete(Long offerId);
     public int insertOfferingsImage(String image_name, int offer_id, InputStream input, long len) throws SQLException;
+    public List<Blob> selectOfferingsImage(int offer_id) throws SQLException;
 }
