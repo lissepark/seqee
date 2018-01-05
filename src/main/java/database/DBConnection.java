@@ -194,6 +194,7 @@ public class DBConnection {
         rs = null;
         List<Blob> blobs = new ArrayList<>();
         try{
+            selectOfferingsImage.setInt(1, offer_id);
             rs = selectOfferingsImage.executeQuery();
             while(rs.next()){
                 Blob blob;
