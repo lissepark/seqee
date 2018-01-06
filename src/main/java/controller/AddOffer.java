@@ -61,23 +61,10 @@ public class AddOffer extends HttpServlet {
                             File file = File.createTempFile("img", ".png", uploadDir);
                             item.write(file);
                             InputStream input = new FileInputStream(file);
-/*
-                            try {
-                                offerDAO.insertOfferingsImage(file.getName(), 55, input, file.length());
-                            } catch (SQLException e) {
-                                e.printStackTrace();
-                            }
-*/
+
                             if (!file.getName().isEmpty()) {
                                 imgName = (String) file.getName();
                             }
-                            OutputStream output = new FileOutputStream(System.getenv("HOME") + "/src/main/webapp/images/" + file.getName());
-                            byte[] bytes = new byte[BUFFER_LENGTH];
-                            int read = 0;
-                            while ((read = input.read(bytes, 0, BUFFER_LENGTH)) != -1) {
-                                output.write(bytes, 0, read);
-                            }
-
                             offer.setOfferName(name);
                             offer.setOfferDescription(description);
                             offer.setOfferImageName(imgName);
@@ -87,6 +74,19 @@ public class AddOffer extends HttpServlet {
                                 offerDAO.insertOffer(offer,input,file.length());
                             } catch (SQLException e) {
                                 e.printStackTrace();
+                            }
+/*
+                            try {
+                                offerDAO.insertOfferingsImage(file.getName(), 55, input, file.length());
+                            } catch (SQLException e) {
+                                e.printStackTrace();
+                            }
+*/
+                            OutputStream output = new FileOutputStream(System.getenv("HOME") + "/src/main/webapp/images/" + file.getName());
+                            byte[] bytes = new byte[BUFFER_LENGTH];
+                            int read = 0;
+                            while ((read = input.read(bytes, 0, BUFFER_LENGTH)) != -1) {
+                                output.write(bytes, 0, read);
                             }
 
                             input.close();
