@@ -82,7 +82,7 @@ public class DBConnection {
             changeDiscipline = conn.prepareStatement("UPDATE `discipline` SET `name`=? WHERE `id`=?");
             */
             getAllOffers = conn.prepareStatement("SELECT * FROM offering");
-            insertOffering = conn.prepareStatement("INSERT INTO offering SET `offering_name`=?, `offering_description`=?, `offer_image_path`=?");
+            insertOffering = conn.prepareStatement("INSERT INTO offering SET `offering_name`=?, `offering_description`=?, `offer_image_name`=?, `image_nat`=?");
             insertOfferingsImage = conn.prepareStatement("INSERT INTO images SET `image_name`=?, `offer_id`=?, `image_nat`=?");
             selectOfferingsImage = conn.prepareStatement("SELECT * FROM images where `offer_id`=?");
             /*
@@ -156,7 +156,7 @@ public class DBConnection {
                 offer.setId(rs.getLong("offering_id"));
                 offer.setOfferName(rs.getString("offering_name"));
                 offer.setOfferDescription(rs.getString("offering_description"));
-                offer.setOfferImagePath(rs.getString("offer_image_path"));
+                offer.setOfferImageName(rs.getString("offer_image_name"));
                 result.add(offer);
             }
         } catch (SQLException e) {
@@ -170,10 +170,24 @@ public class DBConnection {
             insertOffering.setString(1, offer.getOfferName());
             insertOffering.setString(2, offer.getOfferDescription());
             //insertOffering.setArray(3,offer.getOfferCategories());
-            insertOffering.setString(3, offer.getOfferImagePath());
+            insertOffering.setString(3, offer.getOfferImageName());
             return insertOffering.executeUpdate();
         } catch (SQLException e) {
             LOGGER.debug("insertOffer - SQLException");
+            return -1;
+        }
+    }
+
+    public int insertOffer(Offer offer, InputStream input, long len) throws SQLException {
+        try {
+            insertOffering.setString(1, offer.getOfferName());
+            insertOffering.setString(2, offer.getOfferDescription());
+            //insertOffering.setArray(3,offer.getOfferCategories());
+            insertOffering.setString(3, offer.getOfferImageName());
+            insertOffering.setBinaryStream(4, input, len);
+            return insertOffering.executeUpdate();
+        } catch (SQLException e) {
+            LOGGER.debug("insertOffer with image - SQLException");
             return -1;
         }
     }

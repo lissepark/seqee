@@ -15,6 +15,7 @@ public interface OfferDAO {
     public List<Offer>searchOffersByKeyword(String keyWord);
     //public List<Category>findAllCategories();
     public void insertOffer(Offer offer) throws SQLException;
+    public void insertOffer(Offer offer, InputStream input, long len) throws SQLException;
     public void update(Offer offer);
     public void delete(Long offerId);
     public int insertOfferingsImage(String image_name, int offer_id, InputStream input, long len) throws SQLException;

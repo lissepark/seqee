@@ -66,6 +66,13 @@ public class DataService {
         return result;
     }
 
+    public int insertOffer(Offer offer, InputStream input, long len) throws SQLException {
+        DBConnection conn = getDBConnection();
+        int result = conn.insertOffer(offer,input,len);
+        this.putDBConnection(conn);
+        return result;
+    }
+
     public int insertOfferingsImage(String image_name, int offer_id, InputStream input, long len) throws SQLException {
         DBConnection conn = getDBConnection();
         int result = conn.insertOfferingsImage(image_name, offer_id, input, len);

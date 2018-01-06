@@ -19,7 +19,7 @@
             Offer offer1 = (Offer) iterator1.next();%>
     <li><%=offer1.getId()%>, offering=<%=offer1.getOfferName()%>
         <span class="label" style="margin-left: 30px;"><%=offer1.getOfferDescription()%></span>
-        <span class="label" style="margin-left: 30px;"><%=offer1.getOfferImagePath()%></span>
+        <span class="label" style="margin-left: 30px;"><%=offer1.getOfferImageName()%></span>
     </li>
     <%}%>
 </ul>

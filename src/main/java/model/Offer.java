@@ -1,5 +1,7 @@
 package model;
 
+import com.mysql.jdbc.Blob;
+
 import java.util.List;
 
 /**
@@ -10,7 +12,8 @@ public class Offer {
     private String offerDescription;
     private String offerName;
     private List<Category> categories;
-    private String offerImagePath;
+    private String offerImageName;
+    private Blob blob;
 
     public Long getId() {
         return id;
@@ -36,12 +39,12 @@ public class Offer {
         this.offerName = offerName;
     }
 
-    public String getOfferImagePath() {
-        return offerImagePath;
+    public String getOfferImageName() {
+        return offerImageName;
     }
 
-    public void setOfferImagePath(String offerImagePath) {
-        this.offerImagePath = offerImagePath;
+    public void setOfferImageName(String offerImageName) {
+        this.offerImageName = offerImageName;
     }
 
     public List<Category> getOfferCategories() {
@@ -50,6 +53,14 @@ public class Offer {
 
     public void setOfferCategories(List<Category> categories) {
         this.categories = categories;
+    }
+
+    public Blob getOfferMainImage() {
+        return blob;
+    }
+
+    public void setOfferMainImage(Blob blob) {
+        this.blob = blob;
     }
 
     public String toString() {

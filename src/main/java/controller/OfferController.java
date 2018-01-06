@@ -16,7 +16,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.Part;
 import java.io.*;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -37,8 +36,9 @@ public class OfferController extends HttpServlet{
     private void getAllOffers(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException, SQLException {
         OfferDAO offerDAO = new OfferDAOImpl();
         List<Offer> offerList = offerDAO.getAllOffers();
-
+        int offer_n =0;
         int offer_id = 0;
+        int blob_n = 0;
         Iterator<Offer> iter = offerList.iterator();
         while (iter.hasNext()) {
             Offer offer = (Offer) iter.next();
@@ -49,13 +49,13 @@ public class OfferController extends HttpServlet{
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            // not correct if will be the list
-            File file = new File("/opt/app-root/src/src/main/webapp/images/image1.png");
-            FileOutputStream fos = new FileOutputStream(file);
 
+            blob_n = 0;
             Blob blob;
             Iterator<java.sql.Blob> iterBlob = blobs.iterator();
             while (iterBlob.hasNext()) {
+                File file = new File("/opt/app-root/src/src/main/webapp/images/offer"+offer_id+"_image"+blob_n+".png");
+                FileOutputStream fos = new FileOutputStream(file);
                 blob = (Blob) iterBlob.next();
                 byte b[] = new byte[(int) blob.length()];
                 try {
@@ -64,15 +64,16 @@ public class OfferController extends HttpServlet{
                     e.printStackTrace();
                 }
                 fos.write(b);
-
+                fos.close();
 
                 resp.setContentLength((int) file.length());
                 resp.setContentType(new MimetypesFileTypeMap().getContentType(file));
                 resp.getOutputStream().write(b);
 
-
+                blob_n++;
             }
-            fos.close();
+
+            offer_n++;
         }
 
 
