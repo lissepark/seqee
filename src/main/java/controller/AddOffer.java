@@ -52,12 +52,13 @@ public class AddOffer extends HttpServlet {
                 } else {
                     String contentType = item.getContentType();
                     if (contentType != null) {
-                        if (!contentType.equals("image/png")) {
+                        if (!contentType.equals("image/png") && !contentType.equals("image/jpeg")) {
                             System.out.println("Error. Only png or jpg format image files supported");
                             continue;
                         }
-                        if (contentType.equals("image/png")) {
-                            File uploadDir = new File("/opt/app-root/src/src/main/webapp/images");
+                        if (contentType.equals("image/png") || contentType.equals("image/jpeg")) {
+                            File uploadDir = new File("/home/sergii/Documents/");//for localhost
+                            //File uploadDir = new File("/opt/app-root/src/src/main/webapp/images");
                             File file = File.createTempFile("img", ".png", uploadDir);
                             item.write(file);
                             InputStream input = new FileInputStream(file);
@@ -82,15 +83,6 @@ public class AddOffer extends HttpServlet {
                                 e.printStackTrace();
                             }
 */
-                            OutputStream output = new FileOutputStream(System.getenv("HOME") + "/src/main/webapp/images/" + file.getName());
-                            byte[] bytes = new byte[BUFFER_LENGTH];
-                            int read = 0;
-                            while ((read = input.read(bytes, 0, BUFFER_LENGTH)) != -1) {
-                                output.write(bytes, 0, read);
-                            }
-
-                            input.close();
-                            output.close();
                         }
                     }
                 }

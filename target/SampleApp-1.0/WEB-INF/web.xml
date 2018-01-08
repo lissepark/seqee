@@ -25,6 +25,14 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
     <servlet-name>OfferController</servlet-name>
     <url-pattern>/offers</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>AddOffer</servlet-name>
+    <servlet-class>controller.AddOffer</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddOffer</servlet-name>
+    <url-pattern>/addoffer</url-pattern>
+  </servlet-mapping>
   <mime-mapping>
     <extension>css</extension>
     <mime-type>text/css</mime-type>

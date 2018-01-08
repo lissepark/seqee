@@ -11,6 +11,16 @@
         для фото, Индивидуальные проекты Family joinery workshop Sequoia">
     <title>Резной декор, Мебель из дерева, Посуда из дерева, Торцевые разделочные доски, Рамки
         для фото, Индивидуальные проекты Family joinery workshop Sequoia</title>
+	<style>
+       .carousel-item {
+          width: 640px;
+		  height: 300px;
+       }
+	   .carousel-item active {
+          width: 640px;
+		  height: 300px;
+       }
+    </style>
 </head>
 <body>
 
@@ -72,7 +82,7 @@
             <div class="carousel-item active">
                 <img class="d-block w-100" src="images/002.png" alt="First slide">
             </div>
-            <div class="carousel-item">
+            <div class="carousel-item" style="width:100px;height:360px">
                 <img src="images/002.png" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h3 style="color: #0c5460">The first image</h3>
@@ -179,7 +189,7 @@
 
     <!-- Site footer -->
     <footer class="footer">
-        <p>&copy; Family joinery workshop Sequoia 2017</p>
+        <p>&copy; Family joinery workshop Sequoia 2017-2018</p>
     </footer>
 
 </div> <!-- /container -->

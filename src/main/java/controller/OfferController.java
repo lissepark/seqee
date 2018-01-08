@@ -43,18 +43,19 @@ public class OfferController extends HttpServlet{
         while (iter.hasNext()) {
             Offer offer = (Offer) iter.next();
             offer_id = offer.getId().intValue();
+            Blob blob;
+            blob_n = 0;
+            /*
             List<java.sql.Blob> blobs = new ArrayList<>();
             try {
                 blobs =  offerDAO.selectOfferingsImage(offer_id);
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-
-            blob_n = 0;
-            Blob blob;
             Iterator<java.sql.Blob> iterBlob = blobs.iterator();
             while (iterBlob.hasNext()) {
-                File file = new File("/opt/app-root/src/src/main/webapp/images/offer"+offer_id+"_image"+blob_n+".png");
+                File file = new File("/home/sergii/Documents"+offer_id+"_image"+blob_n+".png");//for the local host
+                //File file = new File("/opt/app-root/src/src/main/webapp/images/offer"+offer_id+"_image"+blob_n+".png");
                 FileOutputStream fos = new FileOutputStream(file);
                 blob = (Blob) iterBlob.next();
                 byte b[] = new byte[(int) blob.length()];
@@ -66,17 +67,25 @@ public class OfferController extends HttpServlet{
                 fos.write(b);
                 fos.close();
 
-                resp.setContentLength((int) file.length());
-                resp.setContentType(new MimetypesFileTypeMap().getContentType(file));
-                resp.getOutputStream().write(b);
+            File file = new File("/home/sergii/Documents/"+offer_id+"_image"+blob_n+".png");//for the local host
+            FileOutputStream fos = new FileOutputStream(file);
+            blob = (Blob) offer.getOfferMainImage();
+            byte b[] = new byte[(int) blob.length()];
+            try {
+                b = blob.getBytes(1, (int) blob.length());
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            fos.write(b);
+            fos.close();
+*/
+                //resp.setContentLength((int) file.length());
+                //resp.setContentType(new MimetypesFileTypeMap().getContentType(file));
+                //resp.getOutputStream().write(b);
 
                 blob_n++;
+                offer_n++;
             }
-
-            offer_n++;
-        }
-
-
         req.setAttribute("offerList", offerList);
     }
 /*
