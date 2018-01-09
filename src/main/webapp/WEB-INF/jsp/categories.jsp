@@ -16,7 +16,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title></title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link href="/css/style.css" rel="stylesheet">
+    <script src="/js/jquery-3.2.1.min.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 <body>
 <div class="card-deck rounded mx-auto d-block">
