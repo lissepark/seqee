@@ -5197,11 +5197,11 @@ button.close {
 .carousel-caption {
   position: absolute;
   right: 15%;
-  bottom: 20px;
+  bottom: 20%;
   left: 15%;
   z-index: 10;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 20%;
+  padding-bottom: 10%;
   color: #fff;
   text-align: center;
 }

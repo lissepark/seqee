@@ -26,7 +26,7 @@
 <body>
 <div><span class="label" style="margin-left:15px;">Offers</span></div>
 <div><span class="label" style="margin-left:15px;"><a href="/">Main</a></span></div>
-<div class="card-deck rounded mx-auto d-block" style="margin: auto">
+<div class="card-deck rounded mx-auto d-block">
     <%
         List<Offer> offerList1 = (List<Offer>) request.getAttribute("offerList");
         Iterator<Offer> iterator1 = offerList1.iterator();

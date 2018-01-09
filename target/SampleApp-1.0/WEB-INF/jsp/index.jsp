@@ -26,7 +26,7 @@
 
 <div class="container">
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-left: auto">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
@@ -72,7 +72,7 @@
         </div>
     </div>
 
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="width: 100%; height: 200px;margin-top: 6px">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -80,27 +80,24 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="d-block w-100" src="images/002.png" alt="First slide">
-            </div>
-            <div class="carousel-item" style="width:100px;height:360px">
                 <img src="images/002.png" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                    <h3 style="color: #0c5460">The first image</h3>
-                    <p style="color: #0c5460">image 1</p>
+                    <h3 style="color: #0c5460">Type here what you want. Ex.: 'The first image'</h3>
+                    <p style="color: #0c5460">image 1 will be changed</p>
                 </div>
             </div>
             <div class="carousel-item">
                 <img src="images/008.png" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                    <h3 style="color: #0c5460">The second image</h3>
-                    <p style="color: #0c5460">image 2</p>
+                    <h3 style="color: #0c5460">Type here what you want. Ex.: 'The second image'</h3>
+                    <p style="color: #0c5460">image 2 will be changed</p>
                 </div>
             </div>
             <div class="carousel-item">
                 <img src="images/019.png" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                    <h3 style="color: #0c5460">The third image</h3>
-                    <p style="color: #0c5460">image 3</p>
+                    <h3 style="color: #0c5460">Type here what you want. Ex.: 'The third image'</h3>
+                    <p style="color: #0c5460">image 3 will be changed</p>
                 </div>
             </div>
         </div>
@@ -113,6 +110,12 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
+
+    <div class="centered">
+        <jsp:include page="categories.jsp" flush="true"/>
+        <jsp:include page="offers.jsp" flush="true"/>
+    </div>
+
 
     <!-- Jumbotron -->
     <div class="jumbotron">
