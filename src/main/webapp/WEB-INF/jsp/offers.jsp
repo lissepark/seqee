@@ -7,11 +7,6 @@
 <%@ page import="java.io.ByteArrayOutputStream" %>
 <%@ page import="com.mysql.jdbc.Blob" %>
 <%@ page import="java.sql.SQLException" %>
-<%@ page import="java.io.File" %>
-<%@ page import="java.io.FileOutputStream" %>
-<%@ page import="java.awt.image.RenderedImage" %>
-<%@ page import="com.sun.org.apache.xerces.internal.impl.dv.util.Base64" %>
-<%@ page import="javax.xml.bind.DatatypeConverter" %>
 <%@ page pageEncoding="UTF-8" contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
@@ -40,12 +35,6 @@
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-/*
-            File file = new File("/home/sergii/Documents/"+offer1.getId()+"_image.png");//for the local host
-            FileOutputStream fos = new FileOutputStream(file);            
-            fos.write(b);
-            fos.close();
-            */
             ByteArrayInputStream bais = new ByteArrayInputStream(b);
             //BufferedImage image = new BufferedImage(600,400,BufferedImage.TYPE_4BYTE_ABGR);
             BufferedImage image = ImageIO.read(bais);
