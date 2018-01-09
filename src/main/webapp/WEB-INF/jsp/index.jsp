@@ -103,6 +103,7 @@
 
     <div class="centered">
         <jsp:include page="/categories" flush="true"/>
+        <%out.flush();%>
     </div>
 
 
