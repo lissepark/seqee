@@ -110,7 +110,7 @@
         </a>
     </div>
 
-    <div class="card-deck rounded mx-auto d-block">
+    <div class="card-deck rounded mx-auto d-block" style="margin-top: 10px">
         <%
             List<Offer> offerList1 = (List<Offer>) request.getAttribute("offerList");
             Iterator<Offer> iterator1 = offerList1.iterator();
