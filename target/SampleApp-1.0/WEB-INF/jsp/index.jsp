@@ -113,7 +113,6 @@
 
     <div class="centered">
         <jsp:include page="categories.jsp" flush="true"/>
-        <jsp:include page="offers.jsp" flush="true"/>
     </div>
 
 
