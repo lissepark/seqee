@@ -57,7 +57,8 @@
             <p class="card-text"><%=offer1.getOfferDescription()%></p>
         </div>
     </div>
-    <%}%>
+    <%}
+    out.flush();%>
 </div>
 <div style="clear: both"></div>
 </body>
