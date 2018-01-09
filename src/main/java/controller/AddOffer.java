@@ -57,8 +57,8 @@ public class AddOffer extends HttpServlet {
                             continue;
                         }
                         if (contentType.equals("image/png") || contentType.equals("image/jpeg")) {
-                            File uploadDir = new File("/home/sergii/Documents/");//for localhost
-                            //File uploadDir = new File("/opt/app-root/src/src/main/webapp/images");
+                            //File uploadDir = new File("/home/sergii/Documents/");//for localhost
+                            File uploadDir = new File("/opt/app-root/src/src/main/webapp/images");
                             File file = File.createTempFile("img", ".png", uploadDir);
                             item.write(file);
                             InputStream input = new FileInputStream(file);
