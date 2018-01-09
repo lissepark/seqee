@@ -112,7 +112,7 @@
     </div>
 
     <div class="centered">
-        <jsp:include page="/categories" flush="true"/>
+        <jsp:include page="/categories"/>
     </div>
 
 
