@@ -19,7 +19,6 @@
     <title>Title</title>
 </head>
 <body>
-<jsp:include page="/categories" />
 <div class="card-deck rounded mx-auto d-block">
     <%
         List<Offer> offerList1 = (List<Offer>) request.getAttribute("offerList");
