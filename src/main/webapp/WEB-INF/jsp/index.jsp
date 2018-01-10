@@ -20,6 +20,20 @@
         для фото, Индивидуальные проекты Family joinery workshop Sequoia">
     <title>Резной декор, Мебель из дерева, Посуда из дерева, Торцевые разделочные доски, Рамки
         для фото, Индивидуальные проекты Family joinery workshop Sequoia</title>
+    <style>
+        .wrap {
+            text-align: justify;
+        }
+        .wrap .wrapdiv {
+            display: inline-block;
+            vertical-align: top;
+        }
+        .wrap:after {
+            display: inline-block;
+            content: "";
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
 
@@ -110,7 +124,7 @@
         </a>
     </div>
 
-    <div class="card-deck rounded mx-auto d-block" style="margin-top: 10px; text-align: center; overflow: auto; width: 100%">
+    <div class="wrap rounded " style="margin-top: 10px">
         <%
             List<Offer> offerList1 = (List<Offer>) request.getAttribute("offerList");
             Iterator<Offer> iterator1 = offerList1.iterator();
@@ -135,7 +149,7 @@
             baos.close();
             String b64 = javax.xml.bind.DatatypeConverter.printBase64Binary(imageInByteArray);
         %>
-        <div class="card rounded float-left" style="width: 14rem;">
+        <div class="wrapdiv rounded" style="width: 14rem;">
             <img class="card-img-top img-thumbnail" src="data:image/png;base64,<%= b64 %>"
                  alt="Card image cap" style="width: 222px;height: 162px">
             <div class="card-body" style="height: 40px;">
