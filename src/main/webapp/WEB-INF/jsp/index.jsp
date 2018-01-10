@@ -110,7 +110,7 @@
         </a>
     </div>
 
-    <div class="card-deck rounded mx-auto d-block" style="margin-top: 10px">
+    <div class="card-deck rounded" style="margin-top: 10px">
         <%
             List<Offer> offerList1 = (List<Offer>) request.getAttribute("offerList");
             Iterator<Offer> iterator1 = offerList1.iterator();
@@ -138,7 +138,7 @@
         <div class="card rounded float-left" style="width: 14rem;">
             <img class="card-img-top img-thumbnail" src="data:image/png;base64,<%= b64 %>"
                  alt="Card image cap" style="width: 220px;height: 160px">
-            <div class="card-body">
+            <div class="card-block">
                 <h5 class="card-title"><%=offer1.getOfferName()%></h5>
                 <p class="card-text"><%=offer1.getOfferDescription()%></p>
             </div>
