@@ -137,10 +137,9 @@
         %>
         <div class="card rounded float-left" style="width: 14rem;">
             <img class="card-img-top img-thumbnail" src="data:image/png;base64,<%= b64 %>"
-                 alt="Card image cap" style="width: 220px;height: 160px">
-            <div class="card-block">
-                <h5 class="card-title"><%=offer1.getOfferName()%></h5>
-                <p class="card-text"><%=offer1.getOfferDescription()%></p>
+                 alt="Card image cap" style="width: 222px;height: 162px">
+            <div class="card-block" style="height: 40px;">
+                <h5 class="card-title" style="text-align: center"><%=offer1.getOfferName()%></h5>
             </div>
         </div>
         <%}%>
