@@ -3766,6 +3766,7 @@ tbody.collapse.show {
         flex-flow: row wrap;
     margin-right: -15px;
     margin-left: -15px;
+    justify-content: space-between;
   }
   .card-deck .card {
     display: -ms-flexbox;
@@ -3774,8 +3775,8 @@ tbody.collapse.show {
         flex: 1 0 0%;
     -ms-flex-direction: column;
         flex-direction: column;
-    margin-right: 15px;
-    margin-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
   }
 }
 
