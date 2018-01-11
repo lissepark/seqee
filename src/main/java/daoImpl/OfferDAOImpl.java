@@ -2,6 +2,7 @@ package daoImpl;
 
 import dao.OfferDAO;
 import database.DataService;
+import model.Category;
 import model.Offer;
 
 import java.io.InputStream;
@@ -30,6 +31,14 @@ public class OfferDAOImpl implements OfferDAO {
     public void insertOffer(Offer offering,InputStream input, long len) throws SQLException {
         dataService.insertOffer(offering,input, len);
     }
+
+    public List<Category>getAllCategories(){
+        return dataService.getAllCategories();
+    }
+    public void insertCategory(Category category, InputStream input, long len) throws SQLException{
+        dataService.insertCategory(category,input,len);
+    }
+
     public void update(Offer offering) {
     }
     public void delete(Long offerId) {

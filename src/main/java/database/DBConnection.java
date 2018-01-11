@@ -1,5 +1,6 @@
 package database;
 
+import model.Category;
 import model.Offer;
 import org.apache.log4j.Logger;
 
@@ -39,6 +40,8 @@ public class DBConnection {
     */
     private static PreparedStatement getAllOffers;
     private static PreparedStatement insertOffering;
+    private static PreparedStatement getAllCategories;
+    private static PreparedStatement insertCategory;
     private static PreparedStatement insertOfferingsImage;
     private static PreparedStatement selectOfferingsImage;
     /*
@@ -83,6 +86,8 @@ public class DBConnection {
             */
             getAllOffers = conn.prepareStatement("SELECT * FROM offering");
             insertOffering = conn.prepareStatement("INSERT INTO offering SET `offering_name`=?, `offering_description`=?, `offer_image_name`=?, `image_nat`=?");
+            getAllCategories = conn.prepareStatement("SELECT * FROM category");
+            insertCategory = conn.prepareStatement("INSERT INTO category SET `category_name`=?, `category_description`=?, `category_order`=?, `category_image`=?");
             insertOfferingsImage = conn.prepareStatement("INSERT INTO images SET `image_name`=?, `offer_id`=?, `image_nat`=?");
             selectOfferingsImage = conn.prepareStatement("SELECT * FROM images where `offer_id`=?");
             /*
@@ -221,6 +226,40 @@ public class DBConnection {
             e.printStackTrace();
         }
         return blobs;
+    }
+
+
+    public List<Category> getAllCategories() {
+        rs = null;
+        List<Category> result = new ArrayList<>();
+        try {
+            rs = getAllOffers.executeQuery();
+            while (rs.next()) {
+                Category category = new Category();
+                category.setId(rs.getLong("category_id"));
+                category.setCategoryName(rs.getString("category_name"));
+                category.setCategoryDescription(rs.getString("category_description"));
+                category.setCategoryOrder(rs.getString("category_order"));
+                category.setCategoryMainImage((com.mysql.jdbc.Blob) rs.getBlob("category_image"));
+                result.add(category);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+
+    public int insertCategory(Category category, InputStream input, long len) throws SQLException {
+        try {
+            insertCategory.setString(1, category.getCategoryName());
+            insertCategory.setString(2, category.getCategoryDescription());
+            insertCategory.setString(3, category.getCategoryOrder());
+            insertCategory.setBinaryStream(4, input, len);
+            return insertCategory.executeUpdate();
+        } catch (SQLException e) {
+            LOGGER.debug("insertCategory with image - SQLException");
+            return -1;
+        }
     }
 
 }

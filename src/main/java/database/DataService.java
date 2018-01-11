@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import constants.Constants;
+import model.Category;
 import model.Offer;
 import org.apache.log4j.Logger;
 
@@ -69,6 +70,20 @@ public class DataService {
     public int insertOffer(Offer offer, InputStream input, long len) throws SQLException {
         DBConnection conn = getDBConnection();
         int result = conn.insertOffer(offer,input,len);
+        this.putDBConnection(conn);
+        return result;
+    }
+
+    public List<Category> getAllCategories(){
+        DBConnection conn = getDBConnection();
+        List <Category> result = conn.getAllCategories();
+        this.putDBConnection(conn);
+        return result;
+    }
+
+    public int insertCategory(Category category, InputStream input, long len) throws SQLException {
+        DBConnection conn = getDBConnection();
+        int result = conn.insertCategory(category,input,len);
         this.putDBConnection(conn);
         return result;
     }

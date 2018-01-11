@@ -7,6 +7,7 @@
 <%@ page import="java.awt.image.BufferedImage" %>
 <%@ page import="java.io.ByteArrayOutputStream" %>
 <%@ page import="javax.imageio.ImageIO" %>
+<%@ page import="model.Category" %>
 <%@ page pageEncoding="UTF-8" contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
@@ -126,12 +127,12 @@
 
     <div class="wrap rounded " style="margin-top: 10px">
         <%
-            List<Offer> offerList1 = (List<Offer>) request.getAttribute("offerList");
-            Iterator<Offer> iterator1 = offerList1.iterator();
+            List<Category> categoryList1 = (List<Category>) request.getAttribute("categoryList");
+            Iterator<Category> iterator1 = categoryList1.iterator();
             while (iterator1.hasNext()) {
-                Offer offer1 = (Offer) iterator1.next();%>
+                Category category1 = (Category) iterator1.next();%>
         <%
-            Blob blob = (Blob) offer1.getOfferMainImage();
+            Blob blob = (Blob) category1.getCategoryMainImage();
             byte b[] = new byte[(int) blob.length()];
             try {
                 b = blob.getBytes(1, (int) blob.length());
@@ -149,11 +150,11 @@
             baos.close();
             String b64 = javax.xml.bind.DatatypeConverter.printBase64Binary(imageInByteArray);
         %>
-        <div class="wrapdiv rounded" style="width: 14rem;">
+        <div class="wrapdiv rounded card" style="width: 15rem;">
             <img class="card-img-top img-thumbnail" src="data:image/png;base64,<%= b64 %>"
-                 alt="Card image cap" style="width: 222px;height: 162px">
-            <div class="card-body" style="height: 40px;">
-                <h5 class="card-title" style="text-align: center"><%=offer1.getOfferName()%></h5>
+                 alt="Card image cap" style="width: 238px;height: 172px">
+            <div class="card-body" style="height: 50px;">
+                <h5 class="card-title" style="text-align: center"><%=category1.getCategoryName()%></h5>
             </div>
         </div>
         <%}%>

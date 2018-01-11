@@ -3,6 +3,7 @@ package controller;
 import com.mysql.jdbc.Blob;
 import dao.OfferDAO;
 import daoImpl.OfferDAOImpl;
+import model.Category;
 import model.Offer;
 
 import javax.servlet.RequestDispatcher;
@@ -19,6 +20,12 @@ import java.util.List;
  * Created by sergii on 9/9/17.
  */
 public class Titul extends HttpServlet {
+
+    private void getAllCategories(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException, SQLException {
+        OfferDAO offerDAO = new OfferDAOImpl();
+        List<Category> categoryList = offerDAO.getAllCategories();
+        req.setAttribute("categoryList", categoryList);
+    }
 
     private void getAllOffers(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException, SQLException {
         OfferDAO offerDAO = new OfferDAOImpl();
@@ -44,7 +51,7 @@ public class Titul extends HttpServlet {
             throws ServletException, IOException {
 
         try {
-            getAllOffers(req, resp);
+            getAllCategories(req, resp);
         } catch (SQLException e) {
             e.printStackTrace();
         }
