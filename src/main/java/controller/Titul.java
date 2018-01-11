@@ -24,26 +24,12 @@ public class Titul extends HttpServlet {
     private void getAllCategories(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException, SQLException {
         OfferDAO offerDAO = new OfferDAOImpl();
         List<Category> categoryList = offerDAO.getAllCategories();
-        req.setAttribute("categoryList", categoryList);
-    }
-
-    private void getAllOffers(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException, SQLException {
-        OfferDAO offerDAO = new OfferDAOImpl();
-        List<Offer> offerList = offerDAO.getAllOffers();
-        int offer_n =0;
-        int offer_id = 0;
-        int blob_n = 0;
-        Iterator<Offer> iter = offerList.iterator();
+        Iterator<Category> iter = categoryList.iterator();
         while (iter.hasNext()) {
-            Offer offer = (Offer) iter.next();
-            offer_id = offer.getId().intValue();
-            Blob blob;
-            blob_n = 0;
-
-            blob_n++;
-            offer_n++;
+            Category category = (Category) iter.next();
+            category.getId().intValue();
         }
-        req.setAttribute("offerList", offerList);
+        req.setAttribute("categoryList", categoryList);
     }
 
     @Override
@@ -63,7 +49,7 @@ public class Titul extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-
+        doGet(req,resp);
         //RequestDispatcher requestDispatcher;
         //requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/index.jsp");
         //requestDispatcher.forward(req, resp);

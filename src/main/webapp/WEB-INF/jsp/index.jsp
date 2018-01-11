@@ -1,4 +1,4 @@
-<%@ page import="model.Offer" %>
+<%@ page pageEncoding="UTF-8" contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.Iterator" %>
 <%@ page import="com.mysql.jdbc.Blob" %>
@@ -8,7 +8,6 @@
 <%@ page import="java.io.ByteArrayOutputStream" %>
 <%@ page import="javax.imageio.ImageIO" %>
 <%@ page import="model.Category" %>
-<%@ page pageEncoding="UTF-8" contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
