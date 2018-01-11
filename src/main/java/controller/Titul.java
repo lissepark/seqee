@@ -56,8 +56,7 @@ public class Titul extends HttpServlet {
             e.printStackTrace();
         }
 
-        RequestDispatcher requestDispatcher;
-        requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/index.jsp");
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/index.jsp");
         requestDispatcher.forward(req, resp);
     }
 
