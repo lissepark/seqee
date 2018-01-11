@@ -233,7 +233,7 @@ public class DBConnection {
         rs = null;
         List<Category> result = new ArrayList<>();
         try {
-            rs = getAllOffers.executeQuery();
+            rs = getAllCategories.executeQuery();
             while (rs.next()) {
                 Category category = new Category();
                 category.setId(rs.getLong("category_id"));
