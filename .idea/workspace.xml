@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6bab637c-c3bf-47ce-8296-4fd3ec37ee1b" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/controller/AddCategory.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/addcategory.jsp" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Titul.java" afterPath="$PROJECT_DIR$/src/main/java/controller/Titul.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/OfferDAO.java" afterPath="$PROJECT_DIR$/src/main/java/dao/OfferDAO.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/daoImpl/OfferDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/daoImpl/OfferDAOImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/database/DBConnection.java" afterPath="$PROJECT_DIR$/src/main/java/database/DBConnection.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/database/DataService.java" afterPath="$PROJECT_DIR$/src/main/java/database/DataService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Category.java" afterPath="$PROJECT_DIR$/src/main/java/model/Category.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/AddCategory.java" afterPath="$PROJECT_DIR$/src/main/java/controller/AddCategory.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
     </list>
     <ignored path="SampleApp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -65,20 +57,18 @@
       <file leaf-file-name="AddCategory.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/AddCategory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="68" column="29" lean-forward="false" selection-start-line="68" selection-start-column="29" selection-end-line="68" selection-end-column="29" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="-952">
+              <caret line="4" column="22" lean-forward="false" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Constants.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/constants/Constants.java">
+      <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="2" lean-forward="false" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="2" />
+            <state relative-caret-position="389">
+              <caret line="50" column="20" lean-forward="false" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -192,7 +182,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/offers.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/controller/AddOffer.java" />
         <option value="$PROJECT_DIR$/src/main/java/constants/Constants.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/java/controller/Categories.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/categories.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/bootstrap.css" />
@@ -204,6 +193,7 @@
         <option value="$PROJECT_DIR$/src/main/java/controller/Titul.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/addcategory.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/java/controller/AddCategory.java" />
       </list>
     </option>
@@ -222,7 +212,7 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="-83" />
+    <option name="x" value="-52" />
     <option name="y" value="325" />
     <option name="width" value="1304" />
     <option name="height" value="687" />
@@ -952,7 +942,7 @@
       <workItem from="1515484952863" duration="1429000" />
       <workItem from="1515531023765" duration="11624000" />
       <workItem from="1515652935392" duration="3753000" />
-      <workItem from="1515668076823" duration="3529000" />
+      <workItem from="1515668076823" duration="4250000" />
     </task>
     <task id="LOCAL-00001" summary="commit id">
       <created>1504943768887</created>
@@ -993,10 +983,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="145536000" />
+    <option name="totallyTimeSpent" value="146257000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-83" y="325" width="1304" height="687" extended-state="1" />
+    <frame x="-52" y="325" width="1304" height="687" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1281,14 +1271,6 @@
     <entry file="jar://D:/seva0716/Downloads/jdk1.7.0_79/src.zip!/java/sql/Connection.java" />
     <entry file="jar://D:/seva0716/Downloads/jdk1.7.0_79/src.zip!/java/sql/ResultSet.java" />
     <entry file="jar://D:/seva0716/Downloads/jdk1.7.0_79/src.zip!/java/sql/PreparedStatement.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="31" column="19" lean-forward="false" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/categories.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="334">
@@ -1452,13 +1434,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="50" column="20" lean-forward="false" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controller/AddCategory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="68" column="29" lean-forward="false" selection-start-line="68" selection-start-column="29" selection-end-line="68" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="-952">
+          <caret line="4" column="22" lean-forward="false" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>

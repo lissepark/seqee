@@ -3,7 +3,6 @@ package controller;
 import dao.OfferDAO;
 import daoImpl.OfferDAOImpl;
 import model.Category;
-import model.Offer;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileItemFactory;
 import org.apache.commons.fileupload.FileUploadException;
