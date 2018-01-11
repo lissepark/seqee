@@ -19,7 +19,7 @@
 <body>
 <div class="row marketing">
     <h4>Please, fill the data and load an image</h4>
-    <form action="addoffer" method="post" enctype="multipart/form-data">
+    <form action="addcategory" method="post" enctype="multipart/form-data">
         <p>
             <input type="text" name="categoryName">Type Category name<Br>
             <input type="text" name="categoryDescription" >Type Category description<Br>
