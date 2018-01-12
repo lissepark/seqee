@@ -252,6 +252,7 @@ public class DBConnection {
     public int insertCategory(Category category, InputStream input, long len) throws SQLException {
         try {
             insertCategory.setString(1, category.getCategoryName());
+            System.out.println(category.getCategoryName());
             insertCategory.setString(2, category.getCategoryDescription());
             insertCategory.setString(3, category.getCategoryOrder());
             insertCategory.setBinaryStream(4, input, len);

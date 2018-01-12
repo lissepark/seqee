@@ -18,6 +18,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.sql.SQLException;
 import java.util.Iterator;
 import java.util.List;
@@ -40,8 +41,10 @@ public class AddCategory extends HttpServlet {
                 if (item.isFormField()) {
                     if ((item.getFieldName()).equals("categoryName")){
                         name = item.getString();
+                        name = new String(name.getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
                     } else if ((item.getFieldName()).equals("categoryDescription")){
                         description = item.getString();
+                        description = new String(description.getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
                     }
                 } else {
                     String contentType = item.getContentType();
