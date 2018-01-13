@@ -132,26 +132,36 @@
                 Category category1 = (Category) iterator1.next();%>
         <%
             Blob blob = (Blob) category1.getCategoryMainImage();
-            byte b[] = new byte[(int) blob.length()];
-            try {
-                b = blob.getBytes(1, (int) blob.length());
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-            ByteArrayInputStream bais = new ByteArrayInputStream(b);
-            //BufferedImage image = new BufferedImage(600,400,BufferedImage.TYPE_4BYTE_ABGR);
-            BufferedImage image = ImageIO.read(bais);
+            String b64 = "";
+            if (blob != null) {
+                byte b[] = new byte[(int) blob.length()];
+                try {
+                    b = blob.getBytes(1, (int) blob.length());
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                ByteArrayInputStream bais = new ByteArrayInputStream(b);
+                //BufferedImage image = new BufferedImage(600,400,BufferedImage.TYPE_4BYTE_ABGR);
+                BufferedImage image = ImageIO.read(bais);
 
-            ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            ImageIO.write(image, "png", baos);
-            baos.flush();
-            byte[] imageInByteArray = baos.toByteArray();
-            baos.close();
-            String b64 = javax.xml.bind.DatatypeConverter.printBase64Binary(imageInByteArray);
+                ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                ImageIO.write(image, "png", baos);
+                baos.flush();
+                byte[] imageInByteArray = baos.toByteArray();
+                baos.close();
+                b64 = javax.xml.bind.DatatypeConverter.printBase64Binary(imageInByteArray);
+            }else{
+                b64 = "images/stolen_image.png";
+            }
         %>
         <div class="wrapdiv rounded card" style="width: 15rem;">
+            <%if (blob != null) {%>
             <img class="card-img-top img-thumbnail" src="data:image/png;base64,<%= b64 %>"
                  alt="Card image cap" style="width: 238px;height: 172px">
+            <%}else{%>
+            <img class="card-img-top img-thumbnail" src="<%= b64 %>"
+                 alt="Card image cap" style="width: 238px;height: 172px">
+            <%}%>
             <div class="card-body" style="height: 50px;">
                 <h5 class="card-title" style="text-align: center"><%=category1.getCategoryName()%></h5>
             </div>
