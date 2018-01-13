@@ -49,6 +49,14 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
     <servlet-name>AddCategory</servlet-name>
     <url-pattern>/addcategory</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>Admin</servlet-name>
+    <servlet-class>controller.Admin</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Admin</servlet-name>
+    <url-pattern>/adminruslan</url-pattern>
+  </servlet-mapping>
   <mime-mapping>
     <extension>css</extension>
     <mime-type>text/css</mime-type>

@@ -17,17 +17,17 @@
     <script src="/js/bootstrap.js"></script>
 </head>
 <body>
-<div class="row marketing">
-    <h4>Please, fill the data and load an image</h4>
+<div style="margin-left: 2%">
+    <h4>Please, fill the data and load an image</h4><br>
     <form action="addcategory" method="post" enctype="multipart/form-data">
         <p>
-            <input type="text" name="categoryName">Type Category name<Br>
-            <input type="text" name="categoryDescription" >Type Category description<Br>
+            <input type="text" name="categoryName">Type Category name<br>
+            <input type="text" name="categoryDescription" >Type Category description<br>
         </p>
-        <h3 style="color:blue">Select image for Category to upload:</h3>
+        <h4 style="color:blue">Select image for Category to upload:</h4>
         <br/>
         <input type="file" name="file"><br/>
-        <input class="btn btn-primary btn-lg" type="submit" value="Upload Image">
+        <input class="btn btn-primary btn-lg" type="submit" value="Upload Image and send data">
     </form>
 </div>
 </body>

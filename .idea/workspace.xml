@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6bab637c-c3bf-47ce-8296-4fd3ec37ee1b" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/database/DBConnection.java" afterPath="$PROJECT_DIR$/src/main/java/database/DBConnection.java" />
+    <list default="true" id="6bab637c-c3bf-47ce-8296-4fd3ec37ee1b" name="Default" comment="add admin page">
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/controller/Admin.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/adminruslan.jsp" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/addcategory.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/addcategory.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
     </list>
     <ignored path="SampleApp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,20 +27,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="OfferController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/controller/OfferController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1054">
-              <caret line="182" column="31" lean-forward="false" selection-start-line="182" selection-start-column="20" selection-end-line="182" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DBConnection.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DBConnection.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/database/DBConnection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
+            <state relative-caret-position="-1378">
               <caret line="62" column="115" lean-forward="false" selection-start-line="62" selection-start-column="115" selection-end-line="62" selection-end-column="115" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -54,8 +48,8 @@
       <file leaf-file-name="AddCategory.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/AddCategory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="48" column="24" lean-forward="false" selection-start-line="48" selection-start-column="24" selection-end-line="48" selection-end-column="24" />
+            <state relative-caret-position="-461">
+              <caret line="27" column="21" lean-forward="false" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -63,12 +57,34 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="adminruslan.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/adminruslan.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="21" column="108" lean-forward="true" selection-start-line="21" selection-start-column="108" selection-end-line="21" selection-end-column="108" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="695">
-              <caret line="50" column="20" lean-forward="false" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="20" />
+            <state relative-caret-position="449">
+              <caret line="57" column="43" lean-forward="true" selection-start-line="57" selection-start-column="43" selection-end-line="57" selection-end-column="43" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Admin.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/controller/Admin.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="15" column="93" lean-forward="false" selection-start-line="15" selection-start-column="93" selection-end-line="15" selection-end-column="93" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -96,9 +112,12 @@
       <file leaf-file-name="addcategory.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/addcategory.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="21" column="31" lean-forward="false" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
-              <folding />
+            <state relative-caret-position="493">
+              <caret line="33" column="7" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="33" selection-end-column="7" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h4#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -106,8 +125,8 @@
       <file leaf-file-name="Titul.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/Titul.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="25" column="12" lean-forward="false" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="12" />
+            <state relative-caret-position="476">
+              <caret line="55" column="5" lean-forward="true" selection-start-line="34" selection-start-column="4" selection-end-line="55" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -127,26 +146,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OfferDAOImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/daoImpl/OfferDAOImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="35" column="35" lean-forward="false" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
-              <folding>
-                <element signature="e#856#857#0" expanded="true" />
-                <element signature="e#909#910#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -188,12 +194,14 @@
         <option value="$PROJECT_DIR$/src/main/java/database/DataService.java" />
         <option value="$PROJECT_DIR$/src/main/java/dao/OfferDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/daoImpl/OfferDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/addcategory.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/controller/Titul.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/controller/AddCategory.java" />
         <option value="$PROJECT_DIR$/src/main/java/database/DBConnection.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/addcategory.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/Admin.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/adminruslan.jsp" />
       </list>
     </option>
   </component>
@@ -939,7 +947,7 @@
       <workItem from="1515484952863" duration="1429000" />
       <workItem from="1515531023765" duration="11624000" />
       <workItem from="1515652935392" duration="3753000" />
-      <workItem from="1515668076823" duration="17518000" />
+      <workItem from="1515668076823" duration="23068000" />
     </task>
     <task id="LOCAL-00001" summary="commit id">
       <created>1504943768887</created>
@@ -980,7 +988,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="159525000" />
+    <option name="totallyTimeSpent" value="165075000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1304" height="687" extended-state="0" />
@@ -1039,7 +1047,8 @@
     <MESSAGE value="commit id" />
     <MESSAGE value="logo and carousel were added" />
     <MESSAGE value="db connect were added" />
-    <option name="LAST_COMMIT_MESSAGE" value="db connect were added" />
+    <MESSAGE value="add admin page" />
+    <option name="LAST_COMMIT_MESSAGE" value="add admin page" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1050,24 +1059,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/OfferController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="46" lean-forward="false" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="44" column="6" lean-forward="false" selection-start-line="44" selection-start-column="6" selection-end-line="44" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/daoImpl/OfferDAOImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1369,18 +1360,72 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/constants/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="2" lean-forward="false" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/database/DBConnection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1378">
+          <caret line="62" column="115" lean-forward="false" selection-start-line="62" selection-start-column="115" selection-end-line="62" selection-end-column="115" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1515788436922" expanded="true" signature="4087:4109" ph="SELECT * FRO... offering" />
+            <marker date="1515788436922" expanded="true" signature="4165:4270" ph="INSERT INTO offering... " />
+            <marker date="1515788436922" expanded="true" signature="4328:4350" ph="SELECT * FRO... category" />
+            <marker date="1515788436922" expanded="true" signature="4406:4514" ph="INSERT INTO category... " />
+            <marker date="1515788436922" expanded="true" signature="4576:4642" ph="INSERT INTO images... " />
+            <marker date="1515788436922" expanded="true" signature="4704:4743" ph="SELECT * FRO... images" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/database/DataService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="78" column="45" lean-forward="false" selection-start-line="78" selection-start-column="45" selection-end-line="78" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/AddCategory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-461">
+          <caret line="27" column="21" lean-forward="false" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="695">
-          <caret line="50" column="20" lean-forward="false" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="20" />
+        <state relative-caret-position="449">
+          <caret line="57" column="43" lean-forward="true" selection-start-line="57" selection-start-column="43" selection-end-line="57" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controller/Titul.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="25" column="12" lean-forward="false" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="12" />
+        <state relative-caret-position="476">
+          <caret line="55" column="5" lean-forward="true" selection-start-line="34" selection-start-column="4" selection-end-line="55" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/Admin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="15" column="93" lean-forward="false" selection-start-line="15" selection-start-column="93" selection-end-line="15" selection-end-column="93" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1397,53 +1442,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/addcategory.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="21" column="31" lean-forward="false" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+        <state relative-caret-position="493">
+          <caret line="33" column="7" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="33" selection-end-column="7" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h4#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/adminruslan.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="108" lean-forward="true" selection-start-line="21" selection-start-column="108" selection-end-line="21" selection-end-column="108" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/AddCategory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="48" column="24" lean-forward="false" selection-start-line="48" selection-start-column="24" selection-end-line="48" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/constants/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="2" lean-forward="false" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/database/DataService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="78" column="45" lean-forward="false" selection-start-line="78" selection-start-column="45" selection-end-line="78" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/database/DBConnection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="62" column="115" lean-forward="false" selection-start-line="62" selection-start-column="115" selection-end-line="62" selection-end-column="115" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1515788436922" expanded="true" signature="4087:4109" ph="SELECT * FRO... offering" />
-            <marker date="1515788436922" expanded="true" signature="4165:4270" ph="INSERT INTO offering... " />
-            <marker date="1515788436922" expanded="true" signature="4328:4350" ph="SELECT * FRO... category" />
-            <marker date="1515788436922" expanded="true" signature="4406:4514" ph="INSERT INTO category... " />
-            <marker date="1515788436922" expanded="true" signature="4576:4642" ph="INSERT INTO images... " />
-            <marker date="1515788436922" expanded="true" signature="4704:4743" ph="SELECT * FRO... images" />
-          </folding>
         </state>
       </provider>
     </entry>
