@@ -37,6 +37,8 @@ public class AddCategory extends HttpServlet {
             List<FileItem> items = upload.parseRequest(request);
             Iterator<FileItem> iter = items.iterator();
             while (iter.hasNext()) {
+                File file = null;
+                InputStream input = null;
                 FileItem item = (FileItem) iter.next();
                 if (item.isFormField()) {
                     if ((item.getFieldName()).equals("categoryName")){
@@ -48,29 +50,28 @@ public class AddCategory extends HttpServlet {
                     }
                 } else {
                     String contentType = item.getContentType();
-                    if (contentType != null) {
+                    if (contentType != null && !(item.getFieldName()).equals("categoryName") && !(item.getFieldName()).equals("categoryDescription")) {
                         if (!contentType.equals("image/png") && !contentType.equals("image/jpeg")) {
                             System.out.println("Error. Only png or jpg format image files supported");
                             continue;
                         }
                         if (contentType.equals("image/png") || contentType.equals("image/jpeg")) {
                             File uploadDir = new File("/opt/app-root/src/src/main/webapp/images");
-                            File file = File.createTempFile("img", ".png", uploadDir);
+                            file = File.createTempFile("img", ".png", uploadDir);
                             item.write(file);
-                            InputStream input = new FileInputStream(file);
-
-                            if (!file.getName().isEmpty()) {
-                                imgName = (String) file.getName();
-                            }
-                            category.setCategoryName(name);
-                            category.setCategoryDescription(description);
-                            try {
-                                offerDAO.insertCategory(category,input,file.length());
-                            } catch (SQLException e) {
-                                e.printStackTrace();
-                            }
+                            input = new FileInputStream(file);                            
                         }
                     }
+                }
+                if (!file.getName().isEmpty()) {
+                    imgName = (String) file.getName();
+                }
+                category.setCategoryName(name);
+                category.setCategoryDescription(description);
+                try {
+                    offerDAO.insertCategory(category,input,file.length());
+                } catch (SQLException e) {
+                    e.printStackTrace();
                 }
             }
         } catch (FileUploadException e) {
