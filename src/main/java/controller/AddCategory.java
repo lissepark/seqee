@@ -33,6 +33,7 @@ public class AddCategory extends HttpServlet {
         FileItemFactory itemFactory = new DiskFileItemFactory();
         ServletFileUpload upload = new ServletFileUpload(itemFactory);
         String imgName = "";
+        long leng = 0;
         try {
             List<FileItem> items = upload.parseRequest(request);
             Iterator<FileItem> iter = items.iterator();
@@ -58,18 +59,16 @@ public class AddCategory extends HttpServlet {
                         if (contentType.equals("image/png") || contentType.equals("image/jpeg")) {
                             File uploadDir = new File("/opt/app-root/src/src/main/webapp/images");
                             file = File.createTempFile("img", ".png", uploadDir);
+                            leng = file.length();
                             item.write(file);
                             input = new FileInputStream(file);                            
                         }
                     }
                 }
-                if (!file.getName().isEmpty()) {
-                    imgName = (String) file.getName();
-                }
                 category.setCategoryName(name);
                 category.setCategoryDescription(description);
                 try {
-                    offerDAO.insertCategory(category,input,file.length());
+                    offerDAO.insertCategory(category,input,leng);
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
