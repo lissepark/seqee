@@ -59,15 +59,16 @@ public class AddCategory extends HttpServlet {
                         if (contentType.equals("image/png") || contentType.equals("image/jpeg")) {
                             File uploadDir = new File("/opt/app-root/src/src/main/webapp/images");
                             file = File.createTempFile("img", ".png", uploadDir);
-                            leng = file.length();
                             item.write(file);
-                            input = new FileInputStream(file);                            
+                            input = new FileInputStream(file);
+                            leng = file.length();
                         }
                     }
                     category.setCategoryName(name);
                     category.setCategoryDescription(description);
                     try {
                         offerDAO.insertCategory(category,input,leng);
+                        System.out.println(leng);
                     } catch (SQLException e) {
                         e.printStackTrace();
                     }
