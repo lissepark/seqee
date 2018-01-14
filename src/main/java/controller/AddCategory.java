@@ -33,13 +33,13 @@ public class AddCategory extends HttpServlet {
         FileItemFactory itemFactory = new DiskFileItemFactory();
         ServletFileUpload upload = new ServletFileUpload(itemFactory);
         String imgName = "";
-        long leng = 0;
         try {
             List<FileItem> items = upload.parseRequest(request);
             Iterator<FileItem> iter = items.iterator();
+            File file = null;
+            InputStream input = null;
+            long leng = 0;
             while (iter.hasNext()) {
-                File file = null;
-                InputStream input = null;
                 FileItem item = (FileItem) iter.next();
                 if (item.isFormField()) {
                     if ((item.getFieldName()).equals("categoryName")){
