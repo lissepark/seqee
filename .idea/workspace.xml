@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6bab637c-c3bf-47ce-8296-4fd3ec37ee1b" name="Default" comment="add admin page">
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/AddCategory.java" afterPath="$PROJECT_DIR$/src/main/java/controller/AddCategory.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/database/DBConnection.java" afterPath="$PROJECT_DIR$/src/main/java/database/DBConnection.java" />
     </list>
     <ignored path="SampleApp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,16 +26,16 @@
       <file leaf-file-name="DBConnection.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/database/DBConnection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="836">
-              <caret line="264" column="9" lean-forward="true" selection-start-line="264" selection-start-column="9" selection-end-line="264" selection-end-column="9" />
+            <state relative-caret-position="280">
+              <caret line="256" column="69" lean-forward="false" selection-start-line="256" selection-start-column="69" selection-end-line="256" selection-end-column="69" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1515857136048" expanded="true" signature="4087:4109" ph="SELECT * FRO... offering" />
-                <marker date="1515857136048" expanded="true" signature="4165:4270" ph="INSERT INTO offering... " />
-                <marker date="1515857136048" expanded="true" signature="4328:4350" ph="SELECT * FRO... category" />
-                <marker date="1515857136048" expanded="true" signature="4406:4514" ph="INSERT INTO category... " />
-                <marker date="1515857136048" expanded="true" signature="4576:4642" ph="INSERT INTO images... " />
-                <marker date="1515857136048" expanded="true" signature="4704:4743" ph="SELECT * FRO... images" />
+                <marker date="1515922024410" expanded="true" signature="4087:4109" ph="SELECT * FRO... offering" />
+                <marker date="1515922024410" expanded="true" signature="4165:4270" ph="INSERT INTO offering... " />
+                <marker date="1515922024410" expanded="true" signature="4328:4350" ph="SELECT * FRO... category" />
+                <marker date="1515922024410" expanded="true" signature="4406:4514" ph="INSERT INTO category... " />
+                <marker date="1515922024410" expanded="true" signature="4576:4642" ph="INSERT INTO images... " />
+                <marker date="1515922024410" expanded="true" signature="4704:4743" ph="SELECT * FRO... images" />
               </folding>
             </state>
           </provider>
@@ -216,8 +216,8 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/java/controller/Admin.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/adminruslan.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/database/DBConnection.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/AddCategory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/database/DBConnection.java" />
       </list>
     </option>
   </component>
@@ -964,7 +964,7 @@
       <workItem from="1515531023765" duration="11624000" />
       <workItem from="1515652935392" duration="3753000" />
       <workItem from="1515668076823" duration="23719000" />
-      <workItem from="1515848397903" duration="6097000" />
+      <workItem from="1515848397903" duration="6804000" />
     </task>
     <task id="LOCAL-00001" summary="commit id">
       <created>1504943768887</created>
@@ -1005,7 +1005,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="171823000" />
+    <option name="totallyTimeSpent" value="172530000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="3" y="0" width="1304" height="687" extended-state="0" />
@@ -1539,16 +1539,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/database/DBConnection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="836">
-          <caret line="264" column="9" lean-forward="true" selection-start-line="264" selection-start-column="9" selection-end-line="264" selection-end-column="9" />
+        <state relative-caret-position="280">
+          <caret line="256" column="69" lean-forward="false" selection-start-line="256" selection-start-column="69" selection-end-line="256" selection-end-column="69" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1515857136048" expanded="true" signature="4087:4109" ph="SELECT * FRO... offering" />
-            <marker date="1515857136048" expanded="true" signature="4165:4270" ph="INSERT INTO offering... " />
-            <marker date="1515857136048" expanded="true" signature="4328:4350" ph="SELECT * FRO... category" />
-            <marker date="1515857136048" expanded="true" signature="4406:4514" ph="INSERT INTO category... " />
-            <marker date="1515857136048" expanded="true" signature="4576:4642" ph="INSERT INTO images... " />
-            <marker date="1515857136048" expanded="true" signature="4704:4743" ph="SELECT * FRO... images" />
+            <marker date="1515922024410" expanded="true" signature="4087:4109" ph="SELECT * FRO... offering" />
+            <marker date="1515922024410" expanded="true" signature="4165:4270" ph="INSERT INTO offering... " />
+            <marker date="1515922024410" expanded="true" signature="4328:4350" ph="SELECT * FRO... category" />
+            <marker date="1515922024410" expanded="true" signature="4406:4514" ph="INSERT INTO category... " />
+            <marker date="1515922024410" expanded="true" signature="4576:4642" ph="INSERT INTO images... " />
+            <marker date="1515922024410" expanded="true" signature="4704:4743" ph="SELECT * FRO... images" />
           </folding>
         </state>
       </provider>

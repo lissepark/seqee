@@ -255,9 +255,7 @@ public class DBConnection {
             insertCategory.setString(1, category.getCategoryName());
             insertCategory.setString(2, category.getCategoryDescription());
             insertCategory.setString(3, category.getCategoryOrder());
-            if (input != null) {
-                insertCategory.setBinaryStream(4, input, len);
-            }
+            insertCategory.setBinaryStream(4, input, len);
             return insertCategory.executeUpdate();
         } catch (SQLException e) {
             LOGGER.debug("insertCategory with image - SQLException");
