@@ -2,6 +2,7 @@ package controller;
 
 import dao.OfferDAO;
 import daoImpl.OfferDAOImpl;
+import model.Category;
 import model.Offer;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileItemFactory;
@@ -26,17 +27,17 @@ public class AddOffer extends HttpServlet {
     OfferDAO offerDAO = new OfferDAOImpl();
     Offer offer = new Offer();
 
+    private void getAllCategories(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
+        OfferDAO offerDAO = new OfferDAOImpl();
+        List<Category> categoryList = offerDAO.getAllCategories();
+        request.setAttribute("categoryList", categoryList);
+    }
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String name = null;
         String description = null;
-        //if (!ServletFileUpload.isMultipartContent(request)) {
-        //    System.out.println("Nothing to upload");
-        //    //doGet(req,resp);
-        //    return;
-        //}
         FileItemFactory itemFactory = new DiskFileItemFactory();
         ServletFileUpload upload = new ServletFileUpload(itemFactory);
-        //ArrayList pathList = new ArrayList();
         String imgName = "";
         try {
             List<FileItem> items = upload.parseRequest(request);
@@ -69,20 +70,11 @@ public class AddOffer extends HttpServlet {
                             offer.setOfferName(name);
                             offer.setOfferDescription(description);
                             offer.setOfferImageName(imgName);
-                            //String group = request.getParameter("group");
-                            //String date = request.getParameter("date");
                             try {
                                 offerDAO.insertOffer(offer,input,file.length());
                             } catch (SQLException e) {
                                 e.printStackTrace();
                             }
-/*
-                            try {
-                                offerDAO.insertOfferingsImage(file.getName(), 55, input, file.length());
-                            } catch (SQLException e) {
-                                e.printStackTrace();
-                            }
-*/
                         }
                     }
                 }
@@ -98,6 +90,12 @@ public class AddOffer extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        try {
+            getAllCategories(request, response);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/WEB-INF/jsp/addoffer.jsp");
         requestDispatcher.forward(request, response);
     }

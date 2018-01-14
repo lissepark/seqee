@@ -24,11 +24,6 @@ public class Titul extends HttpServlet {
     private void getAllCategories(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException, SQLException {
         OfferDAO offerDAO = new OfferDAOImpl();
         List<Category> categoryList = offerDAO.getAllCategories();
-        Iterator<Category> iter = categoryList.iterator();
-        while (iter.hasNext()) {
-            Category category = (Category) iter.next();
-            category.getId().intValue();
-        }
         req.setAttribute("categoryList", categoryList);
     }
 
