@@ -51,7 +51,7 @@ public class AddCategory extends HttpServlet {
                     }
                 } else {
                     String contentType = item.getContentType();
-                    if (contentType != null && !(item.getFieldName()).equals("categoryName") && !(item.getFieldName()).equals("categoryDescription")) {
+                    if (!contentType.equals("application/octet-stream")) {
                         if (!contentType.equals("image/png") && !contentType.equals("image/jpeg")) {
                             System.out.println("Error. Only png or jpg format image files supported");
                             continue;
@@ -64,13 +64,13 @@ public class AddCategory extends HttpServlet {
                             input = new FileInputStream(file);                            
                         }
                     }
-                }
-                category.setCategoryName(name);
-                category.setCategoryDescription(description);
-                try {
-                    offerDAO.insertCategory(category,input,leng);
-                } catch (SQLException e) {
-                    e.printStackTrace();
+                    category.setCategoryName(name);
+                    category.setCategoryDescription(description);
+                    try {
+                        offerDAO.insertCategory(category,input,leng);
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         } catch (FileUploadException e) {
