@@ -11,7 +11,7 @@ public class Offer {
     private Long id;
     private String offerDescription;
     private String offerName;
-    private List<Category> categories;
+    private int category;
     private String offerImageName;
     private Blob blob;
 
@@ -47,12 +47,12 @@ public class Offer {
         this.offerImageName = offerImageName;
     }
 
-    public List<Category> getOfferCategories() {
-        return categories;
+    public int getOfferCategory() {
+        return category;
     }
 
-    public void setOfferCategories(List<Category> categories) {
-        this.categories = categories;
+    public void setOfferCategory(int category) {
+        this.category = category;
     }
 
     public Blob getOfferMainImage() {

@@ -86,7 +86,7 @@ public class DBConnection {
             changeDiscipline = conn.prepareStatement("UPDATE `discipline` SET `name`=? WHERE `id`=?");
             */
             getAllOffers = conn.prepareStatement("SELECT * FROM offering");
-            insertOffering = conn.prepareStatement("INSERT INTO offering SET `offering_name`=?, `offering_description`=?, `offer_image_name`=?, `image_nat`=?");
+            insertOffering = conn.prepareStatement("INSERT INTO offering SET `offering_name`=?, `offering_description`=?, `offer_image_name`=?, `image_nat`=?, `category_id`=?");
             getAllCategories = conn.prepareStatement("SELECT * FROM category");
             insertCategory = conn.prepareStatement("INSERT INTO category SET `category_name`=?, `category_description`=?, `category_order`=?, `category_image`=?");
             insertOfferingsImage = conn.prepareStatement("INSERT INTO images SET `image_name`=?, `offer_id`=?, `image_nat`=?");
@@ -192,6 +192,7 @@ public class DBConnection {
             //insertOffering.setArray(3,offer.getOfferCategories());
             insertOffering.setString(3, offer.getOfferImageName());
             insertOffering.setBinaryStream(4, input, len);
+            insertOffering.setInt(5, offer.getOfferCategory());
             return insertOffering.executeUpdate();
         } catch (SQLException e) {
             LOGGER.debug("insertOffer with image - SQLException");

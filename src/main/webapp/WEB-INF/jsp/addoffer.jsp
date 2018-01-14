@@ -21,22 +21,23 @@
     List<Category> categoryList1 = (List<Category>) request.getAttribute("categoryList");
     Iterator<Category> iterator1 = categoryList1.iterator();
     %>
-    <div class="row marketing">
+    <div>
         <h4>Please, fill the data and load an image</h4>
         <form action="addoffer" method="post" enctype="multipart/form-data">
             <p>
-                <input type="text" name="offerName"><Br>
-                <input type="text" name="offerDescription" ><Br>
+                <input type="text" name="offerName">Type the name of the offer<br>
+                <input type="text" name="offerDescription">Type the description of the offer<br>
 
 
                 <select type="text" name="categoryId">
+                    <option disabled>Choose the Category</option>
                     <%while (iterator1.hasNext()) {
                         Category category1 = (Category) iterator1.next();%>
-                    <option><%=category1.getCategoryName()%></option>
+                    <option value="<%=category1.getId()%>"><%=category1.getCategoryName()%></option>
                     <%}%>
                 </select>
             </p>
-            <h3 style="color:blue">Select image to upload:</h3>
+            <h4 style="color:blue">Select image to upload:</h4>
             <br/>
             <input type="file" name="file"><br/>
             <input class="btn btn-primary btn-lg" type="submit" value="Upload Image">
