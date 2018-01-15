@@ -33,133 +33,21 @@ public class OfferController extends HttpServlet{
         super();
     }
 
-    private void getAllOffers(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException, SQLException {
-        OfferDAO offerDAO = new OfferDAOImpl();
-        List<Offer> offerList = offerDAO.getAllOffers();
-        int offer_n =0;
-        int offer_id = 0;
-        int blob_n = 0;
-        Iterator<Offer> iter = offerList.iterator();
-        while (iter.hasNext()) {
-            Offer offer = (Offer) iter.next();
-            offer_id = offer.getId().intValue();
-            Blob blob;
-            blob_n = 0;
-            /*
-            List<java.sql.Blob> blobs = new ArrayList<>();
-            try {
-                blobs =  offerDAO.selectOfferingsImage(offer_id);
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-            Iterator<java.sql.Blob> iterBlob = blobs.iterator();
-            while (iterBlob.hasNext()) {
-                File file = new File("/home/sergii/Documents"+offer_id+"_image"+blob_n+".png");//for the local host
-                //File file = new File("/opt/app-root/src/src/main/webapp/images/offer"+offer_id+"_image"+blob_n+".png");
-                FileOutputStream fos = new FileOutputStream(file);
-                blob = (Blob) iterBlob.next();
-                byte b[] = new byte[(int) blob.length()];
-                try {
-                    b = blob.getBytes(1, (int) blob.length());
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-                fos.write(b);
-                fos.close();
-
-            File file = new File("/home/sergii/Documents/"+offer_id+"_image"+blob_n+".png");//for the local host
-            FileOutputStream fos = new FileOutputStream(file);
-            blob = (Blob) offer.getOfferMainImage();
-            byte b[] = new byte[(int) blob.length()];
-            try {
-                b = blob.getBytes(1, (int) blob.length());
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-            fos.write(b);
-            fos.close();
-*/
-                //resp.setContentLength((int) file.length());
-                //resp.setContentType(new MimetypesFileTypeMap().getContentType(file));
-                //resp.getOutputStream().write(b);
-
-                blob_n++;
-                offer_n++;
-            }
-        req.setAttribute("offerList", offerList);
-    }
-/*
-    private void findAllCategories(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-        OfferDAO offerDAO = new OfferDAOImpl();
-        List<Category> categoryList = offerDAO.findAllCategories();
-        request.setAttribute("categoryList", categoryList);
-    }*/
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-/*
-        String filePath = req.getRequestURI();
-        System.out.println("req.getRequestURI() "+req.getRequestURI());
-        File file = new File(System.getenv("HOME") + filePath.replace("/offers",""));
-        System.out.println("System.getenv(HOME) "+System.getenv("HOME") + filePath.replace("/offers",""));
-        InputStream input = new FileInputStream(file);
-
-        resp.setContentLength((int) file.length());
-        System.out.println("file.length() "+file.length());
-        resp.setContentType(new MimetypesFileTypeMap().getContentType(file));
-
-        OutputStream output = resp.getOutputStream();
-        byte[] bytes = new byte[BUFFER_LENGTH];
-        int read = 0;
-        while ((read = input.read(bytes, 0, BUFFER_LENGTH)) != -1) {
-            output.write(bytes, 0, read);
-            output.flush();
-        }
-
-        input.close();
-        output.close();
-*/
-        try {
-            getAllOffers(req, resp);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-
+        OfferDAO offerDAO = new OfferDAOImpl();
+        List<Offer> offerList = offerDAO.getAllOffers();
+        req.setAttribute("offerList", offerList);
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/offers.jsp");
         requestDispatcher.forward(req, resp);
     }
-/*
-    private String getFileName(Part part) {
-        for (String cd : part.getHeader("content-disposition").split(";")) {
-            if (cd.trim().startsWith("filename")) {
-                return cd.substring(cd.indexOf('=') + 1).trim()
-                        .replace("\"", "");
-            }
-        }
-        return null;
-    }
-*/
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        //String url = "/jsp/offers.jsp";
-        //String action = req.getParameter("action");
-        //String category = req.getParameter("category");
-        //if (action != null) {
-            //switch (action) {
-                //case "allOffers":
-                    //findAllOffers(req, resp);
-                    //break;
-               /* case "category":
-                    findAllCategories(req, resp);
-                    url = base + "category.jsp?category=" + category;
-                    break;*/
-                //}
         if (!ServletFileUpload.isMultipartContent(req)) {
             System.out.println("Nothing to upload");
-            //doGet(req,resp);
             return;
         }
         FileItemFactory itemFactory = new DiskFileItemFactory();
@@ -179,11 +67,8 @@ public class OfferController extends HttpServlet{
                     item.write(file);
                     pathList.add(file.getPath());
                     System.out.println(file.getPath());
-                    //try to write permanently
                     InputStream input = new FileInputStream(file);
-                    //resp.setContentLength((int) file.length());
                     System.out.println("file.length() " + file.length());
-                    //resp.setContentType(new MimetypesFileTypeMap().getContentType(file));
 
                     OutputStream output = new FileOutputStream(System.getenv("HOME") + "/src/main/webapp/images/" + file.getName());
                     byte[] bytes = new byte[BUFFER_LENGTH];
@@ -197,7 +82,6 @@ public class OfferController extends HttpServlet{
 
                     System.out.println("file.getName() " + file.getName());
                     System.out.println("System.getenv(HOME) + file.getName() " + System.getenv("HOME") + "/images/" + file.getName());
-                    //end try to write permanently
                 }
             }
         } catch (FileUploadException e) {
@@ -208,7 +92,5 @@ public class OfferController extends HttpServlet{
         }
 
         doGet(req,resp);
-        //RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/offers.jsp");
-        //requestDispatcher.forward(req, resp);
     }
 }
