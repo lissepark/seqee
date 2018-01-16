@@ -17,8 +17,25 @@
     <script src="/js/jquery-3.2.1.min.js"></script>
     <script src="/js/bootstrap.js"></script>
     <title>Offers</title>
+    <style>
+        .wrap {
+            text-align: justify;
+        }
+        .wrap .wrapdiv {
+            display: inline-block;
+            vertical-align: top;
+        }
+        .wrap:after {
+            display: inline-block;
+            content: "";
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
+<div class="container">
+    <jsp:include page="header.jsp"/>
+
 <div><span class="label" style="margin-left:15px;">Offers</span></div>
 <div><span class="label" style="margin-left:15px;"><a href="/">Main</a></span></div>
 <div class="card-deck rounded mx-auto d-block">
@@ -76,6 +93,6 @@
         <input class="btn btn-primary btn-lg" type="submit" value="Upload Image">
     </form>
 </div>
-
+</div>
 </body>
 </html>
