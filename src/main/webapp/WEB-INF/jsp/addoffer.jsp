@@ -21,7 +21,7 @@
     List<Category> categoryList1 = (List<Category>) request.getAttribute("categoryList");
     Iterator<Category> iterator1 = categoryList1.iterator();
     %>
-    <div>
+    <div style="margin-left: 2%">
         <h4>Please, fill the data and load an image</h4>
         <form action="addoffer" method="post" enctype="multipart/form-data">
             <p>
