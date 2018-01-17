@@ -21,21 +21,13 @@ import java.util.List;
  */
 public class Titul extends HttpServlet {
 
-    private void getAllCategories(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException, SQLException {
-        OfferDAO offerDAO = new OfferDAOImpl();
-        List<Category> categoryList = offerDAO.getAllCategories();
-        req.setAttribute("categoryList", categoryList);
-    }
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
 
-        try {
-            getAllCategories(req, resp);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        OfferDAO offerDAO = new OfferDAOImpl();
+        List<Category> categoryList = offerDAO.getAllCategories();
+        req.setAttribute("categoryList", categoryList);
 
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/index.jsp");
         requestDispatcher.forward(req, resp);

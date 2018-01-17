@@ -27,7 +27,7 @@ import java.util.List;
  */
 public class OfferController extends HttpServlet{
 
-    int BUFFER_LENGTH = 4096;
+    //int BUFFER_LENGTH = 4096;
 
     public OfferController() {
         super();
@@ -36,8 +36,8 @@ public class OfferController extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        System.out.println("req.getParameter() = "+req.getParameter("category_id"));
-        //System.out.println("req.getAttribute() = "+req.getAttribute("category_id"));
+        String category_id_str = req.getParameter("category_id");
+        System.out.println("category_id_str");
         OfferDAO offerDAO = new OfferDAOImpl();
         List<Offer> offerList = offerDAO.getAllOffers();
         req.setAttribute("offerList", offerList);
@@ -73,9 +73,9 @@ public class OfferController extends HttpServlet{
                     System.out.println("file.length() " + file.length());
 
                     OutputStream output = new FileOutputStream(System.getenv("HOME") + "/src/main/webapp/images/" + file.getName());
-                    byte[] bytes = new byte[BUFFER_LENGTH];
+                    byte[] bytes = new byte[(int) file.length()];
                     int read = 0;
-                    while ((read = input.read(bytes, 0, BUFFER_LENGTH)) != -1) {
+                    while ((read = input.read(bytes, 0, (int) file.length())) != -1) {
                         output.write(bytes, 0, read);
                         //output.flush();
                     }

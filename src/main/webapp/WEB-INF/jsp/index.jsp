@@ -111,13 +111,13 @@
         %>
         <div class="wrapdiv rounded card" style="width: 15rem;">
             <%if (blob != null) {%>
-            <a href="/offers.jsp?category_id=<%=category1.getId()%>"><img class="card-img-top img-thumbnail" src="data:image/png;base64,<%= b64 %>"
+            <a href="/offers?category_id=<%=category1.getId()%>"><img class="card-img-top img-thumbnail" src="data:image/png;base64,<%= b64 %>"
                  alt="Card image cap" style="width: 238px;height: 172px"></a>
             <%}else{%>
-            <a href="/offers.jsp?category_id=<%=category1.getId()%>"><img class="card-img-top img-thumbnail" src="<%= b64 %>"
+            <a href="/offers?category_id=<%=category1.getId()%>"><img class="card-img-top img-thumbnail" src="<%= b64 %>"
                  alt="Card image cap" style="width: 238px;height: 172px"></a>
             <%}%>
-            <a href="/offers.jsp?category_id=<%=category1.getId()%>"><div class="card-body" style="height: 50px;">
+            <a href="/offers?category_id=<%=category1.getId()%>"><div class="card-body" style="height: 50px;">
                 <h5 class="card-title" style="text-align: center"><%=category1.getCategoryName()%></h5>
             </div></a>
         </div>
