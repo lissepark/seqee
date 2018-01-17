@@ -79,7 +79,7 @@
         </a>
     </div>
 
-    <div class="wrap rounded " style="margin-top: 10px">
+    <div class="wrap rounded" style="margin-top: 10px">
         <%
             List<Category> categoryList1 = (List<Category>) request.getAttribute("categoryList");
             Iterator<Category> iterator1 = categoryList1.iterator();
@@ -111,15 +111,15 @@
         %>
         <div class="wrapdiv rounded card" style="width: 15rem;">
             <%if (blob != null) {%>
-            <img class="card-img-top img-thumbnail" src="data:image/png;base64,<%= b64 %>"
-                 alt="Card image cap" style="width: 238px;height: 172px">
+            <a href="/offers.jsp?category_id=<%=category1.getId()%>"><img class="card-img-top img-thumbnail" src="data:image/png;base64,<%= b64 %>"
+                 alt="Card image cap" style="width: 238px;height: 172px"></a>
             <%}else{%>
-            <img class="card-img-top img-thumbnail" src="<%= b64 %>"
-                 alt="Card image cap" style="width: 238px;height: 172px">
+            <a href="/offers.jsp?category_id=<%=category1.getId()%>"><img class="card-img-top img-thumbnail" src="<%= b64 %>"
+                 alt="Card image cap" style="width: 238px;height: 172px"></a>
             <%}%>
-            <div class="card-body" style="height: 50px;">
+            <a href="/offers.jsp?category_id=<%=category1.getId()%>"><div class="card-body" style="height: 50px;">
                 <h5 class="card-title" style="text-align: center"><%=category1.getCategoryName()%></h5>
-            </div>
+            </div></a>
         </div>
         <%}%>
     </div>
