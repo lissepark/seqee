@@ -36,7 +36,8 @@ public class OfferController extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        System.out.println("req.getAttribute() = "+req.getAttribute("category_id"));
+        System.out.println("req.getParameter() = "+req.getParameter("category_id"));
+        //System.out.println("req.getAttribute() = "+req.getAttribute("category_id"));
         OfferDAO offerDAO = new OfferDAOImpl();
         List<Offer> offerList = offerDAO.getAllOffers();
         req.setAttribute("offerList", offerList);
