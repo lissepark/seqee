@@ -48,6 +48,7 @@
             Blob blob = (Blob) offer1.getOfferMainImage();
             String b64 = "";
             if (blob != null) {
+                if (blob.length() <= 1100000) {
                 byte b[] = new byte[(int) blob.length()];
                 try {
                     b = blob.getBytes(1, (int) blob.length());
@@ -64,17 +65,22 @@
                 byte[] imageInByteArray = baos.toByteArray();
                 baos.close();
                 b64 = javax.xml.bind.DatatypeConverter.printBase64Binary(imageInByteArray);
+                }else {
+                    b64 = "images/too_big_image.jpg";
+                }
             } else {
                 b64 = "images/stolen_image.png";
             }
         %>
     <div class="wrapdiv rounded card" style="width: 15rem;">
-        <%if (blob != null) {%>
+        <%if (blob != null && blob.length() <= 1100000) {%>
         <img class="card-img-top img-thumbnail" src="data:image/png;base64,<%= b64 %>"
              alt="Card image cap" style="width: 238px;height: 172px">
-        <%}else{%>
+        <%}else if(blob != null && blob.length() > 1100000)  {%>
         <img class="card-img-top img-thumbnail" src="<%= b64 %>"
              alt="Card image cap" style="width: 238px;height: 172px">
+        <%} else {%>
+        <img class="card-img-top img-thumbnail" src="<%= b64 %>" alt="Card image cap" style="width: 238px;height: 172px">
         <%}%>
         <div class="card-body" style="height: 50px;">
             <h5 class="card-title" style="text-align: center"><%=offer1.getOfferName()%></h5>

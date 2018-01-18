@@ -89,8 +89,7 @@
             Blob blob = (Blob) category1.getCategoryMainImage();
             String b64 = "";
             if (blob != null) {
-                System.out.println(blob.length());
-                if (blob.length() <= 4096) {
+                if (blob.length() <= 1100000) {
                     byte b[] = new byte[(int) blob.length()];
                     try {
                         b = blob.getBytes(1, (int) blob.length());
@@ -115,10 +114,10 @@
             }
         %>
         <div class="wrapdiv rounded card" style="width: 15rem;">
-            <%if (blob != null && blob.length() <= 4096) {%>
+            <%if (blob != null && blob.length() <= 1100000) {%>
             <a href="/offers?category_id=<%=category1.getId()%>"><img class="card-img-top img-thumbnail" src="data:image/png;base64,<%= b64 %>"
                  alt="Card image cap" style="width: 238px;height: 172px"></a>
-            <%}else if(blob != null && blob.length() > 4096)  {%>
+            <%}else if(blob != null && blob.length() > 1100000)  {%>
             <a href="/offers?category_id=<%=category1.getId()%>"><img class="card-img-top img-thumbnail" src="<%= b64 %>"
                  alt="Card image cap" style="width: 238px;height: 172px"></a>
             <%} else {%>
