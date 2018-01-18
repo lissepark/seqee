@@ -108,7 +108,7 @@
                     baos.close();
                     b64 = javax.xml.bind.DatatypeConverter.printBase64Binary(imageInByteArray);
                 }else {
-                    b64 = "images/too_big_image.png";
+                    b64 = "images/too_big_image.jpg";
                 }
             }else{
                 b64 = "images/stolen_image.png";
