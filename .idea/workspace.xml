@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6bab637c-c3bf-47ce-8296-4fd3ec37ee1b" name="Default" comment="add admin page">
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/offers.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/offers.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/OfferController.java" afterPath="$PROJECT_DIR$/src/main/java/controller/OfferController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/OfferDAO.java" afterPath="$PROJECT_DIR$/src/main/java/dao/OfferDAO.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/daoImpl/OfferDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/daoImpl/OfferDAOImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/database/DBConnection.java" afterPath="$PROJECT_DIR$/src/main/java/database/DBConnection.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/database/DataService.java" afterPath="$PROJECT_DIR$/src/main/java/database/DataService.java" />
     </list>
     <ignored path="SampleApp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,11 +27,50 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="OfferController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DBConnection.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/database/DBConnection.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="177" column="44" lean-forward="false" selection-start-line="177" selection-start-column="23" selection-end-line="177" selection-end-column="44" />
+              <folding>
+                <marker date="1516308653015" expanded="true" signature="4147:4169" ph="SELECT * FRO... offering" />
+                <marker date="1516308653015" expanded="true" signature="4232:4276" ph="SELECT * FRO... offering" />
+                <marker date="1516308653015" expanded="true" signature="4332:4437" ph="INSERT INTO offering... " />
+                <marker date="1516308653015" expanded="true" signature="4332:4454" ph="INSERT INTO offering... " />
+                <marker date="1516308653015" expanded="true" signature="4512:4534" ph="SELECT * FRO... category" />
+                <marker date="1516308653015" expanded="true" signature="4590:4698" ph="INSERT INTO category... " />
+                <marker date="1516308653015" expanded="true" signature="4760:4826" ph="INSERT INTO images... " />
+                <marker date="1516308653015" expanded="true" signature="4888:4927" ph="SELECT * FRO... images" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OfferController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/OfferController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="935">
-              <caret line="77" column="75" lean-forward="false" selection-start-line="77" selection-start-column="75" selection-end-line="77" selection-end-column="75" />
+            <state relative-caret-position="204">
+              <caret line="40" column="96" lean-forward="false" selection-start-line="40" selection-start-column="96" selection-end-line="40" selection-end-column="96" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OfferDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/dao/OfferDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="15" column="60" lean-forward="false" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="60" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OfferDAOImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/daoImpl/OfferDAOImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="209">
+              <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -40,32 +82,6 @@
             <state relative-caret-position="83">
               <caret line="49" column="124" lean-forward="false" selection-start-line="49" selection-start-column="24" selection-end-line="49" selection-end-column="124" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="addoffer.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/addoffer.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="23" column="33" lean-forward="false" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="header.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/header.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="887">
-              <caret line="75" column="10" lean-forward="false" selection-start-line="75" selection-start-column="10" selection-end-line="75" selection-end-column="10" />
-              <folding>
-                <element signature="n#style#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -83,7 +99,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="offers.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="offers.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/offers.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="714">
@@ -108,6 +124,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="882">
               <caret line="81" column="63" lean-forward="false" selection-start-line="81" selection-start-column="63" selection-end-line="81" selection-end-column="63" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DataService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/database/DataService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="193">
+              <caret line="62" column="44" lean-forward="false" selection-start-line="62" selection-start-column="23" selection-end-line="62" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -163,23 +189,23 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/categories.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/src/main/java/model/Category.java" />
-        <option value="$PROJECT_DIR$/src/main/java/database/DataService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/daoImpl/OfferDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/addcategory.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/java/controller/Admin.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/adminruslan.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/controller/AddCategory.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dao/OfferDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/Offer.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/AddOffer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/database/DBConnection.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/header.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/addoffer.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/controller/Titul.java" />
-        <option value="$PROJECT_DIR$/src/main/java/controller/OfferController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/offers.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/database/DBConnection.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dao/OfferDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/database/DataService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/daoImpl/OfferDAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/OfferController.java" />
       </list>
     </option>
   </component>
@@ -926,7 +952,7 @@
       <workItem from="1515531023765" duration="11624000" />
       <workItem from="1515652935392" duration="3753000" />
       <workItem from="1515668076823" duration="23719000" />
-      <workItem from="1515848397903" duration="41416000" />
+      <workItem from="1515848397903" duration="43685000" />
     </task>
     <task id="LOCAL-00001" summary="commit id">
       <created>1504943768887</created>
@@ -967,7 +993,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="207142000" />
+    <option name="totallyTimeSpent" value="209411000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1312" height="687" extended-state="0" />
@@ -1284,16 +1310,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/database/DataService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1173">
-          <caret line="78" column="45" lean-forward="false" selection-start-line="78" selection-start-column="45" selection-end-line="78" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="969">
@@ -1317,39 +1333,6 @@
         <state relative-caret-position="255">
           <caret line="15" column="7" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="15" selection-end-column="7" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/daoImpl/OfferDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="35" column="35" lean-forward="false" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dao/OfferDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/database/DBConnection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="163" column="80" lean-forward="false" selection-start-line="163" selection-start-column="80" selection-end-line="163" selection-end-column="80" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <marker date="1516078884596" expanded="true" signature="4087:4109" ph="SELECT * FRO... offering" />
-            <marker date="1516078884596" expanded="true" signature="4165:4270" ph="INSERT INTO offering... " />
-            <marker date="1516078884596" expanded="true" signature="4165:4287" ph="INSERT INTO offering... " />
-            <marker date="1516078884596" expanded="true" signature="4345:4367" ph="SELECT * FRO... category" />
-            <marker date="1516078884596" expanded="true" signature="4423:4531" ph="INSERT INTO category... " />
-            <marker date="1516078884596" expanded="true" signature="4593:4659" ph="INSERT INTO images... " />
-            <marker date="1516078884596" expanded="true" signature="4721:4760" ph="SELECT * FRO... images" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1417,14 +1400,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/OfferController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="77" column="75" lean-forward="false" selection-start-line="77" selection-start-column="75" selection-end-line="77" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -1451,6 +1426,55 @@
             <element signature="n#style#0;n#h5#0;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/database/DBConnection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="177" column="44" lean-forward="false" selection-start-line="177" selection-start-column="23" selection-end-line="177" selection-end-column="44" />
+          <folding>
+            <marker date="1516308653015" expanded="true" signature="4147:4169" ph="SELECT * FRO... offering" />
+            <marker date="1516308653015" expanded="true" signature="4232:4276" ph="SELECT * FRO... offering" />
+            <marker date="1516308653015" expanded="true" signature="4332:4437" ph="INSERT INTO offering... " />
+            <marker date="1516308653015" expanded="true" signature="4332:4454" ph="INSERT INTO offering... " />
+            <marker date="1516308653015" expanded="true" signature="4512:4534" ph="SELECT * FRO... category" />
+            <marker date="1516308653015" expanded="true" signature="4590:4698" ph="INSERT INTO category... " />
+            <marker date="1516308653015" expanded="true" signature="4760:4826" ph="INSERT INTO images... " />
+            <marker date="1516308653015" expanded="true" signature="4888:4927" ph="SELECT * FRO... images" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dao/OfferDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="15" column="60" lean-forward="false" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/database/DataService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="62" column="44" lean-forward="false" selection-start-line="62" selection-start-column="23" selection-end-line="62" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/daoImpl/OfferDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/OfferController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="40" column="96" lean-forward="false" selection-start-line="40" selection-start-column="96" selection-end-line="40" selection-end-column="96" />
+          <folding />
         </state>
       </provider>
     </entry>

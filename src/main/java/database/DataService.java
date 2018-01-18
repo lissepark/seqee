@@ -60,6 +60,13 @@ public class DataService {
         return result;
     }
 
+    public List<Offer> getOffersByCategoryId(int categoryId) {
+        DBConnection conn = getDBConnection();
+        List <Offer> result = conn.getOffersByCategoryId(categoryId);
+        this.putDBConnection(conn);
+        return result;
+    }
+
     public int insertOffer(Offer offer) throws SQLException {
         DBConnection conn = getDBConnection();
         int result = conn.insertOffer(offer);

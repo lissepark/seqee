@@ -44,6 +44,7 @@ public class DBConnection {
     private static PreparedStatement insertCategory;
     private static PreparedStatement insertOfferingsImage;
     private static PreparedStatement selectOfferingsImage;
+    private static PreparedStatement getOffersByCategoryId;
     /*
     private static PreparedStatement deleteDiscipline;
     private static PreparedStatement selectDisciplineById;
@@ -86,11 +87,13 @@ public class DBConnection {
             changeDiscipline = conn.prepareStatement("UPDATE `discipline` SET `name`=? WHERE `id`=?");
             */
             getAllOffers = conn.prepareStatement("SELECT * FROM offering");
+            getOffersByCategoryId = conn.prepareStatement("SELECT * FROM offering where `category_id`=?");
             insertOffering = conn.prepareStatement("INSERT INTO offering SET `offering_name`=?, `offering_description`=?, `offer_image_name`=?, `image_nat`=?, `category_id`=?");
             getAllCategories = conn.prepareStatement("SELECT * FROM category");
             insertCategory = conn.prepareStatement("INSERT INTO category SET `category_name`=?, `category_description`=?, `category_order`=?, `category_image`=?");
             insertOfferingsImage = conn.prepareStatement("INSERT INTO images SET `image_name`=?, `offer_id`=?, `image_nat`=?");
             selectOfferingsImage = conn.prepareStatement("SELECT * FROM images where `offer_id`=?");
+
             /*
             deleteDiscipline = conn.prepareStatement("DELETE FROM `discipline` WHERE `id`=?");
             selectDisciplineById = conn.prepareStatement("SELECT * FROM discipline WHERE id = ?");
@@ -124,6 +127,7 @@ public class DBConnection {
             getListTerms.close();
             */
             getAllOffers.close();
+            getOffersByCategoryId.close();
             insertOffering.close();
             insertOfferingsImage.close();
             selectOfferingsImage.close();
@@ -157,6 +161,26 @@ public class DBConnection {
         List<Offer> result = new ArrayList<>();
         try {
             rs = getAllOffers.executeQuery();
+            while (rs.next()) {
+                Offer offer = new Offer();
+                offer.setId(rs.getLong("offering_id"));
+                offer.setOfferName(rs.getString("offering_name"));
+                offer.setOfferDescription(rs.getString("offering_description"));
+                offer.setOfferMainImage((com.mysql.jdbc.Blob) rs.getBlob("image_nat"));
+                result.add(offer);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+
+    public List<Offer> getOffersByCategoryId(int categoryId) {
+        rs = null;
+        List<Offer> result = new ArrayList<>();
+        try {
+            getOffersByCategoryId.setInt(1,categoryId);
+            rs = getOffersByCategoryId.executeQuery();
             while (rs.next()) {
                 Offer offer = new Offer();
                 offer.setId(rs.getLong("offering_id"));

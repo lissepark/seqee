@@ -37,9 +37,8 @@ public class OfferController extends HttpServlet{
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         String category_id_str = req.getParameter("category_id");
-        System.out.println("category_id_str");
         OfferDAO offerDAO = new OfferDAOImpl();
-        List<Offer> offerList = offerDAO.getAllOffers();
+        List<Offer> offerList = offerDAO.getOffersByCategoryId(Integer.parseInt(category_id_str));
         req.setAttribute("offerList", offerList);
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/offers.jsp");
         requestDispatcher.forward(req, resp);

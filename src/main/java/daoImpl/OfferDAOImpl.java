@@ -21,6 +21,10 @@ public class OfferDAOImpl implements OfferDAO {
         return dataService.getAllOffers();
     }
 
+    public List<Offer> getOffersByCategoryId(int categoryId) {
+        return dataService.getOffersByCategoryId(categoryId);
+    }
+
     public List<Offer>searchOffersByKeyword(String keyWord) {
         return null;
     }

@@ -13,6 +13,7 @@ import java.util.List;
  */
 public interface OfferDAO {
     public List<Offer> getAllOffers();
+    public List<Offer> getOffersByCategoryId(int categoryId);
     public void insertOffer(Offer offer) throws SQLException;
     public void insertOffer(Offer offer, InputStream input, long len) throws SQLException;
     public List<Category> getAllCategories();
