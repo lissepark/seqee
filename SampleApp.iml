@@ -16,6 +16,7 @@
         <fileset id="fileset" name="applicationContext.xml" removed="false">
           <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/beans.xml</file>
           <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/spring/dispatcher-servlet.xml</file>
+          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/applicationContext.xml</file>
         </fileset>
       </configuration>
     </facet>
