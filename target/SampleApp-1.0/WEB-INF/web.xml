@@ -8,6 +8,10 @@
 http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
          id="WebApp_ID" version="3.0">
 
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+
   <display-name>Archetype Created Web Application</display-name>
   <servlet>
     <servlet-name>Titul</servlet-name>
@@ -41,6 +45,23 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
     <servlet-name>Categories</servlet-name>
     <url-pattern>/categories</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>AddCategory</servlet-name>
+    <servlet-class>controller.AddCategory</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddCategory</servlet-name>
+    <url-pattern>/addcategory</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Admin</servlet-name>
+    <servlet-class>controller.Admin</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Admin</servlet-name>
+    <url-pattern>/adminruslan</url-pattern>
+  </servlet-mapping>
+
   <mime-mapping>
     <extension>css</extension>
     <mime-type>text/css</mime-type>

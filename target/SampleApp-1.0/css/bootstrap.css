@@ -3665,11 +3665,11 @@ tbody.collapse.show {
 .card-body {
   -ms-flex: 1 1 auto;
       flex: 1 1 auto;
-  padding: 1.25rem;
+  padding: 0.25rem;
 }
 
 .card-title {
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.25rem;
 }
 
 .card-subtitle {
@@ -3766,6 +3766,7 @@ tbody.collapse.show {
         flex-flow: row wrap;
     margin-right: -15px;
     margin-left: -15px;
+    justify-content: space-between;
   }
   .card-deck .card {
     display: -ms-flexbox;
@@ -3774,8 +3775,8 @@ tbody.collapse.show {
         flex: 1 0 0%;
     -ms-flex-direction: column;
         flex-direction: column;
-    margin-right: 15px;
-    margin-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
   }
 }
 
@@ -5201,7 +5202,7 @@ button.close {
   left: 15%;
   z-index: 10;
   padding-top: 20%;
-  padding-bottom: 10%;
+  padding-bottom: 2%;
   color: #fff;
   text-align: center;
 }

@@ -17,11 +17,28 @@
     <script src="/js/jquery-3.2.1.min.js"></script>
     <script src="/js/bootstrap.js"></script>
     <title>Offers</title>
+    <style>
+        .wrap {
+            text-align: justify;
+        }
+        .wrap .wrapdiv {
+            display: inline-block;
+            vertical-align: top;
+        }
+        .wrap:after {
+            display: inline-block;
+            content: "";
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
+<div class="container">
+    <jsp:include page="header.jsp"/>
+
 <div><span class="label" style="margin-left:15px;">Offers</span></div>
 <div><span class="label" style="margin-left:15px;"><a href="/">Main</a></span></div>
-<div class="card-deck rounded mx-auto d-block">
+<div class="wrap rounded" style="margin-top: 10px">
     <%
         List<Offer> offerList1 = (List<Offer>) request.getAttribute("offerList");
         Iterator<Offer> iterator1 = offerList1.iterator();
@@ -29,43 +46,54 @@
             Offer offer1 = (Offer) iterator1.next();%>
         <%
             Blob blob = (Blob) offer1.getOfferMainImage();
-            byte b[] = new byte[(int) blob.length()];
-            try {
-                b = blob.getBytes(1, (int) blob.length());
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-            ByteArrayInputStream bais = new ByteArrayInputStream(b);
-            //BufferedImage image = new BufferedImage(600,400,BufferedImage.TYPE_4BYTE_ABGR);
-            BufferedImage image = ImageIO.read(bais);
+            String b64 = "";
+            if (blob != null) {
+                if (blob.length() <= 1100000) {
+                byte b[] = new byte[(int) blob.length()];
+                try {
+                    b = blob.getBytes(1, (int) blob.length());
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                ByteArrayInputStream bais = new ByteArrayInputStream(b);
+                //BufferedImage image = new BufferedImage(600,400,BufferedImage.TYPE_4BYTE_ABGR);
+                BufferedImage image = ImageIO.read(bais);
 
-            ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            ImageIO.write(image, "png", baos);
-            baos.flush();
-            byte[] imageInByteArray = baos.toByteArray();
-            baos.close();
-            String b64 = javax.xml.bind.DatatypeConverter.printBase64Binary(imageInByteArray);
+                ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                ImageIO.write(image, "png", baos);
+                baos.flush();
+                byte[] imageInByteArray = baos.toByteArray();
+                baos.close();
+                b64 = javax.xml.bind.DatatypeConverter.printBase64Binary(imageInByteArray);
+                }else {
+                    b64 = "images/too_big_image.jpg";
+                }
+            } else {
+                b64 = "images/stolen_image.png";
+            }
         %>
-        <div class="card rounded float-left" style="width: 18rem;">
-            <img class="card-img-top img-thumbnail" src="data:image/png;base64,<%= b64 %>"
-                 alt="Card image cap" style="width: 300px;height: 300px">
-            <div class="card-body">
-                <h5 class="card-title"><%=offer1.getOfferName()%></h5>
-                <p class="card-text"><%=offer1.getOfferDescription()%></p>
-            </div>
+    <div class="wrapdiv rounded card" style="width: 15rem;">
+        <%if (blob != null && blob.length() <= 1100000) {%>
+        <img class="card-img-top img-thumbnail" src="data:image/png;base64,<%= b64 %>"
+             alt="Card image cap" style="width: 238px;height: 172px">
+        <%}else if(blob != null && blob.length() > 1100000)  {%>
+        <img class="card-img-top img-thumbnail" src="<%= b64 %>"
+             alt="Card image cap" style="width: 238px;height: 172px">
+        <%} else {%>
+        <img class="card-img-top img-thumbnail" src="<%= b64 %>" alt="Card image cap" style="width: 238px;height: 172px">
+        <%}%>
+        <div class="card-body" style="height: 50px;">
+            <h5 class="card-title" style="text-align: center"><%=offer1.getOfferName()%></h5>
+            <p class="card-text"><%=offer1.getOfferDescription()%></p>
         </div>
+    </div>
     <%}%>
 </div>
 <div style="clear: both"></div>
-<div class="row marketing">
-    <h4>Please, fill the image path</h4>
-    <form action="offers" method="post" enctype="multipart/form-data">
-        <h3 style="color:blue">Select image to upload:</h3>
-        <br/>
-        <input type="file" name="file"><br/>
-        <input class="btn btn-primary btn-lg" type="submit" value="Upload Image">
-    </form>
+    <!-- Site footer -->
+    <footer class="footer">
+        <p>&copy; Family joinery workshop Sequoia 2017-2018</p>
+    </footer>
 </div>
-
 </body>
 </html>

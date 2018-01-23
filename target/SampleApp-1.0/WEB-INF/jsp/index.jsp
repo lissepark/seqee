@@ -1,4 +1,4 @@
-<%@ page import="model.Offer" %>
+<%@ page pageEncoding="UTF-8" contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.Iterator" %>
 <%@ page import="com.mysql.jdbc.Blob" %>
@@ -7,7 +7,7 @@
 <%@ page import="java.awt.image.BufferedImage" %>
 <%@ page import="java.io.ByteArrayOutputStream" %>
 <%@ page import="javax.imageio.ImageIO" %>
-<%@ page pageEncoding="UTF-8" contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="model.Category" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
@@ -20,56 +20,25 @@
         для фото, Индивидуальные проекты Family joinery workshop Sequoia">
     <title>Резной декор, Мебель из дерева, Посуда из дерева, Торцевые разделочные доски, Рамки
         для фото, Индивидуальные проекты Family joinery workshop Sequoia</title>
+    <style>
+        .wrap {
+            text-align: justify;
+        }
+        .wrap .wrapdiv {
+            display: inline-block;
+            vertical-align: top;
+        }
+        .wrap:after {
+            display: inline-block;
+            content: "";
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
 
 <div class="container">
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-left: auto">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Главная<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Мой кабинет</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Оплата и доставка</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Обратная связь</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Контакты</a>
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-        </div>
-    </nav>
-
-    <div class="masthead" style="margin-top: 10px">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <img src="images/seq_logo.png" class="rounded float-left" alt="Sequoia">
-                </div>
-                <div class="col-md-auto">
-                    <p class="text-lg-left h4 text-muted">Семейная столярная мастерская</p>
-                    <p class="text-xl-left h3 text-muted">Family joinery workshop Sequoia</p>
-                    <h6 class="text-sm-left">+38(099)682-15-44</h6>
-                    <h6 class="text-sm-left">+38(099)349-63-12</h6>
-                    <h6 class="text-sm-left">fjwsequoia@gmail.com</h6>
-                </div>
-                <div class="col col-lg-2" style="align-content: flex-end">
-                    Корзина
-                </div>
-            </div>
-        </div>
-    </div>
+    <jsp:include page="header.jsp"/>
 
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="width: 100%; height: 200px;margin-top: 6px">
         <ol class="carousel-indicators">
@@ -110,38 +79,54 @@
         </a>
     </div>
 
-    <div class="card-deck rounded mx-auto d-block" style="margin-top: 10px">
+    <div class="wrap rounded" style="margin-top: 10px">
         <%
-            List<Offer> offerList1 = (List<Offer>) request.getAttribute("offerList");
-            Iterator<Offer> iterator1 = offerList1.iterator();
+            List<Category> categoryList1 = (List<Category>) request.getAttribute("categoryList");
+            Iterator<Category> iterator1 = categoryList1.iterator();
             while (iterator1.hasNext()) {
-                Offer offer1 = (Offer) iterator1.next();%>
+                Category category1 = (Category) iterator1.next();%>
         <%
-            Blob blob = (Blob) offer1.getOfferMainImage();
-            byte b[] = new byte[(int) blob.length()];
-            try {
-                b = blob.getBytes(1, (int) blob.length());
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-            ByteArrayInputStream bais = new ByteArrayInputStream(b);
-            //BufferedImage image = new BufferedImage(600,400,BufferedImage.TYPE_4BYTE_ABGR);
-            BufferedImage image = ImageIO.read(bais);
+            Blob blob = (Blob) category1.getCategoryMainImage();
+            String b64 = "";
+            if (blob != null) {
+                if (blob.length() <= 1100000) {
+                    byte b[] = new byte[(int) blob.length()];
+                    try {
+                        b = blob.getBytes(1, (int) blob.length());
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                    ByteArrayInputStream bais = new ByteArrayInputStream(b);
+                    //BufferedImage image = new BufferedImage(600,400,BufferedImage.TYPE_4BYTE_ABGR);
+                    BufferedImage image = ImageIO.read(bais);
 
-            ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            ImageIO.write(image, "png", baos);
-            baos.flush();
-            byte[] imageInByteArray = baos.toByteArray();
-            baos.close();
-            String b64 = javax.xml.bind.DatatypeConverter.printBase64Binary(imageInByteArray);
+                    ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                    ImageIO.write(image, "png", baos);
+                    baos.flush();
+                    byte[] imageInByteArray = baos.toByteArray();
+                    baos.close();
+                    b64 = javax.xml.bind.DatatypeConverter.printBase64Binary(imageInByteArray);
+                }else {
+                    b64 = "images/too_big_image.jpg";
+                }
+            }else{
+                b64 = "images/stolen_image.png";
+            }
         %>
-        <div class="card rounded float-left" style="width: 14rem;">
-            <img class="card-img-top img-thumbnail" src="data:image/png;base64,<%= b64 %>"
-                 alt="Card image cap" style="width: 220px;height: 160px">
-            <div class="card-body">
-                <h5 class="card-title"><%=offer1.getOfferName()%></h5>
-                <p class="card-text"><%=offer1.getOfferDescription()%></p>
-            </div>
+        <div class="wrapdiv rounded card" style="width: 15rem;">
+            <%if (blob != null && blob.length() <= 1100000) {%>
+            <a href="/offers?category_id=<%=category1.getId()%>"><img class="card-img-top img-thumbnail" src="data:image/png;base64,<%= b64 %>"
+                 alt="Card image cap" style="width: 238px;height: 172px"></a>
+            <%}else if(blob != null && blob.length() > 1100000)  {%>
+            <a href="/offers?category_id=<%=category1.getId()%>"><img class="card-img-top img-thumbnail" src="<%= b64 %>"
+                 alt="Card image cap" style="width: 238px;height: 172px"></a>
+            <%} else {%>
+                <a href="/offers?category_id=<%=category1.getId()%>"><img class="card-img-top img-thumbnail" src="<%= b64 %>"
+                                                                          alt="Card image cap" style="width: 238px;height: 172px"></a>
+            <%}%>
+            <a href="/offers?category_id=<%=category1.getId()%>"><div class="card-body" style="height: 50px;">
+                <h5 class="card-title" style="text-align: center"><%=category1.getCategoryName()%></h5>
+            </div></a>
         </div>
         <%}%>
     </div>

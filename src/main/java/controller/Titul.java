@@ -27,7 +27,7 @@ public class Titul extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
 
-        ApplicationContext actx = new ClassPathXmlApplicationContext("/WEB-INF/beans.xml");
+        //ApplicationContext actx = new ClassPathXmlApplicationContext("/WEB-INF/beans.xml");
 
         OfferDAO offerDAO = new OfferDAOImpl();
         List<Category> categoryList = offerDAO.getAllCategories();
