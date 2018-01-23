@@ -28,8 +28,9 @@ public class Titul extends HttpServlet {
             throws ServletException, IOException {
 
         ApplicationContext actx = new ClassPathXmlApplicationContext("beans.xml");
+        OfferDAO offerDAO = (OfferDAO) actx.getBean("daoImpl");
 
-        OfferDAO offerDAO = new OfferDAOImpl();
+        //OfferDAO offerDAO = new OfferDAOImpl();
         List<Category> categoryList = offerDAO.getAllCategories();
         req.setAttribute("categoryList", categoryList);
 
