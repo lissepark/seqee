@@ -1,5 +1,8 @@
 package model;
 
+/**
+ * Created by sergii on 1/26/18.
+ */
 public class User {
     private String username;
     private String password;
