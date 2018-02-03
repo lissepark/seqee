@@ -2,6 +2,7 @@ package dao;
 
 import model.Category;
 import model.Offer;
+import model.User;
 
 import java.io.InputStream;
 import java.sql.Blob;
@@ -23,4 +24,5 @@ public interface OfferDAO {
     public int insertOfferingsImage(String image_name, int offer_id, InputStream input, long len) throws SQLException;
     public List<Blob> selectOfferingsImage(int offer_id) throws SQLException;
     public List<Offer>searchOffersByKeyword(String keyWord);
+    public User getUserByUserName(String user_name) throws SQLException;
 }

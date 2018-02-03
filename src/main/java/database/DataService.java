@@ -9,6 +9,7 @@ import java.util.List;
 import constants.Constants;
 import model.Category;
 import model.Offer;
+import model.User;
 import org.apache.log4j.Logger;
 
 public class DataService {
@@ -109,35 +110,13 @@ public class DataService {
         return blobs;
     }
 
-/*
-    public List<Discipline> getAllDisciplines(){
+    public User getUserByUserName(String user_name) throws SQLException {
         DBConnection conn = getDBConnection();
-        List <Discipline> result = conn.getAllDisciplines();
+        User user = conn.getUserByUserName(user_name);
         this.putDBConnection(conn);
-        return result;
+        return user;
     }
 
-    public int changeDiscipline(Discipline discipline) throws SQLException {
-        DBConnection conn = getDBConnection();
-        int result = conn.changeDiscipline(discipline);
-        this.putDBConnection(conn);
-        return result;
-    }
-
-    public Discipline selectDisciplineById(int id) throws SQLException {
-        DBConnection conn = getDBConnection();
-        Discipline result = conn.selectDisciplineById(id);
-        this.putDBConnection(conn);
-        return result;
-    }
-
-    public int deleteDiscipline(Discipline discipline) throws SQLException {
-        DBConnection conn = getDBConnection();
-        int result = conn.deleteDiscipline(discipline);
-        this.putDBConnection(conn);
-        return result;
-    }
-*/
     public void close() {
     }
 

@@ -4,6 +4,7 @@ import dao.OfferDAO;
 import database.DataService;
 import model.Category;
 import model.Offer;
+import model.User;
 
 import java.io.InputStream;
 import java.sql.*;
@@ -55,4 +56,8 @@ public class OfferDAOImpl implements OfferDAO {
     public List<Blob> selectOfferingsImage(int offer_id) throws SQLException {
         return dataService.selectOfferingsImage(offer_id);
     }
+
+    public User getUserByUserName(String user_name) throws SQLException {
+        return dataService.getUserByUserName(user_name);
+    };
 }
