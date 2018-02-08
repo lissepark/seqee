@@ -2,6 +2,7 @@ package services;
 
 import dao.OfferDAO;
 import daoImpl.OfferDAOImpl;
+import database.DataService;
 import model.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -15,7 +16,7 @@ public class ServiceUser implements UserDetailsService {
 
     OfferDAO offerDAO = new OfferDAOImpl();
 
-    public ServiceUser() {
+    public ServiceUser(DataService dataService) {
 
     }
 
