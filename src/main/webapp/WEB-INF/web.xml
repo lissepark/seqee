@@ -25,6 +25,7 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
   </filter-mapping>
 
 
+
   <servlet>
     <servlet-name>Titul</servlet-name>
     <servlet-class>controller.Titul</servlet-class>
