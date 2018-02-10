@@ -15,13 +15,6 @@
     </properties>
     
     <dependencies>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-framework-bom</artifactId>
-            <version>4.2.3.RELEASE</version>
-            <type>pom</type>
-        </dependency>
-
 
         <dependency>
             <groupId>javax</groupId>
