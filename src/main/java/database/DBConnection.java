@@ -3,7 +3,6 @@ package database;
 import model.Category;
 import model.Offer;
 import model.User;
-import org.apache.log4j.Logger;
 
 import java.io.File;
 import java.io.InputStream;
@@ -17,7 +16,6 @@ import java.util.Date;
 
 public class DBConnection {
 
-    private static final Logger LOGGER = Logger.getLogger(DBConnection.class);
     private Connection conn = null;
     private ResultSet rs = null;
 
@@ -40,7 +38,7 @@ public class DBConnection {
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
-            LOGGER.error("ClassNotFoundException - > DBConnection(String url); " + e);
+            System.out.println("ClassNotFoundException - > DBConnection(String url); " + e.getMessage());
         }
     }
 
@@ -122,7 +120,7 @@ public class DBConnection {
             insertOffering.setString(3, offer.getOfferImageName());
             return insertOffering.executeUpdate();
         } catch (SQLException e) {
-            LOGGER.debug("insertOffer - SQLException");
+            System.out.println("insertOffer - SQLException"+e.getMessage());
             return -1;
         }
     }
@@ -137,7 +135,7 @@ public class DBConnection {
             insertOffering.setInt(5, offer.getOfferCategory());
             return insertOffering.executeUpdate();
         } catch (SQLException e) {
-            LOGGER.debug("insertOffer with image - SQLException");
+            System.out.println("insertOffer with image - SQLException"+e.getMessage());
             return -1;
         }
     }
@@ -149,7 +147,7 @@ public class DBConnection {
             insertOfferingsImage.setBinaryStream(3, input, len);
             return insertOfferingsImage.executeUpdate();
         } catch (SQLException e) {
-            LOGGER.debug("insertOfferingsImage - SQLException");
+            System.out.println("insertOfferingsImage - SQLException"+e.getMessage());
             return -1;
         }
     }
@@ -166,7 +164,6 @@ public class DBConnection {
                 blobs.add(blob);
             }
         } catch(Exception e) {
-            LOGGER.error("selectOfferingsImage - > Error; " + e);
             e.printStackTrace();
         }
         return blobs;
@@ -201,7 +198,7 @@ public class DBConnection {
             insertCategory.setBinaryStream(4, input, len);
             return insertCategory.executeUpdate();
         } catch (SQLException e) {
-            LOGGER.debug("insertCategory with image - SQLException");
+            System.out.println("insertCategory with image - SQLException"+e.getMessage());
             return -1;
         }
     }
@@ -218,7 +215,7 @@ public class DBConnection {
                 //passw
             }
         } catch (SQLException e) {
-            LOGGER.debug("insertCategory with image - SQLException");
+            System.out.println("insertCategory with image - SQLException"+e.getMessage());
         }
         return user;
     }

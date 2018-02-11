@@ -10,17 +10,14 @@ import constants.Constants;
 import model.Category;
 import model.Offer;
 import model.User;
-import org.apache.log4j.Logger;
 
 public class DataService {
 
-    private static final Logger LOGGER = Logger.getLogger(DataService.class);
     private static List<DBConnection> connectionPool = new ArrayList<DBConnection>();
     private static Object monitor = new Object();
 
     public boolean init() {
         try{
-            LOGGER.info("init database");
             for (int i = 0; i < 5; i++){
                 newConnection();
             }
