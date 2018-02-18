@@ -46,7 +46,7 @@
         <h1>Services</h1>
     </div>
     <c:url value="/login" var="loginVar"/>
-    <form id="appointment-form" action="${loginVar}" method="POST">
+    <form id="appointment-form" action="/login" method="POST">
         <div class="form-group">
             <label for="make">Username</label>
             <input name="custom_username" class="form-control" />
