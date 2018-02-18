@@ -5,16 +5,22 @@
   Time: 10:36 PM
   To change this template use File | Settings | File Templates.
 --%>
+<%--
+  Created by IntelliJ IDEA.
+  User: seva0716
+  Date: 2/16/2018
+  Time: 10:36 PM
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
-<%@ page language="java" contentType="text/html; charset=UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>Kevin's Auto Service Center</title>
+
+    <title>Sequoia admin page Login</title>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet"
@@ -42,7 +48,7 @@
     <c:url value="/login" var="loginVar"/>
     <form id="appointment-form" action="${loginVar}" method="POST">
         <div class="form-group">
-            <label for="make"> Username </label>
+            <label for="make">Username</label>
             <input name="custom_username" class="form-control" />
         </div>
         <div class="form-group">
@@ -50,6 +56,9 @@
             <input type="password" name="custom_password" class="form-control" />
         </div>
         <sec:csrfInput/>
+        <c:if test="${param.error != null }">
+            <h3 style="color: red">Invalid Username or Password.</h3>
+        </c:if>
         <button type="submit" id="btn-save" class="btn btn-primary">Login</button>
     </form>
 </div>

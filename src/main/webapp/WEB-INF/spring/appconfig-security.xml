@@ -5,11 +5,13 @@
          xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 						http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
 
+    <b:bean class="org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler"/>
     <security:http auto-config="true" use-expressions="false">
-        <security:form-login login-page="/login" login-processing-url="/login" username-parameter="custom_username"
-                             password-parameter="custom_password"/>
         <security:intercept-url pattern="/adminruslan/**" access="ROLE_USER" />
         <security:intercept-url pattern="/**" access="ROLE_ANONYMOUS,ROLE_USER" />
+        <security:form-login login-page="/login" default-target-url="/adminruslan" authentication-failure-url="/login?error=true"
+                             username-parameter="custom_username"
+                             password-parameter="custom_password"/>
     </security:http>
 
     <security:authentication-manager>

@@ -9,6 +9,8 @@
 <%@ page import="javax.imageio.ImageIO" %>
 <%@ page import="model.Category" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
 <html>
 <head>
     <link rel="stylesheet" href="/css/bootstrap.css">
@@ -39,6 +41,7 @@
 
 <div class="container">
     <jsp:include page="header.jsp"/>
+    <sec:authorize access="authenticated" var="authenticated"/>
 
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="width: 100%; height: 200px;margin-top: 6px">
         <ol class="carousel-indicators">
@@ -116,13 +119,18 @@
         <div class="wrapdiv rounded card" style="width: 15rem;">
             <%if (blob != null && blob.length() <= 1100000) {%>
             <a href="/offers?category_id=<%=category1.getId()%>"><img class="card-img-top img-thumbnail" src="data:image/png;base64,<%= b64 %>"
-                 alt="Card image cap" style="width: 238px;height: 172px"></a>
+                                                                      alt="Card image cap" style="width: 238px;height: 172px"></a>
+            <c:choose>
+                <c:when test="${authenticated}">
+                    <a href="/offers?category_id=<%=category1.getId()%>"><button type="button" class="btn btn-primary">Edit</button></a>
+                </c:when>
+            </c:choose>
             <%}else if(blob != null && blob.length() > 1100000)  {%>
             <a href="/offers?category_id=<%=category1.getId()%>"><img class="card-img-top img-thumbnail" src="<%= b64 %>"
-                 alt="Card image cap" style="width: 238px;height: 172px"></a>
+                                                                      alt="Card image cap" style="width: 238px;height: 172px"></a>
             <%} else {%>
-                <a href="/offers?category_id=<%=category1.getId()%>"><img class="card-img-top img-thumbnail" src="<%= b64 %>"
-                                                                          alt="Card image cap" style="width: 238px;height: 172px"></a>
+            <a href="/offers?category_id=<%=category1.getId()%>"><img class="card-img-top img-thumbnail" src="<%= b64 %>"
+                                                                      alt="Card image cap" style="width: 238px;height: 172px"></a>
             <%}%>
             <a href="/offers?category_id=<%=category1.getId()%>"><div class="card-body" style="height: 50px;">
                 <h5 class="card-title" style="text-align: center"><%=category1.getCategoryName()%></h5>
