@@ -15,11 +15,11 @@
     <script src="/js/bootstrap.js"></script>
 </head>
 <body>
-<a href="/addcategory"><button type="button" class="btn btn-primary btn-lg btn-block">Add a Category</button></a>
+<jsp:include page="header.jsp" />
+<a href="/adminruslan/addcategory"><button type="button" class="btn btn-primary btn-lg btn-block">Add a Category</button></a>
 <br>
-<a href="/addoffer"><button type="button" class="btn btn-primary btn-lg btn-block">Add an Offering</button></a>
+<a href="/adminruslan/addoffer"><button type="button" class="btn btn-primary btn-lg btn-block">Add an Offering</button></a>
 <br>
 <a href="/"><button type="button" class="btn btn-outline-primary">Go to main page</button></a>
-<button type="button" class="btn btn-outline-warning">Go to app as Administrator (doesn't work yet)</button>
 </body>
 </html>

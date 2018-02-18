@@ -54,7 +54,7 @@
             <c:choose>
                 <c:when test="${authenticated}">
                     <li class="nav-item">
-                        <a href="<c:url value="/logout"/>">Logout</a>
+                        <a class="nav-link" href="<c:url value="/logout"/>">Logout</a>
                     </li>
                 </c:when>
             </c:choose>
