@@ -79,7 +79,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <img src="images/seq_logo.png" class="rounded float-left" alt="Sequoia">
+                <img src="http://www.fjwsequoia.com/images/seq_logo.png" class="rounded float-left" alt="Sequoia">
             </div>
             <div class="col-md-auto">
                 <p class="text-lg-left h4 text-muted">Семейная столярная мастерская</p>
