@@ -105,6 +105,15 @@
     <url-pattern>/login</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>EditCategory</servlet-name>
+    <servlet-class>controller.EditCategory</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditCategory</servlet-name>
+    <url-pattern>/adminruslan/editcategory</url-pattern>
+  </servlet-mapping>
+
   <mime-mapping>
     <extension>css</extension>
     <mime-type>text/css</mime-type>

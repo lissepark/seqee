@@ -86,6 +86,13 @@ public class DataService {
         return result;
     }
 
+    public Category getCategoryById(int catgId) throws SQLException {
+        DBConnection conn = getDBConnection();
+        Category result = conn.getCategoryById(catgId);
+        this.putDBConnection(conn);
+        return result;
+    }
+
     public int insertCategory(Category category, InputStream input, long len) throws SQLException {
         DBConnection conn = getDBConnection();
         int result = conn.insertCategory(category,input,len);

@@ -122,15 +122,25 @@
                                                                       alt="Card image cap" style="width: 238px;height: 172px"></a>
             <c:choose>
                 <c:when test="${authenticated}">
-                    <a href="/offers?category_id=<%=category1.getId()%>"><button type="button" class="btn btn-primary">Edit</button></a>
+                    <a href="/editcategory?category_id=<%=category1.getId()%>"><button type="button" class="btn btn-primary">Edit</button></a>
                 </c:when>
             </c:choose>
             <%}else if(blob != null && blob.length() > 1100000)  {%>
             <a href="/offers?category_id=<%=category1.getId()%>"><img class="card-img-top img-thumbnail" src="<%= b64 %>"
                                                                       alt="Card image cap" style="width: 238px;height: 172px"></a>
+            <c:choose>
+                <c:when test="${authenticated}">
+                    <a href="/editcategory?category_id=<%=category1.getId()%>"><button type="button" class="btn btn-primary">Edit</button></a>
+                </c:when>
+            </c:choose>
             <%} else {%>
             <a href="/offers?category_id=<%=category1.getId()%>"><img class="card-img-top img-thumbnail" src="<%= b64 %>"
                                                                       alt="Card image cap" style="width: 238px;height: 172px"></a>
+            <c:choose>
+                <c:when test="${authenticated}">
+                    <a href="/editcategory?category_id=<%=category1.getId()%>"><button type="button" class="btn btn-primary">Edit</button></a>
+                </c:when>
+            </c:choose>
             <%}%>
             <a href="/offers?category_id=<%=category1.getId()%>"><div class="card-body" style="height: 50px;">
                 <h5 class="card-title" style="text-align: center"><%=category1.getCategoryName()%></h5>

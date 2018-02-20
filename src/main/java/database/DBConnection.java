@@ -22,6 +22,7 @@ public class DBConnection {
     private static PreparedStatement getAllOffers;
     private static PreparedStatement insertOffering;
     private static PreparedStatement getAllCategories;
+    private static PreparedStatement getCategoryById;
     private static PreparedStatement insertCategory;
     private static PreparedStatement insertOfferingsImage;
     private static PreparedStatement selectOfferingsImage;
@@ -48,6 +49,7 @@ public class DBConnection {
             getOffersByCategoryId = conn.prepareStatement("SELECT * FROM offering where `category_id`=?");
             insertOffering = conn.prepareStatement("INSERT INTO offering SET `offering_name`=?, `offering_description`=?, `offer_image_name`=?, `image_nat`=?, `category_id`=?");
             getAllCategories = conn.prepareStatement("SELECT * FROM category");
+            getCategoryById = conn.prepareStatement("SELECT * FROM category where `category_id`=?");
             insertCategory = conn.prepareStatement("INSERT INTO category SET `category_name`=?, `category_description`=?, `category_order`=?, `category_image`=?");
             insertOfferingsImage = conn.prepareStatement("INSERT INTO images SET `image_name`=?, `offer_id`=?, `image_nat`=?");
             selectOfferingsImage = conn.prepareStatement("SELECT * FROM images where `offer_id`=?");
@@ -64,6 +66,7 @@ public class DBConnection {
             getOffersByCategoryId.close();
             insertOffering.close();
             getAllCategories.close();
+            getCategoryById.close();
             insertCategory.close();
             insertOfferingsImage.close();
             selectOfferingsImage.close();
@@ -188,6 +191,25 @@ public class DBConnection {
             e.printStackTrace();
         }
         return result;
+    }
+
+    public Category getCategoryById(int categoryId){
+        rs = null;
+        Category catg = new Category();
+        try {
+            getCategoryById.setInt(1, categoryId);
+            rs = getCategoryById.executeQuery();
+            while (rs.next()){
+                catg.setId(rs.getLong("category_id"));
+                catg.setCategoryName(rs.getString("category_name"));
+                catg.setCategoryDescription(rs.getString("category_description"));
+                catg.setCategoryOrder(rs.getString("category_order"));
+                catg.setCategoryMainImage((com.mysql.jdbc.Blob) rs.getBlob("category_image"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return catg;
     }
 
     public int insertCategory(Category category, InputStream input, long len) throws SQLException {

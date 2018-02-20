@@ -18,6 +18,7 @@ public interface OfferDAO {
     public void insertOffer(Offer offer) throws SQLException;
     public void insertOffer(Offer offer, InputStream input, long len) throws SQLException;
     public List<Category> getAllCategories();
+    public Category getCategoryById(int categoryId) throws SQLException;
     public void insertCategory(Category category, InputStream input, long len) throws SQLException;
     public void update(Offer offer);
     public void delete(Long offerId);
@@ -25,4 +26,5 @@ public interface OfferDAO {
     public List<Blob> selectOfferingsImage(int offer_id) throws SQLException;
     public List<Offer>searchOffersByKeyword(String keyWord);
     public User getUserByUserName(String user_name) throws SQLException;
+
 }

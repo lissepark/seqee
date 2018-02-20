@@ -44,6 +44,10 @@ public class OfferDAOImpl implements OfferDAO {
         dataService.insertCategory(category,input,len);
     }
 
+    public Category getCategoryById(int categoryId) throws SQLException {
+        return dataService.getCategoryById(categoryId);
+    }
+
     public void update(Offer offering) {
     }
     public void delete(Long offerId) {
