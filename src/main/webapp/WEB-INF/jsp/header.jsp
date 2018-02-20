@@ -15,6 +15,7 @@
     <link href="/css/style.css" rel="stylesheet">
     <script src="/js/jquery-3.2.1.min.js"></script>
     <script src="/js/bootstrap.js"></script>
+    <script src="/js/general.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <style>
         .wrap {
@@ -54,9 +55,17 @@
             <c:choose>
                 <c:when test="${authenticated}">
                     <li class="nav-item">
-                        <a class="nav-link" href="<c:url value="/logout"/>">Logout</a>
+                        <a id="logout" class="nav-link" href="#">Logout</a>
+                        <form id="logout-form" action="<c:url value="/logout"/>" method="post">
+                            <sec:csrfInput/>
+                        </form>
                     </li>
                 </c:when>
+                <c:otherwise>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Login</a>
+                    </li>
+                </c:otherwise>
             </c:choose>
         </ul>
         <form class="form-inline my-2 my-lg-0">

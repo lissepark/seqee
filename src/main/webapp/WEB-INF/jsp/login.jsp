@@ -56,6 +56,9 @@
             <input type="password" name="custom_password" class="form-control" />
         </div>
         <sec:csrfInput/>
+        <c:if test="${param.logout != null }">
+            <h3 style="color: darkgreen">You have successfully been logged out.</h3>
+        </c:if>
         <c:if test="${param.error != null }">
             <h3 style="color: red">Invalid Username or Password.</h3>
         </c:if>

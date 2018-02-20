@@ -13,6 +13,7 @@
                              authentication-failure-url="/login?error=true"
                              username-parameter="custom_username"
                              password-parameter="custom_password"/>
+        <security:logout logout-url="/logout" logout-success-url="/login?logout=true" />
     </security:http>
 
     <security:authentication-manager>
