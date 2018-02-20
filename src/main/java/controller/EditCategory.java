@@ -39,14 +39,19 @@ public class EditCategory extends HttpServlet{
             throws ServletException, IOException {
         ApplicationContext actx = new ClassPathXmlApplicationContext("beans.xml");
         OfferDAO offerDAO = (OfferDAO) actx.getBean("daoImpl");
-        Category category = new Category();
+        Category categoryById = new Category();
         String category_id_str = req.getParameter("category_id");
         try {
-            category = (Category) offerDAO.getCategoryById(Integer.parseInt(category_id_str));
+            categoryById = (Category) offerDAO.getCategoryById(Integer.parseInt(category_id_str));
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        req.setAttribute("categoryById", category);
+        System.out.println(categoryById.getCategoryName());
+        System.out.println(categoryById.getCategoryName());
+        System.out.println(categoryById.getCategoryName());
+        System.out.println(categoryById.getCategoryName());
+        System.out.println(categoryById.getCategoryName());
+        req.setAttribute("categoryById", categoryById);
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/editcategory.jsp");
         requestDispatcher.forward(req, resp);
     }

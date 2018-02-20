@@ -122,7 +122,7 @@
                                                                       alt="Card image cap" style="width: 238px;height: 172px"></a>
             <c:choose>
                 <c:when test="${authenticated}">
-                    <a href="/editcategory?category_id=<%=category1.getId()%>"><button type="button" class="btn btn-primary">Edit</button></a>
+                    <a href="/adminruslan/editcategory?category_id=<%=category1.getId()%>"><button type="button" class="btn btn-primary">Edit</button></a>
                 </c:when>
             </c:choose>
             <%}else if(blob != null && blob.length() > 1100000)  {%>
@@ -130,7 +130,7 @@
                                                                       alt="Card image cap" style="width: 238px;height: 172px"></a>
             <c:choose>
                 <c:when test="${authenticated}">
-                    <a href="/editcategory?category_id=<%=category1.getId()%>"><button type="button" class="btn btn-primary">Edit</button></a>
+                    <a href="/adminruslan/editcategory?category_id=<%=category1.getId()%>"><button type="button" class="btn btn-primary">Edit</button></a>
                 </c:when>
             </c:choose>
             <%} else {%>
@@ -138,7 +138,7 @@
                                                                       alt="Card image cap" style="width: 238px;height: 172px"></a>
             <c:choose>
                 <c:when test="${authenticated}">
-                    <a href="/editcategory?category_id=<%=category1.getId()%>"><button type="button" class="btn btn-primary">Edit</button></a>
+                    <a href="/adminruslan/editcategory?category_id=<%=category1.getId()%>"><button type="button" class="btn btn-primary">Edit</button></a>
                 </c:when>
             </c:choose>
             <%}%>
