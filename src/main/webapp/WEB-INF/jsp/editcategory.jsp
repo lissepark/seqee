@@ -73,8 +73,9 @@
     %>
 
     <div style="margin-left: 2%">
+        <a href="/"><button type="button" class="btn btn-outline-primary">Go to main page</button></a>
         <h4>Please, fill the data and load an image</h4><br>
-        <form action="editcategory?category_id=<%=categoryById.getId()%>" method="post" enctype="multipart/form-data">
+        <form action="editcategory?${_csrf.parameterName}=${_csrf.token}&category_id=<%=categoryById.getId()%>" method="post" enctype="multipart/form-data">
             <p>
                 <input type="hidden" name="category_id" value="<%=categoryById.getId()%>"><br>
                 <input type="text" name="categoryName" value="<%=categoryById.getCategoryName()%>">Type Category name<br>
