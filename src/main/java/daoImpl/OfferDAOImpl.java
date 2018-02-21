@@ -40,8 +40,17 @@ public class OfferDAOImpl implements OfferDAO {
     public List<Category>getAllCategories(){
         return dataService.getAllCategories();
     }
+
     public void insertCategory(Category category, InputStream input, long len) throws SQLException{
         dataService.insertCategory(category,input,len);
+    }
+
+    public int updateCategoryWithImage(Category category, InputStream input, long len, int category_id) throws SQLException {
+        return dataService.updateCategoryWithImage(category, input, len, category_id);
+    }
+
+    public int updateCategoryWithoutImage(Category category, int category_id) throws SQLException {
+        return dataService.updateCategoryWithoutImage(category, category_id);
     }
 
     public Category getCategoryById(int categoryId) throws SQLException {

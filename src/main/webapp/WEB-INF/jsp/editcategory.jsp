@@ -54,9 +54,7 @@
                     e.printStackTrace();
                 }
                 ByteArrayInputStream bais = new ByteArrayInputStream(b);
-                //BufferedImage image = new BufferedImage(600,400,BufferedImage.TYPE_4BYTE_ABGR);
                 BufferedImage image = ImageIO.read(bais);
-
                 ByteArrayOutputStream baos = new ByteArrayOutputStream();
                 ImageIO.write(image, "png", baos);
                 baos.flush();
@@ -75,6 +73,7 @@
         <h4>Please, fill the data and load an image</h4><br>
         <form action="editcategory" method="post" enctype="multipart/form-data">
             <p>
+                <input type="hidden" name="category_id" value="<%=categoryById.getId()%>"><br>
                 <input type="text" name="categoryName" value="<%=categoryById.getCategoryName()%>">Type Category name<br>
                 <input type="text" name="categoryDescription" value="<%=categoryById.getCategoryDescription()%>">Type Category description<br>
             </p>
@@ -84,36 +83,17 @@
             <input class="btn btn-primary btn-lg" type="submit" value="Upload Image and send data">
         </form>
     </div>
-
     <div class="wrapdiv rounded card" style="width: 15rem;">
         <%if (blob != null && blob.length() <= 1100000) {%>
-        <a href="/offers?category_id=<%=categoryById.getId()%>"><img class="card-img-top img-thumbnail" src="data:image/png;base64,<%= b64 %>"
-                                                                  alt="Card image cap" style="width: 238px;height: 172px"></a>
-        <c:choose>
-            <c:when test="${authenticated}">
-                <a href="/editcategory?category_id=<%=categoryById.getId()%>"><button type="button" class="btn btn-primary">Edit</button></a>
-            </c:when>
-        </c:choose>
+        <img class="card-img-top img-thumbnail" src="data:image/png;base64,<%= b64 %>" alt="Card image cap" style="width: 238px;height: 172px">
         <%}else if(blob != null && blob.length() > 1100000)  {%>
-        <a href="/offers?category_id=<%=categoryById.getId()%>"><img class="card-img-top img-thumbnail" src="<%= b64 %>"
-                                                                  alt="Card image cap" style="width: 238px;height: 172px"></a>
-        <c:choose>
-            <c:when test="${authenticated}">
-                <a href="/editcategory?category_id=<%=categoryById.getId()%>"><button type="button" class="btn btn-primary">Edit</button></a>
-            </c:when>
-        </c:choose>
+        <img class="card-img-top img-thumbnail" src="<%= b64 %>" alt="Card image cap" style="width: 238px;height: 172px">
         <%} else {%>
-        <a href="/offers?category_id=<%=categoryById.getId()%>"><img class="card-img-top img-thumbnail" src="<%= b64 %>"
-                                                                  alt="Card image cap" style="width: 238px;height: 172px"></a>
-        <c:choose>
-            <c:when test="${authenticated}">
-                <a href="/editcategory?category_id=<%=categoryById.getId()%>"><button type="button" class="btn btn-primary">Edit</button></a>
-            </c:when>
-        </c:choose>
+        <img class="card-img-top img-thumbnail" src="<%= b64 %>" alt="Card image cap" style="width: 238px;height: 172px">
         <%}%>
-        <a href="/offers?category_id=<%=categoryById.getId()%>"><div class="card-body" style="height: 50px;">
+        <div class="card-body" style="height: 50px;">
             <h5 class="card-title" style="text-align: center"><%=categoryById.getCategoryName()%></h5>
-        </div></a>
+        </div>
     </div>
 
 </div>

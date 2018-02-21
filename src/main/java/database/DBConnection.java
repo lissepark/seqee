@@ -24,6 +24,8 @@ public class DBConnection {
     private static PreparedStatement getAllCategories;
     private static PreparedStatement getCategoryById;
     private static PreparedStatement insertCategory;
+    private static PreparedStatement updateCategoryWithImage;
+    private static PreparedStatement updateCategoryWithoutImage;
     private static PreparedStatement insertOfferingsImage;
     private static PreparedStatement selectOfferingsImage;
     private static PreparedStatement getOffersByCategoryId;
@@ -51,6 +53,8 @@ public class DBConnection {
             getAllCategories = conn.prepareStatement("SELECT * FROM category");
             getCategoryById = conn.prepareStatement("SELECT * FROM category where `category_id`=?");
             insertCategory = conn.prepareStatement("INSERT INTO category SET `category_name`=?, `category_description`=?, `category_order`=?, `category_image`=?");
+            updateCategoryWithImage = conn.prepareStatement("update category set `category_name`=?, `category_description`=?, `category_order`=?, `category_image`=? where `category_id`=?");
+            updateCategoryWithoutImage = conn.prepareStatement("update category set `category_name`=?, `category_description`=?, `category_order`=? where `category_id`=?");
             insertOfferingsImage = conn.prepareStatement("INSERT INTO images SET `image_name`=?, `offer_id`=?, `image_nat`=?");
             selectOfferingsImage = conn.prepareStatement("SELECT * FROM images where `offer_id`=?");
             getUserByUserName = conn.prepareStatement("SELECT * FROM users where `user_name`=?");
@@ -68,6 +72,8 @@ public class DBConnection {
             getAllCategories.close();
             getCategoryById.close();
             insertCategory.close();
+            updateCategoryWithImage.close();
+            updateCategoryWithoutImage.close();
             insertOfferingsImage.close();
             selectOfferingsImage.close();
             getUserByUserName.close();
@@ -221,6 +227,33 @@ public class DBConnection {
             return insertCategory.executeUpdate();
         } catch (SQLException e) {
             System.out.println("insertCategory with image - SQLException"+e.getMessage());
+            return -1;
+        }
+    }
+
+    public int updateCategoryWithImage(Category category, InputStream input, long len, int category_id) throws SQLException {
+        try {
+            updateCategoryWithImage.setString(1, category.getCategoryName());
+            updateCategoryWithImage.setString(2, category.getCategoryDescription());
+            updateCategoryWithImage.setString(3, category.getCategoryOrder());
+            updateCategoryWithImage.setBinaryStream(4, input, len);
+            updateCategoryWithImage.setInt(5, category_id);
+            return updateCategoryWithImage.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println("updateCategoryWithImage with image - SQLException"+e.getMessage());
+            return -1;
+        }
+    }
+
+    public int updateCategoryWithoutImage(Category category, int category_id) throws SQLException {
+        try {
+            updateCategoryWithoutImage.setString(1, category.getCategoryName());
+            updateCategoryWithoutImage.setString(2, category.getCategoryDescription());
+            updateCategoryWithoutImage.setString(3, category.getCategoryOrder());
+            updateCategoryWithoutImage.setInt(4, category_id);
+            return updateCategoryWithoutImage.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println("updateCategoryWithoutImage with image - SQLException"+e.getMessage());
             return -1;
         }
     }

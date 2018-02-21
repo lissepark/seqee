@@ -20,6 +20,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -33,6 +34,9 @@ public class EditCategory extends HttpServlet{
     public EditCategory() {
         super();
     }
+
+    OfferDAO offerDAO = new OfferDAOImpl();
+    Category category = new Category();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -59,52 +63,65 @@ public class EditCategory extends HttpServlet{
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        /*
-        if (!ServletFileUpload.isMultipartContent(req)) {
-            System.out.println("Nothing to upload");
-            return;
-        }
+        String name = null;
+        String description = null;
+        int catg_id = 0;
         FileItemFactory itemFactory = new DiskFileItemFactory();
         ServletFileUpload upload = new ServletFileUpload(itemFactory);
-        ArrayList pathList = new ArrayList();
+        String imgName = "";
         try {
             List<FileItem> items = upload.parseRequest(req);
-            for (FileItem item : items) {
-                String contentType = item.getContentType();
-                if (contentType != null) {
-                    if (!contentType.equals("image/png")) {
-                        System.out.println("Error. Only png or jpg format image files supported");
-                        continue;
+            Iterator<FileItem> iter = items.iterator();
+            File file = null;
+            InputStream input = null;
+            long leng = 0;
+            while (iter.hasNext()) {
+                FileItem item = (FileItem) iter.next();
+                if (item.isFormField()) {
+                    if ((item.getFieldName()).equals("categoryName")){
+                        name = item.getString();
+                        name = new String(name.getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
+                    } else if ((item.getFieldName()).equals("categoryDescription")){
+                        description = item.getString();
+                        description = new String(description.getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
+                    } else if ((item.getFieldName()).equals("category_id")){
+                        catg_id = Integer.parseInt(item.getString());
                     }
-                    File uploadDir = new File("/opt/app-root/src/src/main/webapp/images");
-                    File file = File.createTempFile("img", ".png", uploadDir);
-                    item.write(file);
-                    pathList.add(file.getPath());
-                    System.out.println(file.getPath());
-                    InputStream input = new FileInputStream(file);
-                    System.out.println("file.length() " + file.length());
-
-                    OutputStream output = new FileOutputStream(System.getenv("HOME") + "/src/main/webapp/images/" + file.getName());
-                    byte[] bytes = new byte[(int) file.length()];
-                    int read = 0;
-                    while ((read = input.read(bytes, 0, (int) file.length())) != -1) {
-                        output.write(bytes, 0, read);
-                        //output.flush();
+                } else {
+                    String contentType = item.getContentType();
+                    if (!contentType.equals("application/octet-stream")) {
+                        if (!contentType.equals("image/png") && !contentType.equals("image/jpeg")) {
+                            System.out.println("Error. Only png or jpg format image files supported");
+                            continue;
+                        }
+                        if (contentType.equals("image/png") || contentType.equals("image/jpeg")) {
+                            File uploadDir = new File("/opt/app-root/src/src/main/webapp/images");
+                            file = File.createTempFile("img", ".png", uploadDir);
+                            item.write(file);
+                            input = new FileInputStream(file);
+                            leng = file.length();
+                        }
                     }
-                    input.close();
-                    output.close();
-
-                    System.out.println("file.getName() " + file.getName());
-                    System.out.println("System.getenv(HOME) + file.getName() " + System.getenv("HOME") + "/images/" + file.getName());
+                    category.setCategoryName(name);
+                    category.setCategoryDescription(description);
+                    try {
+                        if (leng == 0) {
+                            offerDAO.updateCategoryWithoutImage(category,catg_id);
+                        } else if (leng != 0) {
+                            offerDAO.updateCategoryWithImage(category, input, leng,catg_id);
+                        }
+                        System.out.println(leng);
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         } catch (FileUploadException e) {
             System.out.println("FileUpload Exception");
         } catch (Exception ex) {
             ex.printStackTrace();
-            System.out.println("Other Exception in doPost of Analysis servlet");
+            System.out.println("Other Exception in doPost of EditCategory servlet");
         }
-*/
         doGet(req,resp);
     }
 }
