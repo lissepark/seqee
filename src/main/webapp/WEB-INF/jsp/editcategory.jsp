@@ -1,3 +1,4 @@
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ page import="model.Category" %>
 <%@ page import="java.sql.Blob" %>
 <%@ page import="java.sql.SQLException" %>
@@ -33,11 +34,13 @@
             width: 100%;
         }
     </style>
+    <sec:csrfMetaTags/>
+    <meta name="_csrf_parameter" content="_csrf" />
+    <meta name="_csrf_header" content="X-CSRF-TOKEN" />
+    <meta name="_csrf" content="e62835df-f1a0-49ea-bce7-bf96f998119c" />
 </head>
 <body>
 <jsp:include page="header.jsp" />
-
-
 
 <div class="wrap rounded" style="margin-top: 10px">
     <%
@@ -71,7 +74,7 @@
 
     <div style="margin-left: 2%">
         <h4>Please, fill the data and load an image</h4><br>
-        <form action="editcategory" method="post" enctype="multipart/form-data">
+        <form action="editcategory?${_csrf.parameterName}=${_csrf.token}" method="post" enctype="multipart/form-data">
             <p>
                 <input type="hidden" name="category_id" value="<%=categoryById.getId()%>"><br>
                 <input type="text" name="categoryName" value="<%=categoryById.getCategoryName()%>">Type Category name<br>
