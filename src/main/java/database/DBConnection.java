@@ -53,7 +53,7 @@ public class DBConnection {
             insertOffering = conn.prepareStatement("INSERT INTO offering SET `offering_name`=?, `offering_description`=?, `offer_image_name`=?, `image_nat`=?, `category_id`=?");
             getAllCategories = conn.prepareStatement("SELECT * FROM category");
             getCategoryById = conn.prepareStatement("SELECT * FROM category where `category_id`=?");
-            getOfferById = conn.prepareStatement("SELECT * FROM offering where `offer_id`=?");
+            getOfferById = conn.prepareStatement("SELECT * FROM offering where `offering_id`=?");
             insertCategory = conn.prepareStatement("INSERT INTO category SET `category_name`=?, `category_description`=?, `category_order`=?, `category_image`=?");
             updateCategoryWithImage = conn.prepareStatement("update category set `category_name`=?, `category_description`=?, `category_order`=?, `category_image`=? where `category_id`=?");
             updateCategoryWithoutImage = conn.prepareStatement("update category set `category_name`=?, `category_description`=?, `category_order`=? where `category_id`=?");

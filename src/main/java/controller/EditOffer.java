@@ -42,6 +42,11 @@ public class EditOffer extends HttpServlet{
         OfferDAO offerDAO = (OfferDAO) actx.getBean("daoImpl");
         Offer offerById = new Offer();
         String offer_id_str = req.getParameter("offer_id");
+
+        System.out.println(offer_id_str);
+        System.out.println(offer_id_str);
+        System.out.println(offer_id_str);
+
         try {
             offerById = (Offer) offerDAO.getOfferById(Integer.parseInt(offer_id_str));
         } catch (SQLException e) {
