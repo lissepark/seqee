@@ -118,7 +118,10 @@ public class EditCategory extends HttpServlet{
             System.out.println("Other Exception in doPost of EditCategory servlet");
         }
 
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/index.jsp");
+        RequestDispatcher requestDispatcher;
+        //requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/index.jsp");
+        //requestDispatcher.forward(req, resp);
+        requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/index.jsp");
         requestDispatcher.forward(req, resp);
     }
 }
