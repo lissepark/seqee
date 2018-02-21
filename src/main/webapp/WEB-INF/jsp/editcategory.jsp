@@ -74,7 +74,7 @@
 
     <div style="margin-left: 2%">
         <h4>Please, fill the data and load an image</h4><br>
-        <form action="editcategory?${_csrf.parameterName}=${_csrf.token}" method="post" enctype="multipart/form-data">
+        <form action="editcategory?category_id=<%=categoryById.getId()%>" method="post" enctype="multipart/form-data">
             <p>
                 <input type="hidden" name="category_id" value="<%=categoryById.getId()%>"><br>
                 <input type="text" name="categoryName" value="<%=categoryById.getCategoryName()%>">Type Category name<br>
