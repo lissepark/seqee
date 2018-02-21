@@ -93,6 +93,13 @@ public class DataService {
         return result;
     }
 
+    public Offer getOfferById(int offerId) throws SQLException {
+        DBConnection conn = getDBConnection();
+        Offer result = conn.getOfferById(offerId);
+        this.putDBConnection(conn);
+        return result;
+    }
+
     public int insertCategory(Category category, InputStream input, long len) throws SQLException {
         DBConnection conn = getDBConnection();
         int result = conn.insertCategory(category,input,len);

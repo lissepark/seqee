@@ -57,6 +57,10 @@ public class OfferDAOImpl implements OfferDAO {
         return dataService.getCategoryById(categoryId);
     }
 
+    public Offer getOfferById(int offerId) throws SQLException {
+        return dataService.getOfferById(offerId);
+    }
+
     public void update(Offer offering) {
     }
     public void delete(Long offerId) {

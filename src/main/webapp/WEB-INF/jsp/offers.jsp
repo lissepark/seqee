@@ -9,6 +9,8 @@
 <%@ page import="java.sql.SQLException" %>
 <%@ page pageEncoding="UTF-8" contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
 
 <html>
 <head>
@@ -35,11 +37,11 @@
 <body>
 <div class="container">
     <jsp:include page="header.jsp"/>
-
-<div><span class="label" style="margin-left:15px;">Offers</span></div>
-<div><span class="label" style="margin-left:15px;"><a href="/">Main</a></span></div>
-<div class="wrap rounded" style="margin-top: 10px">
-    <%
+    <sec:authorize access="authenticated" var="authenticated"/>
+    <div><span class="label" style="margin-left:15px;">Offers</span></div>
+    <div><span class="label" style="margin-left:15px;"><a href="/">Main</a></span></div>
+    <div class="wrap rounded" style="margin-top: 10px">
+        <%
         List<Offer> offerList1 = (List<Offer>) request.getAttribute("offerList");
         Iterator<Offer> iterator1 = offerList1.iterator();
         while (iterator1.hasNext()) {
@@ -76,11 +78,26 @@
         <%if (blob != null && blob.length() <= 1100000) {%>
         <img class="card-img-top img-thumbnail" src="data:image/png;base64,<%= b64 %>"
              alt="Card image cap" style="width: 238px;height: 172px">
+        <c:choose>
+            <c:when test="${authenticated}">
+                <a href="/adminruslan/editoffer?offer_id=<%=offer1.getId()%>"><button type="button" class="btn btn-primary">Edit</button></a>
+            </c:when>
+        </c:choose>
         <%}else if(blob != null && blob.length() > 1100000)  {%>
         <img class="card-img-top img-thumbnail" src="<%= b64 %>"
              alt="Card image cap" style="width: 238px;height: 172px">
+        <c:choose>
+            <c:when test="${authenticated}">
+                <a href="/adminruslan/editoffer?offer_id=<%=offer1.getId()%>"><button type="button" class="btn btn-primary">Edit</button></a>
+            </c:when>
+        </c:choose>
         <%} else {%>
         <img class="card-img-top img-thumbnail" src="<%= b64 %>" alt="Card image cap" style="width: 238px;height: 172px">
+        <c:choose>
+            <c:when test="${authenticated}">
+                <a href="/adminruslan/editoffer?offer_id=<%=offer1.getId()%>"><button type="button" class="btn btn-primary">Edit</button></a>
+            </c:when>
+        </c:choose>
         <%}%>
         <div class="card-body" style="height: 50px;">
             <h5 class="card-title" style="text-align: center"><%=offer1.getOfferName()%></h5>

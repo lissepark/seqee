@@ -19,6 +19,7 @@ public interface OfferDAO {
     public void insertOffer(Offer offer, InputStream input, long len) throws SQLException;
     public List<Category> getAllCategories();
     public Category getCategoryById(int categoryId) throws SQLException;
+    public Offer getOfferById(int offerId) throws SQLException;
     public void insertCategory(Category category, InputStream input, long len) throws SQLException;
     public int updateCategoryWithImage(Category category, InputStream input, long len, int category_id) throws SQLException;
     public int updateCategoryWithoutImage(Category category, int category_id) throws SQLException;

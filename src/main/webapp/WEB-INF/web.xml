@@ -114,6 +114,15 @@
     <url-pattern>/adminruslan/editcategory</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>EditOffer</servlet-name>
+    <servlet-class>controller.EditOffer</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditOffer</servlet-name>
+    <url-pattern>/adminruslan/editoffer</url-pattern>
+  </servlet-mapping>
+
   <mime-mapping>
     <extension>css</extension>
     <mime-type>text/css</mime-type>
