@@ -81,6 +81,7 @@
             <br/>
             <input type="file" name="file"><br/>
             <input class="btn btn-primary btn-lg" type="submit" value="Upload Image and send data">
+            <input type="hidden"  name="${_csrf.parameterName}"   value="${_csrf.token}"/>
         </form>
     </div>
     <div class="wrapdiv rounded card" style="width: 15rem;">
