@@ -44,9 +44,9 @@
 
 <div class="wrap rounded" style="margin-top: 10px">
     <%
-        Category categoryById = (Category) request.getAttribute("categoryById");
+        Offer offerById = (Offer) request.getAttribute("offerById");
 
-        Blob blob = (Blob) categoryById.getCategoryMainImage();
+        Blob blob = (Blob) offerById.getOfferMainImage();
         String b64 = "";
         if (blob != null) {
             if (blob.length() <= 1100000) {
@@ -75,11 +75,11 @@
     <div style="margin-left: 2%">
         <a href="/"><button type="button" class="btn btn-outline-primary">Go to main page</button></a>
         <h4>Please, fill the data and load an image</h4><br>
-        <form action="editcategory?${_csrf.parameterName}=${_csrf.token}&category_id=<%=categoryById.getId()%>" method="post" enctype="multipart/form-data">
+        <form action="editoffer?${_csrf.parameterName}=${_csrf.token}&offering_id=<%=offerById.getId()%>" method="post" enctype="multipart/form-data">
             <p>
-                <input type="hidden" name="category_id" value="<%=categoryById.getId()%>"><br>
-                <input type="text" name="categoryName" value="<%=categoryById.getCategoryName()%>">Type Category name<br>
-                <input type="text" name="categoryDescription" value="<%=categoryById.getCategoryDescription()%>">Type Category description<br>
+                <input type="hidden" name="category_id" value="<%=offerById.getId()%>"><br>
+                <input type="text" name="categoryName" value="<%=offerById.getOfferName()%>">Type Offer name<br>
+                <input type="text" name="categoryDescription" value="<%=offerById.getOfferDescription()%>">Type Offer description<br>
             </p>
             <h4 style="color:blue">Select image for Category to upload:</h4>
             <br/>
@@ -97,7 +97,7 @@
         <img class="card-img-top img-thumbnail" src="<%= b64 %>" alt="Card image cap" style="width: 238px;height: 172px">
         <%}%>
         <div class="card-body" style="height: 50px;">
-            <h5 class="card-title" style="text-align: center"><%=categoryById.getCategoryName()%></h5>
+            <h5 class="card-title" style="text-align: center"><%=offerById.getOfferName()%></h5>
         </div>
     </div>
 

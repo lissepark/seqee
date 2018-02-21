@@ -55,7 +55,7 @@ public class EditOffer extends HttpServlet{
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        String name = null;
+     /*   String name = null;
         String description = null;
         int catg_id = 0;
         FileItemFactory itemFactory = new DiskFileItemFactory();
@@ -117,6 +117,6 @@ public class EditOffer extends HttpServlet{
         doGet(req, resp);
         //RequestDispatcher requestDispatcher;
         //requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/index.jsp");
-        //requestDispatcher.forward(req, resp);
+        //requestDispatcher.forward(req, resp);*/
     }
 }
