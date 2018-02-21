@@ -50,11 +50,6 @@ public class EditCategory extends HttpServlet{
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        System.out.println(categoryById.getCategoryName());
-        System.out.println(categoryById.getCategoryName());
-        System.out.println(categoryById.getCategoryName());
-        System.out.println(categoryById.getCategoryName());
-        System.out.println(categoryById.getCategoryName());
         req.setAttribute("categoryById", categoryById);
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/editcategory.jsp");
         requestDispatcher.forward(req, resp);
@@ -122,6 +117,8 @@ public class EditCategory extends HttpServlet{
             ex.printStackTrace();
             System.out.println("Other Exception in doPost of EditCategory servlet");
         }
-        doGet(req,resp);
+
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/index.jsp");
+        requestDispatcher.forward(req, resp);
     }
 }
