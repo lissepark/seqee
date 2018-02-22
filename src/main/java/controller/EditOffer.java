@@ -33,10 +33,10 @@ public class EditOffer extends HttpServlet{
     OfferDAO offerDAO = new OfferDAOImpl();
     Offer offer = new Offer();
 
-    private void getAllCategories(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
-        List<Category> categoryList = offerDAO.getAllCategories();
-        request.setAttribute("categoryList", categoryList);
-    }
+    //private void getAllCategories(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
+    //    List<Category> categoryList = offerDAO.getAllCategories();
+    //    request.setAttribute("categoryList", categoryList);
+    //}
 
     public EditOffer() {
         super();
@@ -48,6 +48,9 @@ public class EditOffer extends HttpServlet{
         ApplicationContext actx = new ClassPathXmlApplicationContext("beans.xml");
         OfferDAO offerDAO = (OfferDAO) actx.getBean("daoImpl");
 
+        List<Category> categoryList = offerDAO.getAllCategories();
+        req.setAttribute("categoryList", categoryList);
+
         Offer offerById = new Offer();
         String offer_id_str = req.getParameter("offer_id");
         try {
@@ -56,7 +59,8 @@ public class EditOffer extends HttpServlet{
             e.printStackTrace();
         }
         req.setAttribute("offerById", offerById);
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/editoffer.jsp");
+        RequestDispatcher requestDispatcher;
+        requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/editoffer.jsp");
         requestDispatcher.forward(req, resp);
     }
 
