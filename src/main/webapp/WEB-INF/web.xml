@@ -123,6 +123,15 @@
     <url-pattern>/adminruslan/editoffer</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>DeleteOffer</servlet-name>
+    <servlet-class>controller.DeleteOffer</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteOffer</servlet-name>
+    <url-pattern>/adminruslan/deleteoffer</url-pattern>
+  </servlet-mapping>
+
   <mime-mapping>
     <extension>css</extension>
     <mime-type>text/css</mime-type>

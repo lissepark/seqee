@@ -100,6 +100,13 @@ public class DataService {
         return result;
     }
 
+    public int deleteOfferById(int offerId) throws SQLException {
+        DBConnection conn = getDBConnection();
+        int result = conn.deleteOfferById(offerId);
+        this.putDBConnection(conn);
+        return result;
+    }
+
     public int insertCategory(Category category, InputStream input, long len) throws SQLException {
         DBConnection conn = getDBConnection();
         int result = conn.insertCategory(category,input,len);

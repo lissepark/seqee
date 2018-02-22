@@ -24,6 +24,7 @@ public class DBConnection {
     private static PreparedStatement getAllCategories;
     private static PreparedStatement getCategoryById;
     private static PreparedStatement getOfferById;
+    private static PreparedStatement deleteOfferById;
     private static PreparedStatement insertCategory;
     private static PreparedStatement updateCategoryWithImage;
     private static PreparedStatement updateCategoryWithoutImage;
@@ -56,13 +57,12 @@ public class DBConnection {
             getAllCategories = conn.prepareStatement("SELECT * FROM category");
             getCategoryById = conn.prepareStatement("SELECT * FROM category where `category_id`=?");
             getOfferById = conn.prepareStatement("SELECT * FROM offering where `offering_id`=?");
+            deleteOfferById = conn.prepareStatement("DELETE FROM offering where `offering_id`=?");
             insertCategory = conn.prepareStatement("INSERT INTO category SET `category_name`=?, `category_description`=?, `category_order`=?, `category_image`=?");
             updateCategoryWithImage = conn.prepareStatement("update category set `category_name`=?, `category_description`=?, `category_order`=?, `category_image`=? where `category_id`=?");
             updateCategoryWithoutImage = conn.prepareStatement("update category set `category_name`=?, `category_description`=?, `category_order`=? where `category_id`=?");
-
             updateOfferWithImage = conn.prepareStatement("update offering set `offering_name`=?, `offering_description`=?, `offer_image_name`=?, `image_nat`=?, `category_id`=? where `offering_id`=?");
             updateOfferWithoutImage = conn.prepareStatement("update offering set `offering_name`=?, `offering_description`=?, `offer_image_name`=?, `category_id`=? where `offering_id`=?");
-
             insertOfferingsImage = conn.prepareStatement("INSERT INTO images SET `image_name`=?, `offer_id`=?, `image_nat`=?");
             selectOfferingsImage = conn.prepareStatement("SELECT * FROM images where `offer_id`=?");
             getUserByUserName = conn.prepareStatement("SELECT * FROM users where `user_name`=?");
@@ -80,6 +80,7 @@ public class DBConnection {
             getAllCategories.close();
             getCategoryById.close();
             getOfferById.close();
+            deleteOfferById.close();
             insertCategory.close();
             updateCategoryWithImage.close();
             updateCategoryWithoutImage.close();
@@ -246,6 +247,16 @@ public class DBConnection {
             e.printStackTrace();
         }
         return offer;
+    }
+
+    public int deleteOfferById(int offerId) throws SQLException{
+        try {
+            deleteOfferById.setInt(1, offerId);
+            rs = getOfferById.executeQuery();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return -1;
     }
 
     public int insertCategory(Category category, InputStream input, long len) throws SQLException {

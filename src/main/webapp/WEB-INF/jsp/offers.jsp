@@ -81,6 +81,7 @@
         <c:choose>
             <c:when test="${authenticated}">
                 <a href="/adminruslan/editoffer?offer_id=<%=offer1.getId()%>"><button type="button" class="btn btn-primary">Edit</button></a>
+                <a href="/adminruslan/deleteoffer?offer_id=<%=offer1.getId()%>"><button type="button" class="btn btn-danger">Delete</button></a>
             </c:when>
         </c:choose>
         <%}else if(blob != null && blob.length() > 1100000)  {%>
@@ -89,6 +90,7 @@
         <c:choose>
             <c:when test="${authenticated}">
                 <a href="/adminruslan/editoffer?offer_id=<%=offer1.getId()%>"><button type="button" class="btn btn-primary">Edit</button></a>
+                <a href="/adminruslan/deleteoffer?offer_id=<%=offer1.getId()%>"><button type="button" class="btn btn-danger">Delete</button></a>
             </c:when>
         </c:choose>
         <%} else {%>
@@ -96,6 +98,7 @@
         <c:choose>
             <c:when test="${authenticated}">
                 <a href="/adminruslan/editoffer?offer_id=<%=offer1.getId()%>"><button type="button" class="btn btn-primary">Edit</button></a>
+                <a href="/adminruslan/deleteoffer?offer_id=<%=offer1.getId()%>"><button type="button" class="btn btn-danger">Delete</button></a>
             </c:when>
         </c:choose>
         <%}%>
