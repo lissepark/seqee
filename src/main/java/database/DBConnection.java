@@ -304,6 +304,12 @@ public class DBConnection {
     }
 
     public int updateOfferWithoutImage(Offer offer, int category_id) throws SQLException {
+
+        System.out.println("getId "+offer.getId());
+        System.out.println("getOfferName "+offer.getOfferName());
+        System.out.println("getOfferDescription "+offer.getOfferDescription());
+        System.out.println("category_id "+category_id);
+
         try {
             updateOfferWithoutImage.setString(1, offer.getOfferName());
             updateOfferWithoutImage.setString(2, offer.getOfferDescription());
