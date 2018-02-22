@@ -8,7 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6bab637c-c3bf-47ce-8296-4fd3ec37ee1b" name="Default" comment="add admin page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/EditOffer.java" afterPath="$PROJECT_DIR$/src/main/java/controller/EditOffer.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/database/DBConnection.java" afterPath="$PROJECT_DIR$/src/main/java/database/DBConnection.java" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/editoffer.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/editoffer.jsp" />
     </list>
     <ignored path="SampleApp.iws" />
@@ -33,8 +33,8 @@
       <file leaf-file-name="EditOffer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/EditOffer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="694">
-              <caret line="93" column="69" lean-forward="false" selection-start-line="93" selection-start-column="69" selection-end-line="93" selection-end-column="69" />
+            <state relative-caret-position="462">
+              <caret line="120" column="85" lean-forward="false" selection-start-line="120" selection-start-column="85" selection-end-line="120" selection-end-column="85" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -66,17 +66,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/EditCategory.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
-              <caret line="37" column="43" lean-forward="true" selection-start-line="37" selection-start-column="43" selection-end-line="37" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="editcategory.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/editcategory.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-884">
-              <caret line="17" column="32" lean-forward="false" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
+              <caret line="37" column="43" lean-forward="false" selection-start-line="37" selection-start-column="43" selection-end-line="37" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -85,8 +75,18 @@
       <file leaf-file-name="OfferDAO.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/dao/OfferDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="21" column="24" lean-forward="false" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
+            <state relative-caret-position="306">
+              <caret line="25" column="93" lean-forward="false" selection-start-line="25" selection-start-column="93" selection-end-line="25" selection-end-column="93" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OfferDAOImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/daoImpl/OfferDAOImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="414">
+              <caret line="55" column="93" lean-forward="false" selection-start-line="55" selection-start-column="93" selection-end-line="55" selection-end-column="93" />
               <folding />
             </state>
           </provider>
@@ -95,19 +95,21 @@
       <file leaf-file-name="DataService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/database/DataService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2159">
-              <caret line="136" column="0" lean-forward="false" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
+            <state relative-caret-position="306">
+              <caret line="125" column="71" lean-forward="true" selection-start-line="125" selection-start-column="71" selection-end-line="125" selection-end-column="71" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="editoffer.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="editoffer.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/editoffer.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="86" column="51" lean-forward="false" selection-start-line="86" selection-start-column="51" selection-end-line="86" selection-end-column="51" />
-              <folding />
+            <state relative-caret-position="399">
+              <caret line="101" column="33" lean-forward="false" selection-start-line="101" selection-start-column="33" selection-end-line="101" selection-end-column="33" />
+              <folding>
+                <element signature="e#5245#5251#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -122,26 +124,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DBConnection.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DBConnection.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/database/DBConnection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3723">
-              <caret line="231" column="37" lean-forward="false" selection-start-line="231" selection-start-column="37" selection-end-line="231" selection-end-column="37" />
+            <state relative-caret-position="225">
+              <caret line="305" column="90" lean-forward="true" selection-start-line="305" selection-start-column="90" selection-end-line="305" selection-end-column="90" />
               <folding>
-                <marker date="1519318264760" expanded="true" signature="1921:1943" ph="SELECT * FRO... offering" />
-                <marker date="1519318264760" expanded="true" signature="2006:2050" ph="SELECT * FRO... offering" />
-                <marker date="1519318264760" expanded="true" signature="2106:2228" ph="INSERT INTO offering... " />
-                <marker date="1519318264760" expanded="true" signature="2286:2308" ph="SELECT * FRO... category" />
-                <marker date="1519318264760" expanded="true" signature="2365:2409" ph="SELECT * FRO... category" />
-                <marker date="1519318264760" expanded="true" signature="2463:2507" ph="SELECT * FRO... offering" />
-                <marker date="1519318264760" expanded="true" signature="2563:2671" ph="INSERT INTO category... " />
-                <marker date="1519318264760" expanded="true" signature="2736:2861" ph="update category... " />
-                <marker date="1519318264760" expanded="true" signature="2929:3034" ph="update category... " />
-                <marker date="1519318264760" expanded="true" signature="3097:3236" ph="update offering... " />
-                <marker date="1519318264760" expanded="true" signature="3301:3425" ph="update offering... " />
-                <marker date="1519318264760" expanded="true" signature="3488:3554" ph="INSERT INTO images... " />
-                <marker date="1519318264760" expanded="true" signature="3616:3655" ph="SELECT * FRO... images" />
-                <marker date="1519318264760" expanded="true" signature="3714:3753" ph="SELECT * FRO... users" />
+                <marker date="1519333407281" expanded="true" signature="1921:1943" ph="SELECT * FRO... offering" />
+                <marker date="1519333407281" expanded="true" signature="2006:2050" ph="SELECT * FRO... offering" />
+                <marker date="1519333407281" expanded="true" signature="2106:2228" ph="INSERT INTO offering... " />
+                <marker date="1519333407281" expanded="true" signature="2286:2308" ph="SELECT * FRO... category" />
+                <marker date="1519333407281" expanded="true" signature="2365:2409" ph="SELECT * FRO... category" />
+                <marker date="1519333407281" expanded="true" signature="2463:2507" ph="SELECT * FRO... offering" />
+                <marker date="1519333407281" expanded="true" signature="2563:2671" ph="INSERT INTO category... " />
+                <marker date="1519333407281" expanded="true" signature="2736:2861" ph="update category... " />
+                <marker date="1519333407281" expanded="true" signature="2929:3034" ph="update category... " />
+                <marker date="1519333407281" expanded="true" signature="3097:3236" ph="update offering... " />
+                <marker date="1519333407281" expanded="true" signature="3301:3425" ph="update offering... " />
+                <marker date="1519333407281" expanded="true" signature="3488:3554" ph="INSERT INTO images... " />
+                <marker date="1519333407281" expanded="true" signature="3616:3655" ph="SELECT * FRO... images" />
+                <marker date="1519333407281" expanded="true" signature="3714:3753" ph="SELECT * FRO... users" />
               </folding>
             </state>
           </provider>
@@ -218,14 +220,14 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/offers.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/model/Offer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/database/DBConnection.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dao/OfferDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/database/DataService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/daoImpl/OfferDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/Categories.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/controller/EditOffer.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/editoffer.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/dao/OfferDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/daoImpl/OfferDAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/database/DataService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/database/DBConnection.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/EditOffer.java" />
       </list>
     </option>
   </component>
@@ -287,10 +289,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -428,6 +426,10 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1162,7 +1164,8 @@
       <workItem from="1519319161175" duration="1379000" />
       <workItem from="1519326407577" duration="1305000" />
       <workItem from="1519328589368" duration="1386000" />
-      <workItem from="1519330503262" duration="674000" />
+      <workItem from="1519330503262" duration="1120000" />
+      <workItem from="1519332351901" duration="1382000" />
     </task>
     <task id="LOCAL-00001" summary="commit id">
       <created>1504943768887</created>
@@ -1203,7 +1206,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="316608000" />
+    <option name="totallyTimeSpent" value="318436000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1312" height="687" extended-state="0" />
@@ -1228,8 +1231,8 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33044982" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44186047" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33044982" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22993827" sideWeight="0.48615918" order="0" side_tool="false" content_ui="combo" />
@@ -1514,57 +1517,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/daoImpl/OfferDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="61" column="5" lean-forward="false" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controller/Categories.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="27" column="21" lean-forward="false" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/database/DataService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2159">
-          <caret line="136" column="0" lean-forward="false" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dao/OfferDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="21" column="24" lean-forward="false" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/database/DBConnection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3723">
-          <caret line="231" column="37" lean-forward="false" selection-start-line="231" selection-start-column="37" selection-end-line="231" selection-end-column="37" />
-          <folding>
-            <marker date="1519318264760" expanded="true" signature="1921:1943" ph="SELECT * FRO... offering" />
-            <marker date="1519318264760" expanded="true" signature="2006:2050" ph="SELECT * FRO... offering" />
-            <marker date="1519318264760" expanded="true" signature="2106:2228" ph="INSERT INTO offering... " />
-            <marker date="1519318264760" expanded="true" signature="2286:2308" ph="SELECT * FRO... category" />
-            <marker date="1519318264760" expanded="true" signature="2365:2409" ph="SELECT * FRO... category" />
-            <marker date="1519318264760" expanded="true" signature="2463:2507" ph="SELECT * FRO... offering" />
-            <marker date="1519318264760" expanded="true" signature="2563:2671" ph="INSERT INTO category... " />
-            <marker date="1519318264760" expanded="true" signature="2736:2861" ph="update category... " />
-            <marker date="1519318264760" expanded="true" signature="2929:3034" ph="update category... " />
-            <marker date="1519318264760" expanded="true" signature="3097:3236" ph="update offering... " />
-            <marker date="1519318264760" expanded="true" signature="3301:3425" ph="update offering... " />
-            <marker date="1519318264760" expanded="true" signature="3488:3554" ph="INSERT INTO images... " />
-            <marker date="1519318264760" expanded="true" signature="3616:3655" ph="SELECT * FRO... images" />
-            <marker date="1519318264760" expanded="true" signature="3714:3753" ph="SELECT * FRO... users" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1592,37 +1548,86 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/EditCategory.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/editcategory.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="37" column="43" lean-forward="true" selection-start-line="37" selection-start-column="43" selection-end-line="37" selection-end-column="43" />
+        <state relative-caret-position="-874">
+          <caret line="17" column="32" lean-forward="false" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/editcategory.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/EditCategory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-884">
-          <caret line="17" column="32" lean-forward="false" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
+        <state relative-caret-position="170">
+          <caret line="37" column="43" lean-forward="false" selection-start-line="37" selection-start-column="43" selection-end-line="37" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/editoffer.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="101" column="33" lean-forward="false" selection-start-line="101" selection-start-column="33" selection-end-line="101" selection-end-column="33" />
+          <folding>
+            <element signature="e#5245#5251#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dao/OfferDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="25" column="93" lean-forward="false" selection-start-line="25" selection-start-column="93" selection-end-line="25" selection-end-column="93" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/daoImpl/OfferDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="55" column="93" lean-forward="false" selection-start-line="55" selection-start-column="93" selection-end-line="55" selection-end-column="93" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/database/DataService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="125" column="71" lean-forward="true" selection-start-line="125" selection-start-column="71" selection-end-line="125" selection-end-column="71" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controller/EditOffer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="694">
-          <caret line="93" column="69" lean-forward="false" selection-start-line="93" selection-start-column="69" selection-end-line="93" selection-end-column="69" />
+        <state relative-caret-position="462">
+          <caret line="120" column="85" lean-forward="false" selection-start-line="120" selection-start-column="85" selection-end-line="120" selection-end-column="85" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/editoffer.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/database/DBConnection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="86" column="51" lean-forward="false" selection-start-line="86" selection-start-column="51" selection-end-line="86" selection-end-column="51" />
-          <folding />
+        <state relative-caret-position="225">
+          <caret line="305" column="90" lean-forward="true" selection-start-line="305" selection-start-column="90" selection-end-line="305" selection-end-column="90" />
+          <folding>
+            <marker date="1519333407281" expanded="true" signature="1921:1943" ph="SELECT * FRO... offering" />
+            <marker date="1519333407281" expanded="true" signature="2006:2050" ph="SELECT * FRO... offering" />
+            <marker date="1519333407281" expanded="true" signature="2106:2228" ph="INSERT INTO offering... " />
+            <marker date="1519333407281" expanded="true" signature="2286:2308" ph="SELECT * FRO... category" />
+            <marker date="1519333407281" expanded="true" signature="2365:2409" ph="SELECT * FRO... category" />
+            <marker date="1519333407281" expanded="true" signature="2463:2507" ph="SELECT * FRO... offering" />
+            <marker date="1519333407281" expanded="true" signature="2563:2671" ph="INSERT INTO category... " />
+            <marker date="1519333407281" expanded="true" signature="2736:2861" ph="update category... " />
+            <marker date="1519333407281" expanded="true" signature="2929:3034" ph="update category... " />
+            <marker date="1519333407281" expanded="true" signature="3097:3236" ph="update offering... " />
+            <marker date="1519333407281" expanded="true" signature="3301:3425" ph="update offering... " />
+            <marker date="1519333407281" expanded="true" signature="3488:3554" ph="INSERT INTO images... " />
+            <marker date="1519333407281" expanded="true" signature="3616:3655" ph="SELECT * FRO... images" />
+            <marker date="1519333407281" expanded="true" signature="3714:3753" ph="SELECT * FRO... users" />
+          </folding>
         </state>
       </provider>
     </entry>

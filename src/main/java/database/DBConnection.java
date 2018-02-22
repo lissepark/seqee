@@ -60,8 +60,8 @@ public class DBConnection {
             updateCategoryWithImage = conn.prepareStatement("update category set `category_name`=?, `category_description`=?, `category_order`=?, `category_image`=? where `category_id`=?");
             updateCategoryWithoutImage = conn.prepareStatement("update category set `category_name`=?, `category_description`=?, `category_order`=? where `category_id`=?");
 
-            updateOfferWithImage = conn.prepareStatement("update offering set `offering_name`=?, `offering_description`=?, `offer_image_name`=?, `image_nat`=?, `category_id`=? where `category_id`=?");
-            updateOfferWithoutImage = conn.prepareStatement("update offering set `offering_name`=?, `offering_description`=?, `offer_image_name`=?, `category_id`=? where `category_id`=?");
+            updateOfferWithImage = conn.prepareStatement("update offering set `offering_name`=?, `offering_description`=?, `offer_image_name`=?, `image_nat`=?, `category_id`=? where `offering_id`=?");
+            updateOfferWithoutImage = conn.prepareStatement("update offering set `offering_name`=?, `offering_description`=?, `offer_image_name`=?, `category_id`=? where `offering_id`=?");
 
             insertOfferingsImage = conn.prepareStatement("INSERT INTO images SET `image_name`=?, `offer_id`=?, `image_nat`=?");
             selectOfferingsImage = conn.prepareStatement("SELECT * FROM images where `offer_id`=?");
@@ -295,7 +295,7 @@ public class DBConnection {
             updateOfferWithImage.setString(3, offer.getOfferImageName());
             updateOfferWithImage.setBinaryStream(4, input, len);
             updateOfferWithImage.setInt(5, category_id);
-            updateOfferWithImage.setInt(6, category_id);
+            updateOfferWithImage.setInt(6, offer.getId());
             return updateOfferWithImage.executeUpdate();
         } catch (SQLException e) {
             System.out.println("updateOfferWithImage with image - SQLException"+e.getMessage());
@@ -309,7 +309,7 @@ public class DBConnection {
             updateOfferWithoutImage.setString(2, offer.getOfferDescription());
             updateOfferWithoutImage.setString(3, offer.getOfferImageName());
             updateOfferWithoutImage.setInt(4, category_id);
-            updateOfferWithoutImage.setInt(5, category_id);
+            updateOfferWithoutImage.setInt(5, offer.getId());
             return updateOfferWithoutImage.executeUpdate();
         } catch (SQLException e) {
             System.out.println("updateOfferWithoutImage with image - SQLException"+e.getMessage());
