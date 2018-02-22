@@ -82,9 +82,9 @@
     <div style="margin-left: 2%">
         <a href="/"><button type="button" class="btn btn-outline-primary">Go to main page</button></a>
         <h4>Please, fill the data and load an image</h4><br>
-        <form action="editoffer?${_csrf.parameterName}=${_csrf.token}&offering_id=<%=offerById.getId()%>" method="post" enctype="multipart/form-data">
+        <form action="editoffer?${_csrf.parameterName}=${_csrf.token}&offer_id=<%=offerById.getId()%>" method="post" enctype="multipart/form-data">
             <p>
-                <input type="hidden" name="offering_id" value="<%=offerById.getId()%>"><br>
+                <input type="hidden" name="offer_id" value="<%=offerById.getId()%>"><br>
                 <input type="text" name="offeringName" value="<%=offerById.getOfferName()%>">Type Offer name<br>
                 <input type="text" name="offeringDescription" value="<%=offerById.getOfferDescription()%>">Type Offer description<br>
                 <select type="text" name="categoryId">

@@ -91,7 +91,7 @@ public class EditOffer extends HttpServlet{
                         description = new String(description.getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
                     } else if ((item.getFieldName()).equals("categoryId")){
                         categId = Integer.parseInt(item.getString());
-                    } else if ((item.getFieldName()).equals("offering_id")){
+                    } else if ((item.getFieldName()).equals("offer_id")){
                         offerId = Integer.parseInt(item.getString());
                     }
                 } else {
