@@ -85,8 +85,8 @@
         <form action="editoffer?${_csrf.parameterName}=${_csrf.token}&offer_id=<%=offerById.getId()%>" method="post" enctype="multipart/form-data">
             <p>
                 <input type="hidden" name="offer_id" value="<%=offerById.getId()%>"><br>
-                <input type="text" name="offeringName" value="<%=offerById.getOfferName()%>">Type Offer name<br>
-                <input type="text" name="offeringDescription" value="<%=offerById.getOfferDescription()%>">Type Offer description<br>
+                <input type="text" name="offerName" value="<%=offerById.getOfferName()%>">Type Offer name<br>
+                <input type="text" name="offerDescription" value="<%=offerById.getOfferDescription()%>">Type Offer description<br>
                 <select type="text" name="categoryId">
                     <option disabled>Choose the Category</option>
                     <%while (iterator1.hasNext()) {
