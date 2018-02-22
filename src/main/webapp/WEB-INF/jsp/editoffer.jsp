@@ -8,7 +8,8 @@
 <%@ page import="javax.imageio.ImageIO" %>
 <%@ page import="model.Category" %>
 <%@ page import="java.util.List" %>
-<%@ page import="java.util.Iterator" %><%--
+<%@ page import="java.util.Iterator" %>
+<%@ page import="database.DataService" %><%--
   Created by IntelliJ IDEA.
   User: seva0716
   Date: 2/20/2018
@@ -52,7 +53,7 @@
 <div class="wrap rounded" style="margin-top: 10px">
     <%
         Offer offerById = (Offer) request.getAttribute("offerById");
-
+        Category category = (new DataService()).getCategoryById(offerById.getOfferCategory());
         Blob blob = (Blob) offerById.getOfferMainImage();
         String b64 = "";
         if (blob != null) {
@@ -89,6 +90,7 @@
                 <input type="text" name="offerDescription" value="<%=offerById.getOfferDescription()%>">Type Offer description<br>
                 <select type="text" name="categoryId">
                     <option disabled>Choose the Category</option>
+                    <option value="<%=offerById.getOfferCategory()%>" selected="selected"><%=category.getCategoryName()%></option>
                     <%while (iterator1.hasNext()) {
                         Category category1 = (Category) iterator1.next();%>
                     <option value="<%=category1.getId()%>"><%=category1.getCategoryName()%></option>
