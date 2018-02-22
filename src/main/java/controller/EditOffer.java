@@ -30,6 +30,13 @@ import java.util.List;
  * Created by incrit.com on 8/21/17.
  */
 public class EditOffer extends HttpServlet{
+    OfferDAO offerDAO = new OfferDAOImpl();
+    Offer offer = new Offer();
+
+    private void getAllCategories(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
+        List<Category> categoryList = offerDAO.getAllCategories();
+        request.setAttribute("categoryList", categoryList);
+    }
 
     public EditOffer() {
         super();
@@ -42,11 +49,6 @@ public class EditOffer extends HttpServlet{
         OfferDAO offerDAO = (OfferDAO) actx.getBean("daoImpl");
         Offer offerById = new Offer();
         String offer_id_str = req.getParameter("offer_id");
-
-        System.out.println(offer_id_str);
-        System.out.println(offer_id_str);
-        System.out.println(offer_id_str);
-
         try {
             offerById = (Offer) offerDAO.getOfferById(Integer.parseInt(offer_id_str));
         } catch (SQLException e) {
@@ -60,9 +62,10 @@ public class EditOffer extends HttpServlet{
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-     /*   String name = null;
+        String name = null;
         String description = null;
-        int catg_id = 0;
+        int categId = 0;
+        int offerId = 0;
         FileItemFactory itemFactory = new DiskFileItemFactory();
         ServletFileUpload upload = new ServletFileUpload(itemFactory);
         String imgName = "";
@@ -75,14 +78,16 @@ public class EditOffer extends HttpServlet{
             while (iter.hasNext()) {
                 FileItem item = (FileItem) iter.next();
                 if (item.isFormField()) {
-                    if ((item.getFieldName()).equals("categoryName")){
+                    if ((item.getFieldName()).equals("offerName")){
                         name = item.getString();
                         name = new String(name.getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
-                    } else if ((item.getFieldName()).equals("categoryDescription")){
+                    } else if ((item.getFieldName()).equals("offerDescription")){
                         description = item.getString();
                         description = new String(description.getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
-                    } else if ((item.getFieldName()).equals("category_id")){
-                        catg_id = Integer.parseInt(item.getString());
+                    } else if ((item.getFieldName()).equals("categoryId")){
+                        categId = Integer.parseInt(item.getString());
+                    } else if ((item.getFieldName()).equals("offering_id")){
+                        offerId = Integer.parseInt(item.getString());
                     }
                 } else {
                     String contentType = item.getContentType();
@@ -92,6 +97,7 @@ public class EditOffer extends HttpServlet{
                             continue;
                         }
                         if (contentType.equals("image/png") || contentType.equals("image/jpeg")) {
+                            //File uploadDir = new File("/home/sergii/Documents/");//for localhost
                             File uploadDir = new File("/opt/app-root/src/src/main/webapp/images");
                             file = File.createTempFile("img", ".png", uploadDir);
                             item.write(file);
@@ -99,13 +105,15 @@ public class EditOffer extends HttpServlet{
                             leng = file.length();
                         }
                     }
-                    category.setCategoryName(name);
-                    category.setCategoryDescription(description);
+                    offer.setOfferName(name);
+                    offer.setOfferDescription(description);
+                    offer.setOfferCategory(categId);
+                    offer.setId(offerId);
                     try {
                         if (leng == 0) {
-                            offerDAO.updateCategoryWithoutImage(category,catg_id);
+                            offerDAO.updateOfferWithoutImage(offer, categId);
                         } else if (leng != 0) {
-                            offerDAO.updateCategoryWithImage(category, input, leng,catg_id);
+                            offerDAO.updateOfferWithImage(offer, input, leng, categId);
                         }
                         System.out.println(leng);
                     } catch (SQLException e) {
@@ -117,11 +125,9 @@ public class EditOffer extends HttpServlet{
             System.out.println("FileUpload Exception");
         } catch (Exception ex) {
             ex.printStackTrace();
-            System.out.println("Other Exception in doPost of EditCategory servlet");
+            System.out.println("Other Exception in doPost of Analysis servlet");
         }
-        doGet(req, resp);
-        //RequestDispatcher requestDispatcher;
-        //requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/index.jsp");
-        //requestDispatcher.forward(req, resp);*/
+
+        doGet(req,resp);
     }
 }

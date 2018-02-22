@@ -8,18 +8,18 @@ import java.util.List;
  * Created by incrit.com on 8/20/17.
  */
 public class Offer {
-    private Long id;
+    private int id;
     private String offerDescription;
     private String offerName;
     private int category;
     private String offerImageName;
     private Blob blob;
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

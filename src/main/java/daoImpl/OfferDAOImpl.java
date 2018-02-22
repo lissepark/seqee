@@ -53,6 +53,14 @@ public class OfferDAOImpl implements OfferDAO {
         return dataService.updateCategoryWithoutImage(category, category_id);
     }
 
+    public int updateOfferWithImage(Offer offer, InputStream input, long len, int category_id) throws SQLException {
+        return dataService.updateOfferWithImage(offer, input, len, category_id);
+    }
+
+    public int updateOfferWithoutImage(Offer offer, int category_id) throws SQLException {
+        return dataService.updateOfferWithoutImage(offer, category_id);
+    }
+
     public Category getCategoryById(int categoryId) throws SQLException {
         return dataService.getCategoryById(categoryId);
     }

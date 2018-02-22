@@ -40,7 +40,7 @@ public class Categories extends HttpServlet {
         Iterator<Offer> iter = offerList.iterator();
         while (iter.hasNext()) {
             Offer offer = (Offer) iter.next();
-            offer_id = offer.getId().intValue();
+            offer_id = offer.getId();
             Blob blob;
             blob_n = 0;
 

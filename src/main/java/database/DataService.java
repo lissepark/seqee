@@ -121,6 +121,20 @@ public class DataService {
         return result;
     }
 
+    public int updateOfferWithImage(Offer offer, InputStream input, long len, int category_id) throws SQLException {
+        DBConnection conn = getDBConnection();
+        int result = conn.updateOfferWithImage(offer, input, len, category_id);
+        this.putDBConnection(conn);
+        return result;
+    }
+
+    public int updateOfferWithoutImage(Offer offer, int category_id) throws SQLException {
+        DBConnection conn = getDBConnection();
+        int result = conn.updateOfferWithoutImage(offer, category_id);
+        this.putDBConnection(conn);
+        return result;
+    }
+
     public int insertOfferingsImage(String image_name, int offer_id, InputStream input, long len) throws SQLException {
         DBConnection conn = getDBConnection();
         int result = conn.insertOfferingsImage(image_name, offer_id, input, len);

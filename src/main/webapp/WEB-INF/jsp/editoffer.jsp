@@ -5,7 +5,10 @@
 <%@ page import="java.io.ByteArrayInputStream" %>
 <%@ page import="java.awt.image.BufferedImage" %>
 <%@ page import="java.io.ByteArrayOutputStream" %>
-<%@ page import="javax.imageio.ImageIO" %><%--
+<%@ page import="javax.imageio.ImageIO" %>
+<%@ page import="model.Category" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.Iterator" %><%--
   Created by IntelliJ IDEA.
   User: seva0716
   Date: 2/20/2018
@@ -41,6 +44,10 @@
 </head>
 <body>
 <jsp:include page="header.jsp" />
+<%
+    List<Category> categoryList1 = (List<Category>) request.getAttribute("categoryList");
+    Iterator<Category> iterator1 = categoryList1.iterator();
+%>
 
 <div class="wrap rounded" style="margin-top: 10px">
     <%
@@ -77,11 +84,18 @@
         <h4>Please, fill the data and load an image</h4><br>
         <form action="editoffer?${_csrf.parameterName}=${_csrf.token}&offering_id=<%=offerById.getId()%>" method="post" enctype="multipart/form-data">
             <p>
-                <input type="hidden" name="category_id" value="<%=offerById.getId()%>"><br>
-                <input type="text" name="categoryName" value="<%=offerById.getOfferName()%>">Type Offer name<br>
-                <input type="text" name="categoryDescription" value="<%=offerById.getOfferDescription()%>">Type Offer description<br>
+                <input type="hidden" name="offering_id" value="<%=offerById.getId()%>"><br>
+                <input type="text" name="offeringName" value="<%=offerById.getOfferName()%>">Type Offer name<br>
+                <input type="text" name="offeringDescription" value="<%=offerById.getOfferDescription()%>">Type Offer description<br>
+                <select type="text" name="categoryId">
+                    <option disabled>Choose the Category</option>
+                    <%while (iterator1.hasNext()) {
+                        Category category1 = (Category) iterator1.next();%>
+                    <option value="<%=category1.getId()%>"><%=category1.getCategoryName()%></option>
+                    <%}%>
+                </select>
             </p>
-            <h4 style="color:blue">Select image for Category to upload:</h4>
+            <h4 style="color:blue">Select image for Offering to upload:</h4>
             <br/>
             <input type="file" name="file"><br/>
             <input class="btn btn-primary btn-lg" type="submit" value="Upload Image and send data">

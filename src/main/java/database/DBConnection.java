@@ -27,6 +27,8 @@ public class DBConnection {
     private static PreparedStatement insertCategory;
     private static PreparedStatement updateCategoryWithImage;
     private static PreparedStatement updateCategoryWithoutImage;
+    private static PreparedStatement updateOfferWithImage;
+    private static PreparedStatement updateOfferWithoutImage;
     private static PreparedStatement insertOfferingsImage;
     private static PreparedStatement selectOfferingsImage;
     private static PreparedStatement getOffersByCategoryId;
@@ -57,6 +59,10 @@ public class DBConnection {
             insertCategory = conn.prepareStatement("INSERT INTO category SET `category_name`=?, `category_description`=?, `category_order`=?, `category_image`=?");
             updateCategoryWithImage = conn.prepareStatement("update category set `category_name`=?, `category_description`=?, `category_order`=?, `category_image`=? where `category_id`=?");
             updateCategoryWithoutImage = conn.prepareStatement("update category set `category_name`=?, `category_description`=?, `category_order`=? where `category_id`=?");
+
+            updateOfferWithImage = conn.prepareStatement("update offering set `offering_name`=?, `offering_description`=?, `offer_image_name`=?, `image_nat`=?, `category_id`=? where `category_id`=?");
+            updateOfferWithoutImage = conn.prepareStatement("update offering set `offering_name`=?, `offering_description`=?, `offer_image_name`=?, `category_id`=? where `category_id`=?");
+
             insertOfferingsImage = conn.prepareStatement("INSERT INTO images SET `image_name`=?, `offer_id`=?, `image_nat`=?");
             selectOfferingsImage = conn.prepareStatement("SELECT * FROM images where `offer_id`=?");
             getUserByUserName = conn.prepareStatement("SELECT * FROM users where `user_name`=?");
@@ -77,6 +83,8 @@ public class DBConnection {
             insertCategory.close();
             updateCategoryWithImage.close();
             updateCategoryWithoutImage.close();
+            updateOfferWithImage.close();
+            updateOfferWithoutImage.close();
             insertOfferingsImage.close();
             selectOfferingsImage.close();
             getUserByUserName.close();
@@ -92,7 +100,7 @@ public class DBConnection {
             rs = getAllOffers.executeQuery();
             while (rs.next()) {
                 Offer offer = new Offer();
-                offer.setId(rs.getLong("offering_id"));
+                offer.setId(rs.getInt("offering_id"));
                 offer.setOfferName(rs.getString("offering_name"));
                 offer.setOfferDescription(rs.getString("offering_description"));
                 offer.setOfferMainImage((com.mysql.jdbc.Blob) rs.getBlob("image_nat"));
@@ -112,7 +120,7 @@ public class DBConnection {
             rs = getOffersByCategoryId.executeQuery();
             while (rs.next()) {
                 Offer offer = new Offer();
-                offer.setId(rs.getLong("offering_id"));
+                offer.setId(rs.getInt("offering_id"));
                 offer.setOfferName(rs.getString("offering_name"));
                 offer.setOfferDescription(rs.getString("offering_description"));
                 offer.setOfferMainImage((com.mysql.jdbc.Blob) rs.getBlob("image_nat"));
@@ -228,7 +236,7 @@ public class DBConnection {
             getOfferById.setInt(1, offerId);
             rs = getOfferById.executeQuery();
             while (rs.next()){
-                offer.setId(rs.getLong("offering_id"));
+                offer.setId(rs.getInt("offering_id"));
                 offer.setOfferName(rs.getString("offering_name"));
                 offer.setOfferDescription(rs.getString("offering_description"));
                 offer.setOfferCategory(rs.getInt("category_id"));
@@ -276,6 +284,35 @@ public class DBConnection {
             return updateCategoryWithoutImage.executeUpdate();
         } catch (SQLException e) {
             System.out.println("updateCategoryWithoutImage with image - SQLException"+e.getMessage());
+            return -1;
+        }
+    }
+
+    public int updateOfferWithImage(Offer offer, InputStream input, long len, int category_id) throws SQLException {
+        try {
+            updateOfferWithImage.setString(1, offer.getOfferName());
+            updateOfferWithImage.setString(2, offer.getOfferDescription());
+            updateOfferWithImage.setString(3, offer.getOfferImageName());
+            updateOfferWithImage.setBinaryStream(4, input, len);
+            updateOfferWithImage.setInt(5, category_id);
+            updateOfferWithImage.setInt(6, category_id);
+            return updateOfferWithImage.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println("updateOfferWithImage with image - SQLException"+e.getMessage());
+            return -1;
+        }
+    }
+
+    public int updateOfferWithoutImage(Offer offer, int category_id) throws SQLException {
+        try {
+            updateOfferWithoutImage.setString(1, offer.getOfferName());
+            updateOfferWithoutImage.setString(2, offer.getOfferDescription());
+            updateOfferWithoutImage.setString(3, offer.getOfferImageName());
+            updateOfferWithoutImage.setInt(4, category_id);
+            updateOfferWithoutImage.setInt(5, category_id);
+            return updateOfferWithoutImage.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println("updateOfferWithoutImage with image - SQLException"+e.getMessage());
             return -1;
         }
     }
