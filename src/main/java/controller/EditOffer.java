@@ -50,21 +50,11 @@ public class EditOffer extends HttpServlet{
 
         Offer offerById = new Offer();
         String offer_id_str = req.getParameter("offer_id");
-
-        System.out.println(offer_id_str);
-        System.out.println(offer_id_str);
-        System.out.println(offer_id_str);
-
         try {
             offerById = (Offer) offerDAO.getOfferById(Integer.parseInt(offer_id_str));
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
-        System.out.println(offerById.getOfferName());
-        System.out.println(offerById.getOfferName());
-        System.out.println(offerById.getOfferName());
-
         req.setAttribute("offerById", offerById);
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/editoffer.jsp");
         requestDispatcher.forward(req, resp);
