@@ -19,14 +19,14 @@ public class DeleteOffer extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String offer_id_str = request.getParameter("offer_id");
-        ApplicationContext actx = new ClassPathXmlApplicationContext("beans.xml");
-        OfferDAO offerDAO = (OfferDAO) actx.getBean("daoImpl");
-        try {
-            offerDAO.deleteOfferById(Integer.parseInt(offer_id_str));
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        //String offer_id_str = request.getParameter("offer_id");
+        //ApplicationContext actx = new ClassPathXmlApplicationContext("beans.xml");
+        //OfferDAO offerDAO = (OfferDAO) actx.getBean("daoImpl");
+        //try {
+        //    offerDAO.deleteOfferById(Integer.parseInt(offer_id_str));
+        //} catch (SQLException e) {
+        //    e.printStackTrace();
+        //}
         RequestDispatcher requestDispatcher;
         requestDispatcher = getServletContext().getRequestDispatcher("/WEB-INF/jsp/index.jsp");
         requestDispatcher.forward(request, response);
