@@ -249,10 +249,10 @@ public class DBConnection {
         return offer;
     }
 
-    public int deleteOfferById(int offerId) throws SQLException{
+    public int deleteOfferById(int offerId) throws SQLException {
         try {
             deleteOfferById.setInt(1, offerId);
-            rs = getOfferById.executeQuery();
+            rs = deleteOfferById.executeQuery();
         } catch (SQLException e) {
             e.printStackTrace();
         }
