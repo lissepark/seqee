@@ -23,16 +23,12 @@ public class DeleteOffer extends HttpServlet {
         ApplicationContext actx = new ClassPathXmlApplicationContext("beans.xml");
         OfferDAO offerDAO = (OfferDAO) actx.getBean("daoImpl");
         try {
-            System.out.println("Integer.parseInt(offer_id_str) = "+Integer.parseInt(offer_id_str));
-            System.out.println("Integer.parseInt(offer_id_str) = "+Integer.parseInt(offer_id_str));
-            System.out.println("Integer.parseInt(offer_id_str) = "+Integer.parseInt(offer_id_str));
-            System.out.println("Integer.parseInt(offer_id_str) = "+Integer.parseInt(offer_id_str));
             offerDAO.deleteOfferById(Integer.parseInt(offer_id_str));
         } catch (SQLException e) {
             e.printStackTrace();
         }
         RequestDispatcher requestDispatcher;
-        requestDispatcher = request.getRequestDispatcher("/WEB-INF/jsp/index.jsp");
+        requestDispatcher = getServletContext().getRequestDispatcher("/WEB-INF/jsp/index.jsp");
         requestDispatcher.forward(request, response);
     }
 
