@@ -250,6 +250,10 @@ public class DBConnection {
     }
 
     public int deleteOfferById(int offerId) throws SQLException {
+        System.out.println("deleteOfferById = "+offerId);
+        System.out.println("deleteOfferById = "+offerId);
+        System.out.println("deleteOfferById = "+offerId);
+        System.out.println("deleteOfferById = "+offerId);
         try {
             deleteOfferById.setInt(1, offerId);
             rs = deleteOfferById.executeQuery();
