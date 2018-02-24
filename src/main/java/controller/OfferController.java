@@ -40,6 +40,7 @@ public class OfferController extends HttpServlet{
         OfferDAO offerDAO = new OfferDAOImpl();
         List<Offer> offerList = offerDAO.getOffersByCategoryId(Integer.parseInt(category_id_str));
         req.setAttribute("offerList", offerList);
+        req.setAttribute("category_id", Integer.parseInt(category_id_str));
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/offers.jsp");
         requestDispatcher.forward(req, resp);
     }

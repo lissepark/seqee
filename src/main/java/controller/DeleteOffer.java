@@ -19,6 +19,8 @@ public class DeleteOffer extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String cat_id_str = request.getParameter("category_id");
+        int catid = Integer.parseInt(cat_id_str);
         //String offer_id_str = request.getParameter("offer_id");
         //ApplicationContext actx = new ClassPathXmlApplicationContext("beans.xml");
         //OfferDAO offerDAO = (OfferDAO) actx.getBean("daoImpl");
@@ -28,7 +30,7 @@ public class DeleteOffer extends HttpServlet {
         //    e.printStackTrace();
         //}
         RequestDispatcher requestDispatcher;
-        requestDispatcher = getServletContext().getRequestDispatcher("/WEB-INF/jsp/index.jsp");
+        requestDispatcher = request.getRequestDispatcher("/WEB-INF/jsp/offers?category_id="+catid);
         requestDispatcher.forward(request, response);
     }
 
