@@ -36,7 +36,7 @@
 <jsp:include page="header.jsp" />
 <div class="container">
     <div class="row">
-        <h1>Services</h1>
+        <h1>Login</h1>
     </div>
     <c:url value="/login" var="loginVar"/>
     <form id="appointment-form" action="/login" method="POST">

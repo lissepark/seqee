@@ -29,11 +29,11 @@ public class DeleteOffer extends HttpServlet {
 
         ApplicationContext actx = new ClassPathXmlApplicationContext("beans.xml");
         OfferDAO offerDAO = (OfferDAO) actx.getBean("daoImpl");
-        //try {
-        //    offerDAO.deleteOfferById(Integer.parseInt(offer_id_str));
-        //} catch (SQLException e) {
-        //    e.printStackTrace();
-        //}
+        try {
+            offerDAO.deleteOfferById(Integer.parseInt(offer_id_str));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         List<Offer> offerList = offerDAO.getOffersByCategoryId(Integer.parseInt(cat_id_str));
         request.setAttribute("offerList", offerList);
         request.setAttribute("category_id", cat_id_str);
