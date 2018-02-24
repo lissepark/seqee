@@ -14,10 +14,12 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 public class DeleteOffer extends HttpServlet {
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request, response);
     }
 
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String cat_id_str = request.getParameter("category_id");
         int catid = Integer.parseInt(cat_id_str);
