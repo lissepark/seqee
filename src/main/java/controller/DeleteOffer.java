@@ -34,9 +34,9 @@ public class DeleteOffer extends HttpServlet {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        List<Offer> offerList = offerDAO.getOffersByCategoryId(Integer.parseInt(cat_id_str));
+        List<Offer> offerList = offerDAO.getOffersByCategoryId(catid);
         request.setAttribute("offerList", offerList);
-        request.setAttribute("category_id", cat_id_str);
+        request.setAttribute("category_id", catid);
 
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/WEB-INF/jsp/offers");
         requestDispatcher.forward(request, response);

@@ -9,7 +9,6 @@
     <list default="true" id="6bab637c-c3bf-47ce-8296-4fd3ec37ee1b" name="Default" comment="add admin page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/DeleteOffer.java" afterPath="$PROJECT_DIR$/src/main/java/controller/DeleteOffer.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp" />
     </list>
     <ignored path="SampleApp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,11 +41,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DeleteOffer.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DeleteOffer.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/DeleteOffer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="35" column="8" lean-forward="false" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
+            <state relative-caret-position="306">
+              <caret line="32" column="69" lean-forward="true" selection-start-line="32" selection-start-column="69" selection-end-line="32" selection-end-column="69" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -77,8 +76,8 @@
       <file leaf-file-name="offers.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/offers.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="77" column="60" lean-forward="true" selection-start-line="77" selection-start-column="60" selection-end-line="77" selection-end-column="60" />
+            <state relative-caret-position="1309">
+              <caret line="77" column="60" lean-forward="false" selection-start-line="77" selection-start-column="60" selection-end-line="77" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -87,7 +86,7 @@
       <file leaf-file-name="Login.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/Login.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
+            <state relative-caret-position="68">
               <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -96,10 +95,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="login.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
+            <state relative-caret-position="112">
               <caret line="38" column="17" lean-forward="false" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
               <folding />
             </state>
@@ -214,8 +213,8 @@
         <option value="$PROJECT_DIR$/src/main/java/controller/OfferController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/offers.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/controller/DeleteOffer.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/DeleteOffer.java" />
       </list>
     </option>
   </component>
@@ -277,8 +276,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -416,8 +413,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1172,7 +1171,8 @@
       <workItem from="1519482574670" duration="1075000" />
       <workItem from="1519489889669" duration="1535000" />
       <workItem from="1519491829865" duration="1863000" />
-      <workItem from="1519508147903" duration="155000" />
+      <workItem from="1519508147903" duration="741000" />
+      <workItem from="1519555696195" duration="335000" />
     </task>
     <task id="LOCAL-00001" summary="commit id">
       <created>1504943768887</created>
@@ -1213,7 +1213,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="342120000" />
+    <option name="totallyTimeSpent" value="343041000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1312" height="687" extended-state="0" />
@@ -1585,27 +1585,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/DeleteOffer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="35" column="8" lean-forward="false" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/offers.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="77" column="60" lean-forward="true" selection-start-line="77" selection-start-column="60" selection-end-line="77" selection-end-column="60" />
+        <state relative-caret-position="1309">
+          <caret line="77" column="60" lean-forward="false" selection-start-line="77" selection-start-column="60" selection-end-line="77" selection-end-column="60" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controller/Login.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
+        <state relative-caret-position="68">
           <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1615,9 +1605,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
+        <state relative-caret-position="112">
           <caret line="38" column="17" lean-forward="false" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/DeleteOffer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="32" column="69" lean-forward="true" selection-start-line="32" selection-start-column="69" selection-end-line="32" selection-end-column="69" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
