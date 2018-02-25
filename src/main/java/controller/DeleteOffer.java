@@ -53,13 +53,15 @@ public class DeleteOffer extends HttpServlet {
         }
 
         RequestDispatcher requestDispatcher;
-        requestDispatcher = request.getRequestDispatcher("/WEB-INF/jsp/deleteoffer");
+        requestDispatcher = request.getRequestDispatcher("/WEB-INF/jsp/deleteoffer.jsp");
         requestDispatcher.forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doGet(request, response);
+        RequestDispatcher requestDispatcher;
+        requestDispatcher = request.getRequestDispatcher("/WEB-INF/jsp/deleteoffer.jsp");
+        requestDispatcher.forward(request, response);
     }
 
     }
