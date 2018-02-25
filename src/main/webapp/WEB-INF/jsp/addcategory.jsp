@@ -7,6 +7,7 @@
 --%>
 <%@ page pageEncoding="UTF-8" contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ page import="model.Category" %>
 <html>
 <head>
@@ -15,11 +16,16 @@
     <link href="/css/style.css" rel="stylesheet">
     <script src="/js/jquery-3.2.1.min.js"></script>
     <script src="/js/bootstrap.js"></script>
+
+    <sec:csrfMetaTags/>
+    <meta name="_csrf_parameter" content="_csrf" />
+    <meta name="_csrf_header" content="X-CSRF-TOKEN" />
+    <meta name="_csrf" content="e62835df-f1a0-49ea-bce7-bf96f998119c" />
 </head>
 <body>
 <div style="margin-left: 2%">
     <h4>Please, fill the data and load an image</h4><br>
-    <form action="addcategory" method="post" enctype="multipart/form-data">
+    <form action="addcategory?${_csrf.parameterName}=${_csrf.token}" method="post" enctype="multipart/form-data">
         <p>
             <input type="text" name="categoryName">Type Category name<br>
             <input type="text" name="categoryDescription" >Type Category description<br>

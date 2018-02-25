@@ -29,16 +29,18 @@ public class DeleteOffer extends HttpServlet {
 
         ApplicationContext actx = new ClassPathXmlApplicationContext("beans.xml");
         OfferDAO offerDAO = (OfferDAO) actx.getBean("daoImpl");
+        List<Offer> offerList = offerDAO.getOffersByCategoryId(catid);
+        request.setAttribute("offerList", offerList);
+        request.setAttribute("category_id", catid);
+
         try {
             offerDAO.deleteOfferById(Integer.parseInt(offer_id_str));
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        List<Offer> offerList = offerDAO.getOffersByCategoryId(catid);
-        request.setAttribute("offerList", offerList);
-        request.setAttribute("category_id", catid);
 
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/WEB-INF/jsp/offers");
+        RequestDispatcher requestDispatcher;
+        requestDispatcher = request.getRequestDispatcher("/WEB-INF/jsp/offers");
         requestDispatcher.forward(request, response);
     }
 

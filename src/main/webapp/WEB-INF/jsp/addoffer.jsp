@@ -1,3 +1,4 @@
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ page import="model.Category" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.Iterator" %><%--
@@ -15,6 +16,11 @@
     <link href="/css/style.css" rel="stylesheet">
     <script src="/js/jquery-3.2.1.min.js"></script>
     <script src="/js/bootstrap.js"></script>
+
+    <sec:csrfMetaTags/>
+    <meta name="_csrf_parameter" content="_csrf" />
+    <meta name="_csrf_header" content="X-CSRF-TOKEN" />
+    <meta name="_csrf" content="e62835df-f1a0-49ea-bce7-bf96f998119c" />
 </head>
 <body>
     <%
@@ -23,7 +29,7 @@
     %>
     <div style="margin-left: 2%">
         <h4>Please, fill the data and load an image</h4>
-        <form action="addoffer" method="post" enctype="multipart/form-data">
+        <form action="addoffer?${_csrf.parameterName}=${_csrf.token}" method="post" enctype="multipart/form-data">
             <p>
                 <input type="text" name="offerName">Type the name of the offer<br>
                 <input type="text" name="offerDescription">Type the description of the offer<br>
