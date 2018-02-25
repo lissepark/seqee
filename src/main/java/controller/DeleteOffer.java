@@ -2,6 +2,7 @@ package controller;
 
 import dao.OfferDAO;
 import daoImpl.OfferDAOImpl;
+import model.Category;
 import model.Offer;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -26,12 +27,24 @@ public class DeleteOffer extends HttpServlet {
         String cat_id_str = request.getParameter("category_id");
         String offer_id_str = request.getParameter("offer_id");
         int catid = Integer.parseInt(cat_id_str);
+        Category category = null;
+        Offer offer = null;
+        String offerNameToDelete = "";
 
         ApplicationContext actx = new ClassPathXmlApplicationContext("beans.xml");
         OfferDAO offerDAO = (OfferDAO) actx.getBean("daoImpl");
         List<Offer> offerList = offerDAO.getOffersByCategoryId(catid);
+        try {
+            category = offerDAO.getCategoryById(catid);
+            offer = offerDAO.getOfferById(Integer.parseInt(offer_id_str));
+            offerNameToDelete = offer.getOfferName();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         request.setAttribute("offerList", offerList);
         request.setAttribute("category_id", catid);
+        request.setAttribute("category", category);
+        request.setAttribute("offerNameToDelete", offerNameToDelete);
 
         try {
             offerDAO.deleteOfferById(Integer.parseInt(offer_id_str));
@@ -40,7 +53,7 @@ public class DeleteOffer extends HttpServlet {
         }
 
         RequestDispatcher requestDispatcher;
-        requestDispatcher = request.getRequestDispatcher("/WEB-INF/jsp/offers");
+        requestDispatcher = request.getRequestDispatcher("/WEB-INF/jsp/deleteoffer");
         requestDispatcher.forward(request, response);
     }
 
