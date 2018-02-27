@@ -29,6 +29,8 @@ public class AddCategory extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String name = null;
+        int categId = 0;
+        int isHide = 0;
         String description = null;
         FileItemFactory itemFactory = new DiskFileItemFactory();
         ServletFileUpload upload = new ServletFileUpload(itemFactory);
@@ -48,6 +50,14 @@ public class AddCategory extends HttpServlet {
                     } else if ((item.getFieldName()).equals("categoryDescription")){
                         description = item.getString();
                         description = new String(description.getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
+                    }else if ((item.getFieldName()).equals("categoryId")){
+                        categId = Integer.parseInt(item.getString());
+                    }else if ((item.getFieldName()).equals("isCategoryHide")){
+                        if ((Integer.parseInt(item.getString())) == 1) {
+                            isHide = Integer.parseInt(item.getString());
+                        }else {
+                            isHide = 0;
+                        }
                     }
                 } else {
                     String contentType = item.getContentType();
@@ -67,7 +77,7 @@ public class AddCategory extends HttpServlet {
                     category.setCategoryName(name);
                     category.setCategoryDescription(description);
                     try {
-                        offerDAO.insertCategory(category,input,leng);
+                        offerDAO.insertCategory(category,input,leng,categId,isHide);
                         System.out.println(leng);
                     } catch (SQLException e) {
                         e.printStackTrace();
@@ -85,6 +95,8 @@ public class AddCategory extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        List<Category> categoryList = offerDAO.getAllCategories();
+        request.setAttribute("categoryList", categoryList);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/WEB-INF/jsp/addcategory.jsp");
         requestDispatcher.forward(request, response);
     }

@@ -58,7 +58,7 @@ public class DBConnection {
             getCategoryById = conn.prepareStatement("SELECT * FROM category where `category_id`=?");
             getOfferById = conn.prepareStatement("SELECT * FROM offering where `offering_id`=?");
             deleteOfferById = conn.prepareStatement("DELETE FROM offering where `offering_id`=?");
-            insertCategory = conn.prepareStatement("INSERT INTO category SET `category_name`=?, `category_description`=?, `category_order`=?, `category_image`=?");
+            insertCategory = conn.prepareStatement("INSERT INTO category SET `category_name`=?, `category_description`=?, `category_order`=?, `category_image`=?, `parent_category_id`=?, `is_hide`=?");
             updateCategoryWithImage = conn.prepareStatement("update category set `category_name`=?, `category_description`=?, `category_order`=?, `category_image`=? where `category_id`=?");
             updateCategoryWithoutImage = conn.prepareStatement("update category set `category_name`=?, `category_description`=?, `category_order`=? where `category_id`=?");
             updateOfferWithImage = conn.prepareStatement("update offering set `offering_name`=?, `offering_description`=?, `offer_image_name`=?, `image_nat`=?, `category_id`=? where `offering_id`=?");
@@ -259,12 +259,14 @@ public class DBConnection {
         }
     }
 
-    public int insertCategory(Category category, InputStream input, long len) throws SQLException {
+    public int insertCategory(Category category, InputStream input, long len, int parent_category_id, int is_hide) throws SQLException {
         try {
             insertCategory.setString(1, category.getCategoryName());
             insertCategory.setString(2, category.getCategoryDescription());
             insertCategory.setString(3, category.getCategoryOrder());
             insertCategory.setBinaryStream(4, input, len);
+            insertCategory.setInt(5, parent_category_id);
+            insertCategory.setInt(6, is_hide);
             return insertCategory.executeUpdate();
         } catch (SQLException e) {
             System.out.println("insertCategory with image - SQLException"+e.getMessage());

@@ -107,9 +107,9 @@ public class DataService {
         return result;
     }
 
-    public int insertCategory(Category category, InputStream input, long len) throws SQLException {
+    public int insertCategory(Category category, InputStream input, long len, int parent_category_id, int is_hide) throws SQLException {
         DBConnection conn = getDBConnection();
-        int result = conn.insertCategory(category,input,len);
+        int result = conn.insertCategory(category,input,len,parent_category_id,is_hide);
         this.putDBConnection(conn);
         return result;
     }
