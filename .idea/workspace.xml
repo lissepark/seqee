@@ -7,8 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6bab637c-c3bf-47ce-8296-4fd3ec37ee1b" name="Default" comment="add admin page">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/editcategory.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/editcategory.jsp" />
     </list>
     <ignored path="SampleApp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -75,11 +74,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="editcategory.jsp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="editcategory.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/editcategory.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1530">
-              <caret line="90" column="110" lean-forward="false" selection-start-line="90" selection-start-column="110" selection-end-line="90" selection-end-column="110" />
+            <state relative-caret-position="136">
+              <caret line="91" column="59" lean-forward="true" selection-start-line="91" selection-start-column="59" selection-end-line="91" selection-end-column="59" />
               <folding />
             </state>
           </provider>
@@ -125,7 +124,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="247">
@@ -222,10 +221,10 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/addcategory.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/controller/AddCategory.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/Category.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/editcategory.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/database/DBConnection.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/EditCategory.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/editcategory.jsp" />
       </list>
     </option>
   </component>
@@ -1194,7 +1193,7 @@
       <workItem from="1519728350827" duration="1343000" />
       <workItem from="1519816166697" duration="1769000" />
       <workItem from="1519818013509" duration="752000" />
-      <workItem from="1519853217939" duration="321000" />
+      <workItem from="1519853217939" duration="816000" />
     </task>
     <task id="LOCAL-00001" summary="commit id">
       <created>1504943768887</created>
@@ -1235,7 +1234,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="356799000" />
+    <option name="totallyTimeSpent" value="357294000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1312" height="687" extended-state="0" />
@@ -1629,14 +1628,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/editcategory.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1530">
-          <caret line="90" column="110" lean-forward="false" selection-start-line="90" selection-start-column="110" selection-end-line="90" selection-end-column="110" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controller/EditCategory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -1649,6 +1640,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
           <caret line="90" column="58" lean-forward="true" selection-start-line="90" selection-start-column="58" selection-end-line="90" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/editcategory.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="91" column="59" lean-forward="true" selection-start-line="91" selection-start-column="59" selection-end-line="91" selection-end-column="59" />
           <folding />
         </state>
       </provider>
