@@ -87,7 +87,8 @@
             List<Category> categoryList1 = (List<Category>) request.getAttribute("categoryList");
             Iterator<Category> iterator1 = categoryList1.iterator();
             while (iterator1.hasNext()) {
-                Category category1 = (Category) iterator1.next();%>
+                Category category1 = (Category) iterator1.next();
+                if(category1.getParentCategory() == 0) {%>
         <%
             Blob blob = (Blob) category1.getCategoryMainImage();
             String b64 = "";
@@ -146,7 +147,7 @@
                 <h5 class="card-title" style="text-align: center"><%=category1.getCategoryName()%></h5>
             </div></a>
         </div>
-        <%}%>
+        <%}}%>
     </div>
     <div style="clear: both"></div>
 
