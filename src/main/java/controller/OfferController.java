@@ -3,6 +3,7 @@ package controller;
 import com.mysql.jdbc.Blob;
 import dao.OfferDAO;
 import daoImpl.OfferDAOImpl;
+import model.Category;
 import model.Offer;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileItemFactory;
@@ -39,6 +40,8 @@ public class OfferController extends HttpServlet{
         String category_id_str = req.getParameter("category_id");
         OfferDAO offerDAO = new OfferDAOImpl();
         List<Offer> offerList = offerDAO.getOffersByCategoryId(Integer.parseInt(category_id_str));
+        List<Category> categoryList = offerDAO.getAllCategories();
+        req.setAttribute("categoryList", categoryList);
         req.setAttribute("offerList", offerList);
         req.setAttribute("category_id", Integer.parseInt(category_id_str));
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/offers.jsp");

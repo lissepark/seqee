@@ -7,6 +7,7 @@
 <%@ page import="java.io.ByteArrayOutputStream" %>
 <%@ page import="com.mysql.jdbc.Blob" %>
 <%@ page import="java.sql.SQLException" %>
+<%@ page import="model.Category" %>
 <%@ page pageEncoding="UTF-8" contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
@@ -40,9 +41,79 @@
     <sec:authorize access="authenticated" var="authenticated"/>
     <div><span class="label" style="margin-left:15px;">Offers</span></div>
     <div><span class="label" style="margin-left:15px;"><a href="/">Main</a></span></div>
+
     <div class="wrap rounded" style="margin-top: 10px">
         <%
-        int cid = (int) request.getAttribute("category_id");
+            int cid = (int) request.getAttribute("category_id");
+            List<Category> categoryList = (List<Category>) request.getAttribute("categoryList");
+            Iterator<Category> iterator = categoryList.iterator();
+            while (iterator.hasNext()) {
+                Category category = (Category) iterator.next();
+                if(category.getParentCategory() == cid) {%>
+        <%
+            Blob blob = (Blob) category.getCategoryMainImage();
+            String b64 = "";
+            if (blob != null) {
+                if (blob.length() <= 1100000) {
+                    byte b[] = new byte[(int) blob.length()];
+                    try {
+                        b = blob.getBytes(1, (int) blob.length());
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                    ByteArrayInputStream bais = new ByteArrayInputStream(b);
+                    //BufferedImage image = new BufferedImage(600,400,BufferedImage.TYPE_4BYTE_ABGR);
+                    BufferedImage image = ImageIO.read(bais);
+
+                    ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                    ImageIO.write(image, "png", baos);
+                    baos.flush();
+                    byte[] imageInByteArray = baos.toByteArray();
+                    baos.close();
+                    b64 = javax.xml.bind.DatatypeConverter.printBase64Binary(imageInByteArray);
+                }else {
+                    b64 = "images/too_big_image.jpg";
+                }
+            }else{
+                b64 = "images/stolen_image.png";
+            }
+        %>
+        <div class="wrapdiv rounded card" style="width: 15rem;">
+            <%if (blob != null && blob.length() <= 1100000) {%>
+            <a href="/offers?category_id=<%=category.getId()%>"><img class="card-img-top img-thumbnail" src="data:image/png;base64,<%= b64 %>"
+                                                                      alt="Card image cap" style="width: 238px;height: 172px"></a>
+            <c:choose>
+                <c:when test="${authenticated}">
+                    <a href="/adminruslan/editcategory?category_id=<%=category.getId()%>"><button type="button" class="btn btn-primary">Edit</button></a>
+                </c:when>
+            </c:choose>
+            <%}else if(blob != null && blob.length() > 1100000)  {%>
+            <a href="/offers?category_id=<%=category.getId()%>"><img class="card-img-top img-thumbnail" src="<%= b64 %>"
+                                                                      alt="Card image cap" style="width: 238px;height: 172px"></a>
+            <c:choose>
+                <c:when test="${authenticated}">
+                    <a href="/adminruslan/editcategory?category_id=<%=category.getId()%>"><button type="button" class="btn btn-primary">Edit</button></a>
+                </c:when>
+            </c:choose>
+            <%} else {%>
+            <a href="/offers?category_id=<%=category.getId()%>"><img class="card-img-top img-thumbnail" src="<%= b64 %>"
+                                                                      alt="Card image cap" style="width: 238px;height: 172px"></a>
+            <c:choose>
+                <c:when test="${authenticated}">
+                    <a href="/adminruslan/editcategory?category_id=<%=category.getId()%>"><button type="button" class="btn btn-primary">Edit</button></a>
+                </c:when>
+            </c:choose>
+            <%}%>
+            <a href="/offers?category_id=<%=category.getId()%>"><div class="card-body" style="height: 50px;">
+                <h5 class="card-title" style="text-align: center"><%=category.getCategoryName()%></h5>
+            </div></a>
+        </div>
+        <%}}%>
+    </div>
+    <div style="clear: both"></div>
+
+    <div class="wrap rounded" style="margin-top: 10px">
+        <%
         List<Offer> offerList1 = (List<Offer>) request.getAttribute("offerList");
         Iterator<Offer> iterator1 = offerList1.iterator();
         while (iterator1.hasNext()) {
