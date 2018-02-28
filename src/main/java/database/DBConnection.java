@@ -59,8 +59,8 @@ public class DBConnection {
             getOfferById = conn.prepareStatement("SELECT * FROM offering where `offering_id`=?");
             deleteOfferById = conn.prepareStatement("DELETE FROM offering where `offering_id`=?");
             insertCategory = conn.prepareStatement("INSERT INTO category SET `category_name`=?, `category_description`=?, `category_order`=?, `category_image`=?, `parent_category_id`=?, `is_hide`=?");
-            updateCategoryWithImage = conn.prepareStatement("update category set `category_name`=?, `category_description`=?, `category_order`=?, `category_image`=? where `category_id`=?");
-            updateCategoryWithoutImage = conn.prepareStatement("update category set `category_name`=?, `category_description`=?, `category_order`=? where `category_id`=?");
+            updateCategoryWithImage = conn.prepareStatement("update category set `category_name`=?, `category_description`=?, `category_order`=?, `category_image`=?, `parent_category_id`=?, `is_hide`=? where `category_id`=?");
+            updateCategoryWithoutImage = conn.prepareStatement("update category set `category_name`=?, `category_description`=?, `category_order`=?, `parent_category_id`=?, `is_hide`=? where `category_id`=?");
             updateOfferWithImage = conn.prepareStatement("update offering set `offering_name`=?, `offering_description`=?, `offer_image_name`=?, `image_nat`=?, `category_id`=? where `offering_id`=?");
             updateOfferWithoutImage = conn.prepareStatement("update offering set `offering_name`=?, `offering_description`=?, `offer_image_name`=?, `category_id`=? where `offering_id`=?");
             insertOfferingsImage = conn.prepareStatement("INSERT INTO images SET `image_name`=?, `offer_id`=?, `image_nat`=?");
@@ -203,6 +203,8 @@ public class DBConnection {
                 category.setCategoryDescription(rs.getString("category_description"));
                 category.setCategoryOrder(rs.getString("category_order"));
                 category.setCategoryMainImage((com.mysql.jdbc.Blob) rs.getBlob("category_image"));
+                category.setParentCategory(rs.getInt("parent_category_id"));
+                category.setIsHide(rs.getInt("is_hide"));
                 result.add(category);
             }
         } catch (SQLException e) {
@@ -280,7 +282,9 @@ public class DBConnection {
             updateCategoryWithImage.setString(2, category.getCategoryDescription());
             updateCategoryWithImage.setString(3, category.getCategoryOrder());
             updateCategoryWithImage.setBinaryStream(4, input, len);
-            updateCategoryWithImage.setInt(5, category_id);
+            updateCategoryWithImage.setInt(5, category.getParentCategory());
+            updateCategoryWithImage.setInt(6, category.getIsHide());
+            updateCategoryWithImage.setInt(7, category_id);
             return updateCategoryWithImage.executeUpdate();
         } catch (SQLException e) {
             System.out.println("updateCategoryWithImage with image - SQLException"+e.getMessage());
@@ -293,7 +297,9 @@ public class DBConnection {
             updateCategoryWithoutImage.setString(1, category.getCategoryName());
             updateCategoryWithoutImage.setString(2, category.getCategoryDescription());
             updateCategoryWithoutImage.setString(3, category.getCategoryOrder());
-            updateCategoryWithoutImage.setInt(4, category_id);
+            updateCategoryWithoutImage.setInt(4, category.getParentCategory());
+            updateCategoryWithoutImage.setInt(5, category.getIsHide());
+            updateCategoryWithoutImage.setInt(6, category_id);
             return updateCategoryWithoutImage.executeUpdate();
         } catch (SQLException e) {
             System.out.println("updateCategoryWithoutImage with image - SQLException"+e.getMessage());

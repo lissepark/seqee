@@ -11,6 +11,8 @@ public class Category {
     private String categoryName;
     private String categoryOrder;
     private Blob blob;
+    private int parentCategory;
+    private int isHide;
 
     public Long getId() {
         return id;
@@ -50,6 +52,22 @@ public class Category {
 
     public void setCategoryMainImage(Blob blob) {
         this.blob = blob;
+    }
+
+    public int getParentCategory() {
+        return parentCategory;
+    }
+
+    public void setParentCategory(int parentCategory) {
+        this.parentCategory = parentCategory;
+    }
+
+    public int getIsHide() {
+        return isHide;
+    }
+
+    public void setIsHide(int isHide) {
+        this.isHide = isHide;
     }
 
     public String toString() {

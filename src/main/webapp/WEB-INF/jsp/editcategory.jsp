@@ -5,7 +5,9 @@
 <%@ page import="java.io.ByteArrayInputStream" %>
 <%@ page import="java.awt.image.BufferedImage" %>
 <%@ page import="java.io.ByteArrayOutputStream" %>
-<%@ page import="javax.imageio.ImageIO" %><%--
+<%@ page import="javax.imageio.ImageIO" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.Iterator" %><%--
   Created by IntelliJ IDEA.
   User: seva0716
   Date: 2/20/2018
@@ -41,6 +43,10 @@
 </head>
 <body>
 <jsp:include page="header.jsp" />
+<%
+    List<Category> categoryList1 = (List<Category>) request.getAttribute("categoryList");
+    Iterator<Category> iterator1 = categoryList1.iterator();
+%>
 
 <div class="wrap rounded" style="margin-top: 10px">
     <%
@@ -80,6 +86,16 @@
                 <input type="hidden" name="category_id" value="<%=categoryById.getId()%>"><br>
                 <input type="text" name="categoryName" value="<%=categoryById.getCategoryName()%>">Type Category name<br>
                 <input type="text" name="categoryDescription" value="<%=categoryById.getCategoryDescription()%>">Type Category description<br>
+                <select type="text" name="categoryId">
+                    <option disabled>Choose the parent category</option>
+                    <option value="<%=categoryById.getParentCategory()%>" selected="selected">Current</option>
+                    <%while (iterator1.hasNext()) {
+                        Category category1 = (Category) iterator1.next();%>
+                    <option value="<%=category1.getId()%>"><%=category1.getCategoryName()%></option>
+                    <%}%>
+                </select>
+                <input type="checkbox" id="isCategoryHide" name="isCategoryHide" value="1">
+                <label for="isCategoryHide">Hide Category</label>
             </p>
             <h4 style="color:blue">Select image for Category to upload:</h4>
             <br/>

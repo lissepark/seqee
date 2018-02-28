@@ -43,6 +43,10 @@ public class EditCategory extends HttpServlet{
             throws ServletException, IOException {
         ApplicationContext actx = new ClassPathXmlApplicationContext("beans.xml");
         OfferDAO offerDAO = (OfferDAO) actx.getBean("daoImpl");
+
+        List<Category> categoryList = offerDAO.getAllCategories();
+        req.setAttribute("categoryList", categoryList);
+
         Category categoryById = new Category();
         String category_id_str = req.getParameter("category_id");
         try {
@@ -58,9 +62,11 @@ public class EditCategory extends HttpServlet{
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
+        int isHide = 0;
         String name = null;
         String description = null;
         int catg_id = 0;
+        int categId = 0;
         FileItemFactory itemFactory = new DiskFileItemFactory();
         ServletFileUpload upload = new ServletFileUpload(itemFactory);
         String imgName = "";
@@ -81,6 +87,14 @@ public class EditCategory extends HttpServlet{
                         description = new String(description.getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
                     } else if ((item.getFieldName()).equals("category_id")){
                         catg_id = Integer.parseInt(item.getString());
+                    } else if ((item.getFieldName()).equals("isCategoryHide")){
+                        if ((Integer.parseInt(item.getString())) == 1) {
+                            isHide = Integer.parseInt(item.getString());
+                        }else {
+                            isHide = 0;
+                        }
+                    } else if ((item.getFieldName()).equals("categoryId")){
+                        categId = Integer.parseInt(item.getString());
                     }
                 } else {
                     String contentType = item.getContentType();
@@ -99,6 +113,8 @@ public class EditCategory extends HttpServlet{
                     }
                     category.setCategoryName(name);
                     category.setCategoryDescription(description);
+                    category.setParentCategory(categId);
+                    category.setIsHide(isHide);
                     try {
                         if (leng == 0) {
                             offerDAO.updateCategoryWithoutImage(category,catg_id);
