@@ -97,11 +97,9 @@
                         <option value="<%=category1.getId()%>"><%=category1.getCategoryName()%></option>
                         <%}%>
                     </select>
-                </p>
-                <h4 style="color:blue">Select image for Offering to upload:</h4>
-                <br/>
-                <input type="file" name="file"><br/>
-                <input class="btn btn-primary btn-lg" type="submit" value="Upload Image and send data">
+                </p><br/>
+                <input type="file" name="file"><h5 style="color:darkgreen">Select image for Offering to upload:</h5><br/>
+                <input class="btn btn-primary btn-lg" type="submit" value="Save changes">
                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
             </form>
         </div>

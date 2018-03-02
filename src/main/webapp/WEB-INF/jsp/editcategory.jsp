@@ -80,15 +80,16 @@
         %>
 
         <div style="margin-left: 2%">
-            <a href="/"><button type="button" class="btn btn-outline-primary">Go to main page</button></a>
+            <a href="/"><button type="button" class="btn btn-outline-primary">Go to main page</button></a><br/>
             <h4>Please, fill the data and load an image</h4><br>
             <form action="editcategory?${_csrf.parameterName}=${_csrf.token}&category_id=<%=categoryById.getId()%>" method="post" enctype="multipart/form-data">
-                <p>
-                    <input type="hidden" name="category_id" value="<%=categoryById.getId()%>"><br>
-                    <input type="text" name="categoryName" value="<%=categoryById.getCategoryName()%>">Type Category name ((leave the same if you don't want to change))<br>
-                    <input type="text" name="categoryDescription" value="<%=categoryById.getCategoryDescription()%>">Type Category description ((leave the same if you don't want to change))<br>
-                    <p>Choose the parent category (leave the same if you don't want to change)</p>
-                    <select type="text" name="categoryId">
+                    <input type="hidden" name="category_id" value="<%=categoryById.getId()%>">
+                    <br/>
+                    <input type="text" name="categoryName" value="<%=categoryById.getCategoryName()%>">Type Category name ((leave the same if you don't want to change))
+                    <br/>
+                    <input type="text" name="categoryDescription" value="<%=categoryById.getCategoryDescription()%>">Type Category description ((leave the same if you don't want to change))
+                    <br/>
+                    <select type="text" id="categoryId" name="categoryId">
                         <option disabled>Choose the parent category</option>
                         <option value="<%=categoryById.getParentCategory()%>" selected="selected">Current category</option>
                         <option value="0">Top category</option>
@@ -96,13 +97,15 @@
                             Category category1 = (Category) iterator1.next();%>
                         <option value="<%=category1.getId()%>"><%=category1.getCategoryName()%></option>
                         <%}%>
-                    </select><br/>
+                    </select>
+                    <label for="categoryId">Choose the parent category (leave the same if you don't want to change)</label>
+                    <br/>
                     <input type="checkbox" id="isCategoryHide" name="isCategoryHide" value="1">
                     <label for="isCategoryHide">Hide Category (Check checkbox if you want to hide this category)</label>
-                </p>
-                <h4 style="color:blue">Select image for Category to upload:</h4>
+                <h5 style="color:darkgreen">Select image for Category to upload:</h5>
                 <br/>
-                <input type="file" name="file"><br/>
+                <input type="file" name="file">
+                <br/>
                 <input class="btn btn-primary btn-lg" type="submit" value="Save changes">
                 <input type="hidden"  name="${_csrf.parameterName}"   value="${_csrf.token}"/>
             </form>

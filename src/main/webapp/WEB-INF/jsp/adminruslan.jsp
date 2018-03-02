@@ -17,9 +17,9 @@
 <body>
     <div class="container">
         <jsp:include page="header.jsp" />
-        <a href="/adminruslan/addcategory"><button type="button" class="btn btn-primary btn-lg btn-block">Add a Category</button></a>
+        <a href="/adminruslan/addcategory"><button type="button" class="btn btn-primary btn-lg">Add a Category</button></a>
         <br>
-        <a href="/adminruslan/addoffer"><button type="button" class="btn btn-primary btn-lg btn-block">Add an Offering</button></a>
+        <a href="/adminruslan/addoffer"><button type="button" class="btn btn-primary btn-lg">Add an Offering</button></a>
         <br>
         <a href="/"><button type="button" class="btn btn-outline-primary">Go to main page</button></a>
     </div>

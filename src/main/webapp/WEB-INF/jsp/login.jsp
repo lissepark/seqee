@@ -9,43 +9,47 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-
     <title>Sequoia admin page Login</title>
-
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet"
-          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-
-    <!-- Optional theme -->
-    <link rel="stylesheet"
-          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-
-    <!-- Latest Jquery -->
-    <script
-            src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"
-            type="text/javascript"></script>
-    <!-- Latest compiled and minified JavaScript -->
-    <script
-            src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link href="/css/style.css" rel="stylesheet">
+    <script src="/js/jquery-3.2.1.min.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Резной декор, Мебель из дерева, Посуда из дерева, Торцевые разделочные доски, Рамки
+        для фото, Индивидуальные проекты Family joinery workshop Sequoia">
+    <title>Резной декор, Мебель из дерева, Посуда из дерева, Торцевые разделочные доски, Рамки
+        для фото, Индивидуальные проекты Family joinery workshop Sequoia</title>
+    <style>
+        .wrap {
+            text-align: justify;
+        }
+        .wrap .wrapdiv {
+            display: inline-block;
+            vertical-align: top;
+        }
+        .wrap:after {
+            display: inline-block;
+            content: "";
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
 <div class="container">
-    <jsp:include page="header.jsp" />
+    <jsp:include page="header.jsp"/>
     <div class="row">
         <h1>Login</h1>
     </div>
     <c:url value="/login" var="loginVar"/>
     <form id="appointment-form" action="/login" method="POST">
         <div class="form-group">
-            <label for="make">Username</label>
+            <label>Username</label>
             <input name="custom_username" class="form-control" />
         </div>
         <div class="form-group">
-            <label for="model">Password</label>
+            <label>Password</label>
             <input type="password" name="custom_password" class="form-control" />
         </div>
         <sec:csrfInput/>
