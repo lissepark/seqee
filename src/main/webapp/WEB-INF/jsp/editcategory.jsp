@@ -88,7 +88,7 @@
                 <input type="text" name="categoryDescription" value="<%=categoryById.getCategoryDescription()%>">Type Category description<br>
                 <select type="text" name="categoryId">
                     <option disabled>Choose the parent category</option>
-                    <option value="<%=categoryById.getParentCategory()%>" selected="selected">Current</option>
+                    <option value="<%=categoryById.getParentCategory()%>" selected="selected">Current, <%=categoryById.getParentCategory()%></option>
                     <option value="0">Top category</option>
                     <%while (iterator1.hasNext()) {
                         Category category1 = (Category) iterator1.next();%>
