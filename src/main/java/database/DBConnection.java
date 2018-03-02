@@ -225,6 +225,8 @@ public class DBConnection {
                 catg.setCategoryDescription(rs.getString("category_description"));
                 catg.setCategoryOrder(rs.getString("category_order"));
                 catg.setCategoryMainImage((com.mysql.jdbc.Blob) rs.getBlob("category_image"));
+                catg.setParentCategory(rs.getInt("parent_category_id"));
+                catg.setIsHide(rs.getInt("is_hide"));
             }
         } catch (SQLException e) {
             e.printStackTrace();
