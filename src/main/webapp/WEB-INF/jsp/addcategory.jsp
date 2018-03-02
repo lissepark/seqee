@@ -37,7 +37,7 @@
         <p>
             <input type="text" name="categoryName">Type Category name<br>
             <input type="text" name="categoryDescription" >Type Category description<br>
-            <!-- parent category -->
+            <p>Choose the parent category (leave the same if you want it has to be 'Top level' category)</p>
             <select type="text" name="categoryId">
                 <option disabled>Choose the parent category</option>
                 <option value="0" selected="selected">Top level category</option>
@@ -45,15 +45,15 @@
                     Category category1 = (Category) iterator1.next();%>
                 <option value="<%=category1.getId()%>"><%=category1.getCategoryName()%></option>
                 <%}%>
-            </select>
+            </select><br/>
             <input type="checkbox" id="isCategoryHide" name="isCategoryHide" value="1">
-            <label for="isCategoryHide">Hide Category</label>
+            <label for="isCategoryHide">Hide Category (Check checkbox if you want to hide this category)</label>
         </p>
         <h4 style="color:blue">Select image for Category to upload:</h4>
         <br/>
         <input type="file" name="file"><br/>
         <br/>
-        <input class="btn btn-primary btn-lg" type="submit" value="Upload Image and send data">
+        <input class="btn btn-primary btn-lg" type="submit" value="Save category">
     </form>
     </div>
 </div>

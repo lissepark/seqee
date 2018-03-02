@@ -41,25 +41,27 @@
     <meta name="_csrf" content="e62835df-f1a0-49ea-bce7-bf96f998119c" />
 </head>
 <body>
-<jsp:include page="header.jsp" />
+<div class="container">
+    <jsp:include page="header.jsp" />
 
-<div class="wrap rounded" style="margin-top: 10px">
-    <%
-        Category categoryById = (Category) request.getAttribute("category");
-        String offerNameToDelete = (String) request.getAttribute("offerNameToDelete");
-    %>
+    <div class="wrap rounded" style="margin-top: 10px">
+        <%
+            Category categoryById = (Category) request.getAttribute("category");
+            String offerNameToDelete = (String) request.getAttribute("offerNameToDelete");
+        %>
 
-    <div style="margin-left: 2%">
-        <p>Offering "<%=offerNameToDelete%>" has been deleted from the "<%=categoryById.getCategoryName()%>" category</p>
-        <a href="/offers?category_id=<%=categoryById.getId()%>"><button type="button" class="btn btn-outline-primary">Go to <%=categoryById.getCategoryName()%> category page</button></a>
-        <a href="/"><button type="button" class="btn btn-outline-primary">Go to main page</button></a>
+        <div style="margin-left: 2%">
+            <p>Offering "<%=offerNameToDelete%>" has been deleted from the "<%=categoryById.getCategoryName()%>" category</p>
+            <a href="/offers?category_id=<%=categoryById.getId()%>"><button type="button" class="btn btn-outline-primary">Go to <%=categoryById.getCategoryName()%> category page</button></a>
+            <a href="/"><button type="button" class="btn btn-outline-primary">Go to main page</button></a>
+        </div>
+
     </div>
-
+    <div style="clear: both"></div>
+    <!-- Site footer -->
+    <footer class="footer">
+        <p>&copy; Family joinery workshop Sequoia 2017-2018</p>
+    </footer>
 </div>
-<div style="clear: both"></div>
-<!-- Site footer -->
-<footer class="footer">
-    <p>&copy; Family joinery workshop Sequoia 2017-2018</p>
-</footer>
 </body>
 </html>

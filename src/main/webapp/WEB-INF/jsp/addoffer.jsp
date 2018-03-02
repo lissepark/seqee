@@ -27,27 +27,29 @@
     List<Category> categoryList1 = (List<Category>) request.getAttribute("categoryList");
     Iterator<Category> iterator1 = categoryList1.iterator();
     %>
-    <div style="margin-left: 2%">
-        <h4>Please, fill the data and load an image</h4>
-        <form action="addoffer?${_csrf.parameterName}=${_csrf.token}" method="post" enctype="multipart/form-data">
-            <p>
-                <input type="text" name="offerName">Type the name of the offer<br>
-                <input type="text" name="offerDescription">Type the description of the offer<br>
+    <div class="container">
+        <div style="margin-left: 2%">
+            <h4>Please, fill the data and load an image</h4>
+            <form action="addoffer?${_csrf.parameterName}=${_csrf.token}" method="post" enctype="multipart/form-data">
+                <p>
+                    <input type="text" name="offerName">Type the name of the offer<br>
+                    <input type="text" name="offerDescription">Type the description of the offer<br>
 
 
-                <select type="text" name="categoryId">
-                    <option disabled>Choose the Category</option>
-                    <%while (iterator1.hasNext()) {
-                        Category category1 = (Category) iterator1.next();%>
-                    <option value="<%=category1.getId()%>"><%=category1.getCategoryName()%></option>
-                    <%}%>
-                </select>
-            </p>
-            <h4 style="color:blue">Select image to upload:</h4>
-            <br/>
-            <input type="file" name="file"><br/>
-            <input class="btn btn-primary btn-lg" type="submit" value="Upload Image">
-        </form>
+                    <select type="text" name="categoryId">
+                        <option disabled>Choose the Category</option>
+                        <%while (iterator1.hasNext()) {
+                            Category category1 = (Category) iterator1.next();%>
+                        <option value="<%=category1.getId()%>"><%=category1.getCategoryName()%></option>
+                        <%}%>
+                    </select>
+                </p>
+                <h4 style="color:blue">Select image to upload:</h4>
+                <br/>
+                <input type="file" name="file"><br/>
+                <input class="btn btn-primary btn-lg" type="submit" value="Upload Image">
+            </form>
+        </div>
     </div>
 </body>
 </html>

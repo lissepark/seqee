@@ -33,8 +33,8 @@
 
 </head>
 <body>
-<jsp:include page="header.jsp" />
 <div class="container">
+    <jsp:include page="header.jsp" />
     <div class="row">
         <h1>Login</h1>
     </div>

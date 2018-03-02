@@ -15,11 +15,13 @@
     <script src="/js/bootstrap.js"></script>
 </head>
 <body>
-<jsp:include page="header.jsp" />
-<a href="/adminruslan/addcategory"><button type="button" class="btn btn-primary btn-lg btn-block">Add a Category</button></a>
-<br>
-<a href="/adminruslan/addoffer"><button type="button" class="btn btn-primary btn-lg btn-block">Add an Offering</button></a>
-<br>
-<a href="/"><button type="button" class="btn btn-outline-primary">Go to main page</button></a>
+    <div class="container">
+        <jsp:include page="header.jsp" />
+        <a href="/adminruslan/addcategory"><button type="button" class="btn btn-primary btn-lg btn-block">Add a Category</button></a>
+        <br>
+        <a href="/adminruslan/addoffer"><button type="button" class="btn btn-primary btn-lg btn-block">Add an Offering</button></a>
+        <br>
+        <a href="/"><button type="button" class="btn btn-outline-primary">Go to main page</button></a>
+    </div>
 </body>
 </html>

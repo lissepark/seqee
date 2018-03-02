@@ -51,13 +51,6 @@ public class EditCategory extends HttpServlet{
         String category_id_str = req.getParameter("category_id");
         try {
             categoryById = (Category) offerDAO.getCategoryById(Integer.parseInt(category_id_str));
-
-            System.out.println("categoryById.getParentCategory() = " + categoryById.getParentCategory());
-            System.out.println("categoryById.getParentCategory() = " + categoryById.getParentCategory());
-            System.out.println("categoryById.getParentCategory() = " + categoryById.getParentCategory());
-            System.out.println("categoryById.getParentCategory() = " + categoryById.getParentCategory());
-            System.out.println("categoryById.getParentCategory() = " + categoryById.getParentCategory());
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
