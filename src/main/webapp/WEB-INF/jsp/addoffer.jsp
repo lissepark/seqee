@@ -32,20 +32,28 @@
         <div style="margin-left: 2%">
             <h4>Please, fill the data and load an image</h4>
             <form action="addoffer?${_csrf.parameterName}=${_csrf.token}" method="post" enctype="multipart/form-data">
-                <p>
-                    <input type="text" name="offerName">Type the name of the offer<br>
-                    <input type="text" name="offerDescription">Type the description of the offer<br>
-                    <select type="text" name="categoryId">
+                <div class="form-group">
+                    <label for="inputOfferName">Type the name of the offer</label>
+                    <input type="text" id="inputOfferName" name="offerName" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="inputDescription">Type the description of the offer</label>
+                    <input type="text" id="inputDescription" name="offerDescription" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="selectCategory">Choose the Category</label>
+                    <select type="text" name="categoryId" id="selectCategory" class="form-control">
                         <option disabled>Choose the Category</option>
                         <%while (iterator1.hasNext()) {
                             Category category1 = (Category) iterator1.next();%>
                         <option value="<%=category1.getId()%>"><%=category1.getCategoryName()%></option>
                         <%}%>
                     </select>
-                </p><br/>
-                <h5 style="color:darkgreen">Select image to upload:</h5>
-                <br/>
-                <input type="file" name="file"><br/>
+                </div>
+                <div class="form-group">
+                    <label for="mainOfferImage">Select image to upload:</label>
+                    <input type="file" name="file" class="form-control-file" id="mainOfferImage">
+                </div>
                 <input class="btn btn-primary btn-lg" type="submit" value="Save Offering">
             </form>
         </div>
