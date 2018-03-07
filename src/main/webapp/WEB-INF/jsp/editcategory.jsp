@@ -83,13 +83,18 @@
             <a href="/"><button type="button" class="btn btn-outline-primary">Go to main page</button></a><br/>
             <h4>Please, fill the data and load an image</h4><br>
             <form action="editcategory?${_csrf.parameterName}=${_csrf.token}&category_id=<%=categoryById.getId()%>" method="post" enctype="multipart/form-data">
-                    <input type="hidden" name="category_id" value="<%=categoryById.getId()%>">
-                    <br/>
-                    <input type="text" name="categoryName" value="<%=categoryById.getCategoryName()%>">Type Category name ((leave the same if you don't want to change))
-                    <br/>
-                    <input type="text" name="categoryDescription" value="<%=categoryById.getCategoryDescription()%>">Type Category description ((leave the same if you don't want to change))
-                    <br/>
-                    <select type="text" id="categoryId" name="categoryId">
+                <input type="hidden" name="category_id" value="<%=categoryById.getId()%>">
+                <div class="form-group">
+                    <label for="inputCategoryName">Type Category name (leave the same if you don't want to change)</label>
+                    <input type="text" name="categoryName" value="<%=categoryById.getCategoryName()%>" id="inputCategoryName" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="inputCategoryDescription">Type Category description (leave the same if you don't want to change)</label>
+                    <input type="text" name="categoryDescription" value="<%=categoryById.getCategoryDescription()%>" id="inputCategoryDescription" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="selectParentCategory">Choose the parent category (leave the same if you want it has to be 'Top level' category)</label>
+                    <select type="text" id="categoryId" name="categoryId" id="selectParentCategory" class="form-control">
                         <option disabled>Choose the parent category</option>
                         <option value="<%=categoryById.getParentCategory()%>" selected="selected">Current category</option>
                         <option value="0">Top category</option>
@@ -98,14 +103,17 @@
                         <option value="<%=category1.getId()%>"><%=category1.getCategoryName()%></option>
                         <%}%>
                     </select>
-                    <label for="categoryId">Choose the parent category (leave the same if you don't want to change)</label>
-                    <br/>
-                    <input type="checkbox" id="isCategoryHide" name="isCategoryHide" value="1">
-                    <label for="isCategoryHide">Hide Category (Check checkbox if you want to hide this category)</label>
-                <h5 style="color:darkgreen">Select image for Category to upload:</h5>
-                <br/>
-                <input type="file" name="file">
-                <br/>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="checkbox" name="isCategoryHide" value="1" class="form-check-input">
+                        Hide Category (Check checkbox if you want to hide this category)
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label for="mainCategoryImage">Select image to upload:</label>
+                    <input type="file" name="file" class="form-control-file" id="mainCategoryImage">
+                </div>
                 <input class="btn btn-primary btn-lg" type="submit" value="Save changes">
                 <input type="hidden"  name="${_csrf.parameterName}"   value="${_csrf.token}"/>
             </form>
