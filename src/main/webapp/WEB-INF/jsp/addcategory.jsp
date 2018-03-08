@@ -31,6 +31,17 @@
 %>
 <div class="container">
     <jsp:include page="header.jsp"/>
+            <%
+                if (request.getAttribute("success") != null) {
+                    int success = (int) request.getAttribute("success");
+                    if (success > 0) {%>
+                <h4 style="color: darkgreen">Category has been successfully added. Would you like to add more categories?</h4>
+                <%
+                    } else if (success <= 0) { %>
+                <h4 style="color: red">Category hasn't been added or has been added incompletely. Please check.</h4>
+            <% }
+                }
+            %>
         <div class="row">
             <div class="col-8">
     <h4>Please, fill the data and load an image</h4><br>

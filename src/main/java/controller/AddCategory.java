@@ -32,6 +32,7 @@ public class AddCategory extends HttpServlet {
         int categId = 0;
         int isHide = 0;
         String description = null;
+        int success = 0;
         FileItemFactory itemFactory = new DiskFileItemFactory();
         ServletFileUpload upload = new ServletFileUpload(itemFactory);
         String imgName = "";
@@ -77,7 +78,7 @@ public class AddCategory extends HttpServlet {
                     category.setCategoryName(name);
                     category.setCategoryDescription(description);
                     try {
-                        offerDAO.insertCategory(category,input,leng,categId,isHide);
+                        success = offerDAO.insertCategory(category,input,leng,categId,isHide);
                         System.out.println(leng);
                     } catch (SQLException e) {
                         e.printStackTrace();
@@ -90,7 +91,7 @@ public class AddCategory extends HttpServlet {
             ex.printStackTrace();
             System.out.println("Other Exception in doPost of Analysis servlet");
         }
-
+        request.setAttribute("success", success);
         doGet(request,response);
     }
 

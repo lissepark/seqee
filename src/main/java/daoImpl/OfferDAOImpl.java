@@ -41,8 +41,8 @@ public class OfferDAOImpl implements OfferDAO {
         return dataService.getAllCategories();
     }
 
-    public void insertCategory(Category category, InputStream input, long len, int parent_category_id, int is_hide) throws SQLException{
-        dataService.insertCategory(category,input,len,parent_category_id,is_hide);
+    public int insertCategory(Category category, InputStream input, long len, int parent_category_id, int is_hide) throws SQLException{
+        return dataService.insertCategory(category,input,len,parent_category_id,is_hide);
     }
 
     public int updateCategoryWithImage(Category category, InputStream input, long len, int category_id) throws SQLException {
