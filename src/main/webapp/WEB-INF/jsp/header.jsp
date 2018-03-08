@@ -60,6 +60,9 @@
                             <sec:csrfInput/>
                         </form>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/adminruslan">Admin page</a>
+                    </li>
                 </c:when>
                 <c:otherwise>
                     <li class="nav-item">

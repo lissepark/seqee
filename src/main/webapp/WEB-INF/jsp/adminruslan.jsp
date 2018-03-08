@@ -26,6 +26,9 @@
             content: "";
             width: 100%;
         }
+        a {
+            margin-bottom: 2%;
+        }
     </style>
 </head>
 <body>
@@ -34,9 +37,11 @@
             <div class="row">
                 <div class="col">
                     <a href="/adminruslan/addcategory" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Add a Category</a>
+                    <br/>
                     <a href="/adminruslan/addoffer" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Add an Offering</a>
                     <!--a href="/adminruslan/addcategory"><button type="button" class="btn btn-primary btn-lg">Add a Category</button></a-->
                     <!--a href="/adminruslan/addoffer"><button type="button" class="btn btn-primary btn-lg">Add an Offering</button></a-->
+                    <br/>
                     <a href="/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Go to main page</a>
                     <!--a href="/"><button type="button" class="btn btn-outline-primary">Go to main page</button></a-->
                 </div>

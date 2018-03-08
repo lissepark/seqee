@@ -31,7 +31,8 @@
 %>
 <div class="container">
     <jsp:include page="header.jsp"/>
-    <div style="margin-left: 2%">
+        <div class="row">
+            <div class="col-8">
     <h4>Please, fill the data and load an image</h4><br>
     <form action="addcategory?${_csrf.parameterName}=${_csrf.token}" method="post" enctype="multipart/form-data">
         <div class="form-group">
@@ -65,6 +66,9 @@
         </div>
         <input class="btn btn-primary btn-lg" type="submit" value="Save category">
     </form>
+    </div>
+    <div class="col">
+        <a href="/adminruslan/addoffer" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Add an Offering</a>
     </div>
 </div>
 </body>

@@ -30,11 +30,11 @@ public class OfferDAOImpl implements OfferDAO {
         return null;
     }
 
-    public void insertOffer(Offer offering) throws SQLException {
-        dataService.insertOffer(offering);
+    public int insertOffer(Offer offering) throws SQLException {
+        return dataService.insertOffer(offering);
     }
-    public void insertOffer(Offer offering,InputStream input, long len) throws SQLException {
-        dataService.insertOffer(offering,input, len);
+    public int insertOffer(Offer offering,InputStream input, long len) throws SQLException {
+        return dataService.insertOffer(offering,input, len);
     }
 
     public List<Category>getAllCategories(){

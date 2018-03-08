@@ -38,6 +38,7 @@ public class AddOffer extends HttpServlet {
         String name = null;
         String description = null;
         String categId = null;
+        int success = 0;
         FileItemFactory itemFactory = new DiskFileItemFactory();
         ServletFileUpload upload = new ServletFileUpload(itemFactory);
         String imgName = "";
@@ -79,7 +80,7 @@ public class AddOffer extends HttpServlet {
                     offer.setOfferDescription(description);
                     offer.setOfferCategory(Integer.parseInt(categId));
                     try {
-                        offerDAO.insertOffer(offer,input,leng);
+                        success = offerDAO.insertOffer(offer,input,leng);
                     } catch (SQLException e) {
                         e.printStackTrace();
                     }
@@ -91,7 +92,7 @@ public class AddOffer extends HttpServlet {
             ex.printStackTrace();
             System.out.println("Other Exception in doPost of Analysis servlet");
         }
-
+        request.setAttribute("success", success);
         doGet(request,response);
     }
 

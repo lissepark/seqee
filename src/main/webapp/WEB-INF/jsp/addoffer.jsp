@@ -29,7 +29,19 @@
     %>
     <div class="container">
         <jsp:include page="header.jsp"/>
-        <div style="margin-left: 2%">
+            <%
+                if (request.getAttribute("success") != null) {
+                    int success = (int) request.getAttribute("success");
+                    if (success > 0) {%>
+                        <h4 style="color: darkgreen">Offer has been successfully added. Would you like to add more offerings?</h4>
+                    <%
+                    } else if (success <= 0) { %>
+                        <h4 style="color: red">Offer hasn't been added or has been added incompletely. Please check.</h4>
+                    <% }
+                }
+            %>
+            <div class="row">
+                <div class="col-8">
             <h4>Please, fill the data and load an image</h4>
             <form action="addoffer?${_csrf.parameterName}=${_csrf.token}" method="post" enctype="multipart/form-data">
                 <div class="form-group">
@@ -56,6 +68,9 @@
                 </div>
                 <input class="btn btn-primary btn-lg" type="submit" value="Save Offering">
             </form>
+        </div>
+        <div class="col">
+            <a href="/adminruslan/addcategory" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Add a Category</a>
         </div>
     </div>
 </body>
