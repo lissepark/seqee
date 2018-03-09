@@ -79,11 +79,6 @@ public class AddCategory extends HttpServlet {
                     category.setCategoryDescription(description);
                     try {
                         success = offerDAO.insertCategory(category,input,leng,categId,isHide);
-                        System.out.println("success = "+success);
-                        System.out.println("success = "+success);
-                        System.out.println("success = "+success);
-                        System.out.println("success = "+success);
-                        System.out.println(leng);
                     } catch (SQLException e) {
                         e.printStackTrace();
                     }
