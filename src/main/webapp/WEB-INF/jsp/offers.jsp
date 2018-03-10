@@ -78,7 +78,7 @@
                 b64 = "images/stolen_image.png";
             }
         %>
-        <div class="wrapdiv rounded card" style="width: 15rem;">
+        <div class="wrapdiv rounded card_local" style="width: 15rem;">
             <%if (blob != null && blob.length() <= 1100000) {%>
             <a href="/offers?category_id=<%=category.getId()%>"><img class="card-img-top img-thumbnail" src="data:image/png;base64,<%= b64 %>"
                                                                       alt="Card image cap" style="width: 238px;height: 172px"></a>
