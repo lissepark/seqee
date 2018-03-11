@@ -22,7 +22,7 @@ body {
 .card-grid:after {
     content: "";
     flex: 1 1 80%;
-    max-width: 200px;
+    max-width: 238px;
 }
 
 .card_local {
@@ -36,7 +36,6 @@ body {
     will-change: box-shadow;
     display: block;
     position: relative;
-    padding: 24px;
     border-radius: 2px;
 }
 

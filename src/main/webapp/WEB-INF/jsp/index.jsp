@@ -148,6 +148,7 @@
             </div></a>
         </div>
         <%}}%>
+        <div class="wrapdiv rounded card_local" style="border: none;width: 238px;"></div>
     </div>
     <div style="clear: both"></div>
 

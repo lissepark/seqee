@@ -42,7 +42,7 @@
     <%
        Category categById = (Category) request.getAttribute("categoryById");
     %>
-    <div><span class="label" style="margin-left:15px;"><%=categById.getCategoryName()%></span></div>
+    <div style="align-content: center"><span class="label"><h3><%=categById.getCategoryName()%></h3></span></div>
     <div class="wrap rounded card-grid" style="margin-top: 10px">
         <%
             int cid = (int) request.getAttribute("category_id");
@@ -105,11 +105,15 @@
                 </c:when>
             </c:choose>
             <%}%>
-            <a href="/offers?category_id=<%=category.getId()%>"><div class="card-body" style="height: 50px;">
-                <h5 class="card-title" style="text-align: center"><%=category.getCategoryName()%></h5>
-            </div></a>
+            <a href="/offers?category_id=<%=category.getId()%>">
+                <div class="card-body" style="height: 50px;">
+                    <h5 class="card-title" style="text-align: center"><%=category.getCategoryName()%></h5>
+                </div>
+            </a>
         </div>
         <%}}%>
+        <div class="wrapdiv rounded card_local" style="border: none;width: 238px;"></div>
+    </div>
     <div style="clear: both"></div>
 
     <div class="wrap rounded card-grid" style="margin-top: 10px">
@@ -146,7 +150,7 @@
                 b64 = "images/stolen_image.png";
             }
         %>
-    <div class="wrapdiv rounded card_local">
+        <div class="wrapdiv rounded card_local">
         <%if (blob != null && blob.length() <= 1100000) {%>
         <img class="card-img-top img-thumbnail" src="data:image/png;base64,<%= b64 %>"
              alt="Card image cap" style="width: 238px;height: 172px">
@@ -180,6 +184,7 @@
         </div>
     </div>
     <%}%>
+    <div class="wrapdiv rounded card_local" style="border: none;width: 238px;"></div>
 </div>
 <div style="clear: both"></div>
     <!-- Site footer -->
