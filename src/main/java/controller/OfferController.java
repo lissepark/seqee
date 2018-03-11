@@ -41,8 +41,15 @@ public class OfferController extends HttpServlet{
         OfferDAO offerDAO = new OfferDAOImpl();
         List<Offer> offerList = offerDAO.getOffersByCategoryId(Integer.parseInt(category_id_str));
         List<Category> categoryList = offerDAO.getAllCategories();
+        Category categoryById = new Category();
+        try {
+            categoryById = offerDAO.getCategoryById(Integer.parseInt(category_id_str));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         req.setAttribute("categoryList", categoryList);
         req.setAttribute("offerList", offerList);
+        req.setAttribute("categoryById", categoryById);
         req.setAttribute("category_id", Integer.parseInt(category_id_str));
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/offers.jsp");
         requestDispatcher.forward(req, resp);

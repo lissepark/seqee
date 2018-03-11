@@ -39,10 +39,11 @@
 <div class="container">
     <jsp:include page="header.jsp"/>
     <sec:authorize access="authenticated" var="authenticated"/>
-    <div><span class="label" style="margin-left:15px;">Offers</span></div>
-    <div><span class="label" style="margin-left:15px;"><a href="/">Main</a></span></div>
-
-    <div class="wrap rounded" style="margin-top: 10px">
+    <%
+       Category categById = (Category) request.getAttribute("categoryById");
+    %>
+    <div><span class="label" style="margin-left:15px;"><%=categById.getCategoryName()%></span></div>
+    <div class="wrap rounded card-grid" style="margin-top: 10px">
         <%
             int cid = (int) request.getAttribute("category_id");
             List<Category> categoryList = (List<Category>) request.getAttribute("categoryList");
@@ -78,7 +79,7 @@
                 b64 = "images/stolen_image.png";
             }
         %>
-        <div class="wrapdiv rounded card_local" style="width: 15rem;">
+        <div class="wrapdiv rounded card_local">
             <%if (blob != null && blob.length() <= 1100000) {%>
             <a href="/offers?category_id=<%=category.getId()%>"><img class="card-img-top img-thumbnail" src="data:image/png;base64,<%= b64 %>"
                                                                       alt="Card image cap" style="width: 238px;height: 172px"></a>
@@ -109,10 +110,9 @@
             </div></a>
         </div>
         <%}}%>
-    </div>
     <div style="clear: both"></div>
 
-    <div class="wrap rounded" style="margin-top: 10px">
+    <div class="wrap rounded card-grid" style="margin-top: 10px">
         <%
         List<Offer> offerList1 = (List<Offer>) request.getAttribute("offerList");
         Iterator<Offer> iterator1 = offerList1.iterator();
@@ -146,7 +146,7 @@
                 b64 = "images/stolen_image.png";
             }
         %>
-    <div class="wrapdiv rounded card" style="width: 15rem;">
+    <div class="wrapdiv rounded card_local">
         <%if (blob != null && blob.length() <= 1100000) {%>
         <img class="card-img-top img-thumbnail" src="data:image/png;base64,<%= b64 %>"
              alt="Card image cap" style="width: 238px;height: 172px">

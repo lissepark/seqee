@@ -82,9 +82,7 @@
         </a>
     </div>
 
-    <div class="wrap rounded" style="margin-top: 10px">
-        <div class="card-grid">
-
+    <div class="wrap rounded card-grid" style="margin-top: 10px">
         <%
             List<Category> categoryList1 = (List<Category>) request.getAttribute("categoryList");
             Iterator<Category> iterator1 = categoryList1.iterator();
@@ -119,7 +117,7 @@
                 b64 = "images/stolen_image.png";
             }
         %>
-        <div class="wrapdiv rounded card_local" style="width: 15rem;">
+        <div class="wrapdiv rounded card_local">
             <%if (blob != null && blob.length() <= 1100000) {%>
             <a href="/offers?category_id=<%=category1.getId()%>"><img class="card-img-top img-thumbnail" src="data:image/png;base64,<%= b64 %>"
                                                                       alt="Card image cap" style="width: 238px;height: 172px"></a>
