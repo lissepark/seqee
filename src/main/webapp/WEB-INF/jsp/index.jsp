@@ -84,11 +84,11 @@
 
     <div class="wrap rounded card-grid" style="margin-top: 10px">
         <%
-            List<Category> categoryList1 = (List<Category>) request.getAttribute("categoryList");
-            Iterator<Category> iterator1 = categoryList1.iterator();
-            while (iterator1.hasNext()) {
-                Category category1 = (Category) iterator1.next();
-                if(category1.getParentCategory() == 0) {%>
+        List<Category> categoryList1 = (List<Category>) request.getAttribute("categoryList");
+        Iterator<Category> iterator1 = categoryList1.iterator();
+        while (iterator1.hasNext()) {
+        Category category1 = (Category) iterator1.next();
+        if(category1.getParentCategory() == 0) {%>
         <%
             Blob blob = (Blob) category1.getCategoryMainImage();
             String b64 = "";
@@ -143,12 +143,14 @@
                 </c:when>
             </c:choose>
             <%}%>
-            <a href="/offers?category_id=<%=category1.getId()%>"><div class="card-body" style="height: 50px;">
-                <h5 class="card-title" style="text-align: center"><%=category1.getCategoryName()%></h5>
-            </div></a>
+            <a href="/offers?category_id=<%=category1.getId()%>">
+                <div class="card-body" style="height: 50px;">
+                    <h5 class="card-title" style="text-align: center"><%=category1.getCategoryName()%></h5>
+                </div>
+            </a>
         </div>
         <%}}%>
-        <div class="wrapdiv rounded card_local" style="border: none;width: 238px;"></div>
+        <div style="border: none;width: 238px;"></div>
     </div>
     <div style="clear: both"></div>
 

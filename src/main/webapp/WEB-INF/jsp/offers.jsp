@@ -40,17 +40,17 @@
     <jsp:include page="header.jsp"/>
     <sec:authorize access="authenticated" var="authenticated"/>
     <%
-       Category categById = (Category) request.getAttribute("categoryById");
+    Category categById = (Category) request.getAttribute("categoryById");
     %>
-    <div style="align-content: center"><span class="label"><h3><%=categById.getCategoryName()%></h3></span></div>
+    <div style="align-content: center;margin: auto"><span class="label"><h3><%=categById.getCategoryName()%></h3></span></div>
     <div class="wrap rounded card-grid" style="margin-top: 10px">
         <%
-            int cid = (int) request.getAttribute("category_id");
-            List<Category> categoryList = (List<Category>) request.getAttribute("categoryList");
-            Iterator<Category> iterator = categoryList.iterator();
-            while (iterator.hasNext()) {
-                Category category = (Category) iterator.next();
-                if(category.getParentCategory() == cid) {%>
+        int cid = (int) request.getAttribute("category_id");
+        List<Category> categoryList = (List<Category>) request.getAttribute("categoryList");
+        Iterator<Category> iterator = categoryList.iterator();
+        while (iterator.hasNext()) {
+            Category category = (Category) iterator.next();
+            if(category.getParentCategory() == cid) {%>
         <%
             Blob blob = (Blob) category.getCategoryMainImage();
             String b64 = "";
@@ -112,7 +112,7 @@
             </a>
         </div>
         <%}}%>
-        <div class="wrapdiv rounded card_local" style="border: none;width: 238px;"></div>
+        <div style="border: none;width: 238px;"></div>
     </div>
     <div style="clear: both"></div>
 
@@ -151,42 +151,40 @@
             }
         %>
         <div class="wrapdiv rounded card_local">
-        <%if (blob != null && blob.length() <= 1100000) {%>
-        <img class="card-img-top img-thumbnail" src="data:image/png;base64,<%= b64 %>"
-             alt="Card image cap" style="width: 238px;height: 172px">
-        <c:choose>
+            <%if (blob != null && blob.length() <= 1100000) {%>
+            <img class="card-img-top img-thumbnail" src="data:image/png;base64,<%= b64 %>" alt="Card image cap" style="width: 238px;height: 172px">
+            <c:choose>
+                <c:when test="${authenticated}">
+                    <a href="/adminruslan/editoffer?offer_id=<%=offer1.getId()%>"><button type="button" class="btn btn-primary">Edit</button></a>
+                    <a href="/adminruslan/deleteoffer?offer_id=<%=offer1.getId()%>&category_id=<%=cid%>"><button type="button" class="btn btn-danger">Delete</button></a>
+                </c:when>
+            </c:choose>
+            <%}else if(blob != null && blob.length() > 1100000)  {%>
+            <img class="card-img-top img-thumbnail" src="<%= b64 %>" alt="Card image cap" style="width: 238px;height: 172px">
+            <c:choose>
             <c:when test="${authenticated}">
                 <a href="/adminruslan/editoffer?offer_id=<%=offer1.getId()%>"><button type="button" class="btn btn-primary">Edit</button></a>
                 <a href="/adminruslan/deleteoffer?offer_id=<%=offer1.getId()%>&category_id=<%=cid%>"><button type="button" class="btn btn-danger">Delete</button></a>
             </c:when>
-        </c:choose>
-        <%}else if(blob != null && blob.length() > 1100000)  {%>
-        <img class="card-img-top img-thumbnail" src="<%= b64 %>"
-             alt="Card image cap" style="width: 238px;height: 172px">
-        <c:choose>
+            </c:choose>
+            <%} else {%>
+            <img class="card-img-top img-thumbnail" src="<%= b64 %>" alt="Card image cap" style="width: 238px;height: 172px">
+            <c:choose>
             <c:when test="${authenticated}">
                 <a href="/adminruslan/editoffer?offer_id=<%=offer1.getId()%>"><button type="button" class="btn btn-primary">Edit</button></a>
                 <a href="/adminruslan/deleteoffer?offer_id=<%=offer1.getId()%>&category_id=<%=cid%>"><button type="button" class="btn btn-danger">Delete</button></a>
             </c:when>
-        </c:choose>
-        <%} else {%>
-        <img class="card-img-top img-thumbnail" src="<%= b64 %>" alt="Card image cap" style="width: 238px;height: 172px">
-        <c:choose>
-            <c:when test="${authenticated}">
-                <a href="/adminruslan/editoffer?offer_id=<%=offer1.getId()%>"><button type="button" class="btn btn-primary">Edit</button></a>
-                <a href="/adminruslan/deleteoffer?offer_id=<%=offer1.getId()%>&category_id=<%=cid%>"><button type="button" class="btn btn-danger">Delete</button></a>
-            </c:when>
-        </c:choose>
-        <%}%>
-        <div class="card-body" style="height: 50px;">
-            <h5 class="card-title" style="text-align: center"><%=offer1.getOfferName()%></h5>
-            <p class="card-text"><%=offer1.getOfferDescription()%></p>
+            </c:choose>
+            <%}%>
+            <div class="card-body" style="height: 50px;">
+                <h5 class="card-title" style="text-align: center"><%=offer1.getOfferName()%></h5>
+                <p class="card-text"><%=offer1.getOfferDescription()%></p>
+            </div>
         </div>
+        <%}%>
+        <div style="border: none;width: 238px;"></div>
     </div>
-    <%}%>
-    <div class="wrapdiv rounded card_local" style="border: none;width: 238px;"></div>
-</div>
-<div style="clear: both"></div>
+    <div style="clear: both"></div>
     <!-- Site footer -->
     <footer class="footer">
         <p>&copy; Family joinery workshop Sequoia 2017-2018</p>
