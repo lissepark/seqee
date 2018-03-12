@@ -42,7 +42,7 @@
     <%
     Category categById = (Category) request.getAttribute("categoryById");
     %>
-    <div style="align-content: center;margin: auto"><span class="label"><h3><%=categById.getCategoryName()%></h3></span></div>
+    <div style="text-align: center;margin: auto"><span class="label"><h3><%=categById.getCategoryName()%></h3></span></div>
     <div class="wrap rounded card-grid" style="margin-top: 10px">
         <%
         int cid = (int) request.getAttribute("category_id");
