@@ -46,7 +46,7 @@
     <div style="text-align: center;margin: auto"><span class="label"><h3><%=categById.getCategoryName()%></h3></span></div>
     <%
         int cid = (int) request.getAttribute("category_id");
-        String breadcrumb = "main";
+        String breadcrumb = "<a href=http://www.fjwsequoia.com>Главная</a>";
         String path1 = "";
         Category categoryCrumb = (new DataService()).getCategoryById(cid);
         String pathLast = "/<a href=/offers?category_id="+categoryCrumb.getId()+">"+categoryCrumb.getCategoryName()+"</a>";
