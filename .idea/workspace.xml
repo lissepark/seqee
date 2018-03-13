@@ -42,11 +42,10 @@
       <file leaf-file-name="offers.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/offers.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="58" column="39" lean-forward="true" selection-start-line="58" selection-start-column="39" selection-end-line="58" selection-end-column="39" />
+            <state relative-caret-position="374">
+              <caret line="56" column="50" lean-forward="false" selection-start-line="56" selection-start-column="50" selection-end-line="56" selection-end-column="50" />
               <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#9975#9981#0#HTML" expanded="true" />
+                <element signature="e#9986#9992#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -226,10 +225,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -375,6 +370,10 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1173,7 +1172,9 @@
       <workItem from="1520864314436" duration="598000" />
       <workItem from="1520884291117" duration="719000" />
       <workItem from="1520890484015" duration="1343000" />
-      <workItem from="1520951062609" duration="751000" />
+      <workItem from="1520951062609" duration="1869000" />
+      <workItem from="1520954973712" duration="861000" />
+      <workItem from="1520956942712" duration="410000" />
     </task>
     <task id="LOCAL-00001" summary="commit id">
       <created>1504943768887</created>
@@ -1214,7 +1215,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="398658000" />
+    <option name="totallyTimeSpent" value="401047000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="12" y="395" width="1231" height="639" extended-state="1" />
@@ -1611,11 +1612,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/offers.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="58" column="39" lean-forward="true" selection-start-line="58" selection-start-column="39" selection-end-line="58" selection-end-column="39" />
+        <state relative-caret-position="374">
+          <caret line="56" column="50" lean-forward="false" selection-start-line="56" selection-start-column="50" selection-end-line="56" selection-end-column="50" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#9975#9981#0#HTML" expanded="true" />
+            <element signature="e#9986#9992#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>

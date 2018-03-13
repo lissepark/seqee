@@ -54,7 +54,7 @@
             categoryCrumb = (new DataService()).getCategoryById(categoryCrumb.getParentCategory());
             path1 = "/" + categoryCrumb.getCategoryName() + path1;
         }
-        breadcrumb = breadcrumb + path1;
+        breadcrumb = breadcrumb + path1 + pathLast;
     %>
     <div><h3><%=breadcrumb%></h3></div>
     <div class="wrap rounded card-grid" style="margin-top: 10px">
