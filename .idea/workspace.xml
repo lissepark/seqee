@@ -7,7 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6bab637c-c3bf-47ce-8296-4fd3ec37ee1b" name="Default" comment="add admin page">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/offers.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/offers.jsp" />
     </list>
     <ignored path="SampleApp.iws" />
@@ -43,9 +42,9 @@
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/offers.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
-              <caret line="48" column="74" lean-forward="false" selection-start-line="48" selection-start-column="74" selection-end-line="48" selection-end-column="74" />
+              <caret line="51" column="30" lean-forward="false" selection-start-line="51" selection-start-column="30" selection-end-line="51" selection-end-column="30" />
               <folding>
-                <element signature="e#10147#10153#0#HTML" expanded="true" />
+                <element signature="e#10152#10158#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -179,7 +178,7 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="12" />
     <option name="y" value="395" />
     <option name="width" value="1231" />
@@ -1175,7 +1174,7 @@
       <workItem from="1520951062609" duration="1869000" />
       <workItem from="1520954973712" duration="861000" />
       <workItem from="1520956942712" duration="1450000" />
-      <workItem from="1520959406764" duration="147000" />
+      <workItem from="1520959406764" duration="829000" />
     </task>
     <task id="LOCAL-00001" summary="commit id">
       <created>1504943768887</created>
@@ -1216,10 +1215,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="402234000" />
+    <option name="totallyTimeSpent" value="402916000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="12" y="395" width="1231" height="639" extended-state="1" />
+    <frame x="12" y="395" width="1231" height="639" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1614,9 +1613,9 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/offers.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="48" column="74" lean-forward="false" selection-start-line="48" selection-start-column="74" selection-end-line="48" selection-end-column="74" />
+          <caret line="51" column="30" lean-forward="false" selection-start-line="51" selection-start-column="30" selection-end-line="51" selection-end-column="30" />
           <folding>
-            <element signature="e#10147#10153#0#HTML" expanded="true" />
+            <element signature="e#10152#10158#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
