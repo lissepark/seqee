@@ -49,14 +49,14 @@
         String breadcrumb = "main";
         String path1 = "";
         Category categoryCrumb = (new DataService()).getCategoryById(cid);
-        String pathLast = "/" + categoryCrumb.getCategoryName();
+        String pathLast = "/<a href=/offers?category_id="+categoryCrumb.getId()+">"+categoryCrumb.getCategoryName()+"</a>";
         while (categoryCrumb.getParentCategory() != 0) {
             categoryCrumb = (new DataService()).getCategoryById(categoryCrumb.getParentCategory());
-            path1 = "/" + categoryCrumb.getCategoryName() + path1;
+            path1 = "/<a href=/offers?category_id="+categoryCrumb.getId()+">" + categoryCrumb.getCategoryName()+"</a>" + path1;
         }
         breadcrumb = breadcrumb + path1 + pathLast;
     %>
-    <div><h3><%=breadcrumb%></h3></div>
+    <div><h6><%=breadcrumb%></h6></div>
     <div class="wrap rounded card-grid" style="margin-top: 10px">
         <%
         List<Category> categoryList = (List<Category>) request.getAttribute("categoryList");

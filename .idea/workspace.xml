@@ -7,7 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6bab637c-c3bf-47ce-8296-4fd3ec37ee1b" name="Default" comment="add admin page">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/offers.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/offers.jsp" />
     </list>
     <ignored path="SampleApp.iws" />
@@ -42,10 +41,10 @@
       <file leaf-file-name="offers.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/offers.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="56" column="50" lean-forward="false" selection-start-line="56" selection-start-column="50" selection-end-line="56" selection-end-column="50" />
+            <state relative-caret-position="289">
+              <caret line="54" column="116" lean-forward="false" selection-start-line="54" selection-start-column="116" selection-end-line="54" selection-end-column="116" />
               <folding>
-                <element signature="e#9986#9992#0#HTML" expanded="true" />
+                <element signature="e#10106#10112#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1174,7 +1173,7 @@
       <workItem from="1520890484015" duration="1343000" />
       <workItem from="1520951062609" duration="1869000" />
       <workItem from="1520954973712" duration="861000" />
-      <workItem from="1520956942712" duration="410000" />
+      <workItem from="1520956942712" duration="857000" />
     </task>
     <task id="LOCAL-00001" summary="commit id">
       <created>1504943768887</created>
@@ -1215,7 +1214,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="401047000" />
+    <option name="totallyTimeSpent" value="401494000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="12" y="395" width="1231" height="639" extended-state="1" />
@@ -1612,10 +1611,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/offers.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="56" column="50" lean-forward="false" selection-start-line="56" selection-start-column="50" selection-end-line="56" selection-end-column="50" />
+        <state relative-caret-position="289">
+          <caret line="54" column="116" lean-forward="false" selection-start-line="54" selection-start-column="116" selection-end-line="54" selection-end-column="116" />
           <folding>
-            <element signature="e#9986#9992#0#HTML" expanded="true" />
+            <element signature="e#10106#10112#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
