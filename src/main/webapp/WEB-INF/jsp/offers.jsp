@@ -8,6 +8,7 @@
 <%@ page import="com.mysql.jdbc.Blob" %>
 <%@ page import="java.sql.SQLException" %>
 <%@ page import="model.Category" %>
+<%@ page import="database.DataService" %>
 <%@ page pageEncoding="UTF-8" contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
@@ -43,9 +44,21 @@
     Category categById = (Category) request.getAttribute("categoryById");
     %>
     <div style="text-align: center;margin: auto"><span class="label"><h3><%=categById.getCategoryName()%></h3></span></div>
+    <%
+        int cid = (int) request.getAttribute("category_id");
+        String breadcrumb = "main";
+        String path1 = "";
+        Category categoryCrumb = (new DataService()).getCategoryById(cid);
+        String pathLast = "/" + categoryCrumb.getCategoryName();
+        while (categoryCrumb.getParentCategory() != 0) {
+            categoryCrumb = (new DataService()).getCategoryById(categoryCrumb.getParentCategory());
+            path1 = "/" + categoryCrumb.getCategoryName() + path1;
+        }
+        breadcrumb = breadcrumb + path1;
+    %>
+    <div><h3><%=breadcrumb%></h3></div>
     <div class="wrap rounded card-grid" style="margin-top: 10px">
         <%
-        int cid = (int) request.getAttribute("category_id");
         List<Category> categoryList = (List<Category>) request.getAttribute("categoryList");
         Iterator<Category> iterator = categoryList.iterator();
         while (iterator.hasNext()) {
