@@ -43,7 +43,7 @@
     <%
     Category categById = (Category) request.getAttribute("categoryById");
     %>
-    <div style="text-align: center;margin: auto"><span class="label"><h3><%=categById.getCategoryName()%></h3></span></div>
+    <!-- div style="text-align: center;margin: auto"><span class="label"><h3><%-- =categById.getCategoryName()--%></h3></span></div-->
     <%
         int cid = (int) request.getAttribute("category_id");
         String breadcrumb = "<a href=http://www.fjwsequoia.com>Главная</a> ";
@@ -52,7 +52,7 @@
         String pathLast = " / <a href=/offers?category_id="+categoryCrumb.getId()+"> "+categoryCrumb.getCategoryName()+"</a>";
         while (categoryCrumb.getParentCategory() != 0) {
             categoryCrumb = (new DataService()).getCategoryById(categoryCrumb.getParentCategory());
-            path1 = " /<a href=/offers?category_id="+categoryCrumb.getId()+">" + categoryCrumb.getCategoryName()+"</a>" + path1;
+            path1 = " / <a href=/offers?category_id="+categoryCrumb.getId()+">" + categoryCrumb.getCategoryName()+"</a>" + path1;
         }
         breadcrumb = breadcrumb + path1 + pathLast;
     %>
@@ -120,7 +120,7 @@
             <%}%>
             <a href="/offers?category_id=<%=category.getId()%>">
                 <div class="card-body" style="height: 50px;">
-                    <h5 class="card-title" style="text-align: center"><%=category.getCategoryName()%></h5>
+                    <h6 class="card-title" style="text-align: center"><%=category.getCategoryName()%></h6>
                 </div>
             </a>
         </div>
