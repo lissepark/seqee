@@ -132,6 +132,15 @@
     <url-pattern>/adminruslan/deleteoffer</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>OfferCard</servlet-name>
+    <servlet-class>controller.OfferCard</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>OfferCard</servlet-name>
+    <url-pattern>/offerCard</url-pattern>
+  </servlet-mapping>
+
   <mime-mapping>
     <extension>css</extension>
     <mime-type>text/css</mime-type>

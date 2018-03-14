@@ -165,7 +165,7 @@
         %>
         <div class="wrapdiv rounded card_local">
             <%if (blob != null && blob.length() <= 1100000) {%>
-            <img class="card-img-top img-thumbnail" src="data:image/png;base64,<%= b64 %>" alt="Card image cap" style="width: 238px;height: 172px">
+            <a href="/offerCard?offer_id=<%=offer1.getId()%>"><img class="card-img-top img-thumbnail" src="data:image/png;base64,<%= b64 %>" alt="Card image cap" style="width: 238px;height: 172px"></a>
             <c:choose>
                 <c:when test="${authenticated}">
                     <a href="/adminruslan/editoffer?offer_id=<%=offer1.getId()%>"><button type="button" class="btn btn-primary">Edit</button></a>
@@ -173,7 +173,7 @@
                 </c:when>
             </c:choose>
             <%}else if(blob != null && blob.length() > 1100000)  {%>
-            <img class="card-img-top img-thumbnail" src="<%= b64 %>" alt="Card image cap" style="width: 238px;height: 172px">
+            <a href="/offerCard?offer_id=<%=offer1.getId()%>"><img class="card-img-top img-thumbnail" src="<%= b64 %>" alt="Card image cap" style="width: 238px;height: 172px"></a>
             <c:choose>
             <c:when test="${authenticated}">
                 <a href="/adminruslan/editoffer?offer_id=<%=offer1.getId()%>"><button type="button" class="btn btn-primary">Edit</button></a>
@@ -181,7 +181,7 @@
             </c:when>
             </c:choose>
             <%} else {%>
-            <img class="card-img-top img-thumbnail" src="<%= b64 %>" alt="Card image cap" style="width: 238px;height: 172px">
+            <a href="/offerCard?offer_id=<%=offer1.getId()%>"><img class="card-img-top img-thumbnail" src="<%= b64 %>" alt="Card image cap" style="width: 238px;height: 172px"></a>
             <c:choose>
             <c:when test="${authenticated}">
                 <a href="/adminruslan/editoffer?offer_id=<%=offer1.getId()%>"><button type="button" class="btn btn-primary">Edit</button></a>
@@ -189,10 +189,12 @@
             </c:when>
             </c:choose>
             <%}%>
-            <div class="card-body" style="height: 50px;">
-                <h5 class="card-title" style="text-align: center"><%=offer1.getOfferName()%></h5>
-                <p class="card-text"><%=offer1.getOfferDescription()%></p>
-            </div>
+            <a href="/offerCard?offer_id=<%=offer1.getId()%>">
+                <div class="card-body" style="height: 50px;">
+                    <h6 class="card-title" style="text-align: center"><%=offer1.getOfferName()%></h6>
+                    <p class="card-text"><%=offer1.getOfferDescription()%></p>
+                </div>
+            </a>
         </div>
         <%}%>
         <div style="border: none;width: 238px;"></div>

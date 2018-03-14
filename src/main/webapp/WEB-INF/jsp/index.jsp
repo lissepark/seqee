@@ -145,7 +145,7 @@
             <%}%>
             <a href="/offers?category_id=<%=category1.getId()%>">
                 <div class="card-body" style="height: 50px;">
-                    <h5 class="card-title" style="text-align: center"><%=category1.getCategoryName()%></h5>
+                    <h6 class="card-title" style="text-align: center"><%=category1.getCategoryName()%></h6>
                 </div>
             </a>
         </div>
