@@ -56,7 +56,7 @@
         }
         breadcrumb = breadcrumb + path1 + pathLast;
     %>
-    <div><h6><%=breadcrumb%></h6></div>
+    <div style="margin-top: 10px"><h6><%=breadcrumb%></h6></div>
     <div class="wrap rounded card-grid" style="margin-top: 10px">
         <%
         List<Category> categoryList = (List<Category>) request.getAttribute("categoryList");
