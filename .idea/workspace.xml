@@ -7,7 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6bab637c-c3bf-47ce-8296-4fd3ec37ee1b" name="Default" comment="add admin page">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/offercard.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/offercard.jsp" />
     </list>
     <ignored path="SampleApp.iws" />
@@ -62,11 +61,11 @@
       <file leaf-file-name="offercard.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/offercard.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="113" column="54" lean-forward="false" selection-start-line="113" selection-start-column="54" selection-end-line="113" selection-end-column="54" />
+            <state relative-caret-position="238">
+              <caret line="14" column="6" lean-forward="false" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
               <folding>
-                <element signature="e#4156#4163#1#HTML" expanded="true" />
-                <element signature="e#5124#5130#0#HTML" expanded="true" />
+                <element signature="e#3955#3962#1#HTML" expanded="true" />
+                <element signature="e#4923#4929#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1237,7 +1236,7 @@
       <workItem from="1521130699527" duration="731000" />
       <workItem from="1521651684715" duration="1979000" />
       <workItem from="1521656099882" duration="1753000" />
-      <workItem from="1521658710032" duration="512000" />
+      <workItem from="1521658710032" duration="784000" />
     </task>
     <task id="LOCAL-00001" summary="commit id">
       <created>1504943768887</created>
@@ -1278,7 +1277,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="415547000" />
+    <option name="totallyTimeSpent" value="415819000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="16" y="15" width="981" height="546" extended-state="0" />
@@ -1691,11 +1690,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/offercard.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="113" column="54" lean-forward="false" selection-start-line="113" selection-start-column="54" selection-end-line="113" selection-end-column="54" />
+        <state relative-caret-position="238">
+          <caret line="14" column="6" lean-forward="false" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
           <folding>
-            <element signature="e#4156#4163#1#HTML" expanded="true" />
-            <element signature="e#5124#5130#0#HTML" expanded="true" />
+            <element signature="e#3955#3962#1#HTML" expanded="true" />
+            <element signature="e#4923#4929#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>

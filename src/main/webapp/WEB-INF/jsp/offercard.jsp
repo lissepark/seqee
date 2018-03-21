@@ -13,10 +13,6 @@
 
 <html>
 <head>
-    <link rel="stylesheet" href="/css/bootstrap.css">
-    <link href="/css/style.css" rel="stylesheet">
-    <script src="/js/jquery-3.2.1.min.js"></script>
-    <script src="/js/bootstrap.js"></script>
     <title>Offer</title>
 </head>
 <body>
