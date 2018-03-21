@@ -87,7 +87,7 @@
 
 
     <a href="#" id="pop">
-        <img id="imageresource" src="http://patyshibuya.com.br/wp-content/uploads/2014/04/04.jpg" style="width: 400px; height: 264px;">
+        <img id="imageresource" src="<%= b64 %>" style="width: 300px; height: 218px;">
         Click to Enlarge
     </a>
 
