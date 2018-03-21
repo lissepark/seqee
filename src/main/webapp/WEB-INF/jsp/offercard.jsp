@@ -87,7 +87,7 @@
 
 
     <a href="#" id="pop">
-        <img id="imageresource" src="<%= b64 %>" style="width: 300px; height: 218px;">
+        <img id="imageresource" src="data:image/png;base64,<%= b64 %>" style="width: 300px; height: 218px;">
         Click to Enlarge
     </a>
 
