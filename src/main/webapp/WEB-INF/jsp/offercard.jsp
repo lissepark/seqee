@@ -56,7 +56,7 @@
             <div class="col">
                 <div class="wrapdiv rounded">
                     <%if (blob != null && blob.length() <= 1100000) {%>
-                    <img class="scaleup" src="data:image/png;base64,<%= b64 %>" alt="Card image cap" style="width: 300px;height: 217px" data-toggle="modal" data-target="#exampleModal">
+                    <img class="scaleup" src="data:image/png;base64,<%= b64 %>" alt="Card image cap" data-toggle="modal" data-target="#exampleModal">
                     <%}else if(blob != null && blob.length() > 1100000)  {%>
                     <img class="card-img-top img-thumbnail" src="<%= b64 %>" alt="Card image cap" style="width: 300px;height: 217px">
                     <%} else {%>
@@ -87,7 +87,7 @@
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content" style="background: none">
-                <div class="modal-header">
+                <div class="modal-header" style="background-color: #a8ffaa">
                     <h5 class="modal-title" id="exampleModalLabel"><%=offerById.getOfferName()%></h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
