@@ -57,6 +57,7 @@
                 <div class="wrapdiv rounded">
                     <%if (blob != null && blob.length() <= 1100000) {%>
                     <img class="scaleup" src="data:image/png;base64,<%= b64 %>" alt="Card image cap" data-toggle="modal" data-target="#exampleModal">
+                    <p data-toggle="modal" data-target="#exampleModal">Увеличить изображение</p>
                     <%}else if(blob != null && blob.length() > 1100000)  {%>
                     <img class="card-img-top img-thumbnail" src="<%= b64 %>" alt="Card image cap" style="width: 300px;height: 217px">
                     <%} else {%>
