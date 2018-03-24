@@ -7,8 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6bab637c-c3bf-47ce-8296-4fd3ec37ee1b" name="Default" comment="add admin page">
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/offercard.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/offercard.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/style.css" afterPath="$PROJECT_DIR$/src/main/webapp/css/style.css" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SampleApp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -62,7 +61,7 @@
       <file leaf-file-name="offercard.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/offercard.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
+            <state relative-caret-position="1479">
               <caret line="87" column="22" lean-forward="false" selection-start-line="87" selection-start-column="22" selection-end-line="87" selection-end-column="22" />
               <folding />
             </state>
@@ -72,8 +71,8 @@
       <file leaf-file-name="bootstrap.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/css/bootstrap.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="4709" column="3" lean-forward="true" selection-start-line="4709" selection-start-column="3" selection-end-line="4709" selection-end-column="3" />
+            <state relative-caret-position="80053">
+              <caret line="4709" column="3" lean-forward="false" selection-start-line="4709" selection-start-column="3" selection-end-line="4709" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -275,6 +274,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -420,10 +423,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="AndroidView" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1239,7 +1238,8 @@
       <workItem from="1521881254859" duration="1317000" />
       <workItem from="1521883362210" duration="1437000" />
       <workItem from="1521885986681" duration="1486000" />
-      <workItem from="1521897026869" duration="812000" />
+      <workItem from="1521897026869" duration="1272000" />
+      <workItem from="1521899804047" duration="613000" />
     </task>
     <task id="LOCAL-00001" summary="commit id">
       <created>1504943768887</created>
@@ -1280,11 +1280,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="421460000" />
+    <option name="totallyTimeSpent" value="422533000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="16" y="15" width="1210" height="546" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -1678,15 +1677,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/css/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="4709" column="3" lean-forward="true" selection-start-line="4709" selection-start-column="3" selection-end-line="4709" selection-end-column="3" />
+        <state relative-caret-position="80053">
+          <caret line="4709" column="3" lean-forward="false" selection-start-line="4709" selection-start-column="3" selection-end-line="4709" selection-end-column="3" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/offercard.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
+        <state relative-caret-position="1479">
           <caret line="87" column="22" lean-forward="false" selection-start-line="87" selection-start-column="22" selection-end-line="87" selection-end-column="22" />
           <folding />
         </state>
