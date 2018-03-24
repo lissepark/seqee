@@ -6,9 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6bab637c-c3bf-47ce-8296-4fd3ec37ee1b" name="Default" comment="add admin page">
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/offercard.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/offercard.jsp" />
-    </list>
+    <list default="true" id="6bab637c-c3bf-47ce-8296-4fd3ec37ee1b" name="Default" comment="add admin page" />
     <ignored path="SampleApp.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -1242,7 +1240,7 @@
       <workItem from="1521885986681" duration="1486000" />
       <workItem from="1521897026869" duration="1272000" />
       <workItem from="1521899804047" duration="1197000" />
-      <workItem from="1521901884949" duration="1110000" />
+      <workItem from="1521901884949" duration="1384000" />
     </task>
     <task id="LOCAL-00001" summary="commit id">
       <created>1504943768887</created>
@@ -1283,7 +1281,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="424227000" />
+    <option name="totallyTimeSpent" value="424501000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="16" y="15" width="1210" height="546" extended-state="0" />
