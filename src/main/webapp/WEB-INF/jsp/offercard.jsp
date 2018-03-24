@@ -13,6 +13,7 @@
 
 <html>
 <head>
+    <script src="/js/popper.min.js"></script>
     <title>Offer</title>
 </head>
 <body>
@@ -55,7 +56,7 @@
             <div class="col">
                 <div class="wrapdiv rounded card" style="width: 15rem;">
                     <%if (blob != null && blob.length() <= 1100000) {%>
-                    <img class="card-img-top img-thumbnail" src="data:image/png;base64,<%= b64 %>" alt="Card image cap" style="width: 300px;height: 218px">
+                    <img class="card-img-top img-thumbnail" src="data:image/png;base64,<%= b64 %>" alt="Card image cap" style="width: 300px;height: 218px" data-toggle="modal" data-target="#exampleModal">
                     <%}else if(blob != null && blob.length() > 1100000)  {%>
                     <img class="card-img-top img-thumbnail" src="<%= b64 %>" alt="Card image cap" style="width: 300px;height: 218px">
                     <%} else {%>
@@ -82,36 +83,27 @@
 
 
 
-    <a href="#" id="pop">
-        <img id="imageresource" src="data:image/png;base64,<%= b64 %>" style="width: 300px; height: 218px;">
-        Click to Enlarge
-    </a>
 
-    <!-- Creates the bootstrap modal where the image will appear -->
-    <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Image preview</h4>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" style="background: none">
+                <div class="modal-header" style="margin:auto">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
-                <div class="modal-body">
-                    <img src="" id="imagepreview" style="width: 400px; height: 264px;" >
+                <div class="modal-body" style="margin:auto">
+                    <img src="data:image/png;base64,<%= b64 %>" alt="">
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <script>
-        jQuery("#pop").on("click", function() {
-            jQuery('#imagepreview').attr('src', jQuery('#imageresource').attr('src')); // here asign the image to the modal when the user click the enlarge link
-            jQuery('#imagemodal').modal('show'); // imagemodal is the id attribute assigned to the bootstrap modal, then i use the show function
-        });
-
-    </script>
 
 
 
