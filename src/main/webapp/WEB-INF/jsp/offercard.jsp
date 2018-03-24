@@ -54,18 +54,18 @@
 
         <div class="row">
             <div class="col">
-                <div class="wrapdiv rounded card" style="width: 15rem;">
+                <div class="wrapdiv rounded card_local">
                     <%if (blob != null && blob.length() <= 1100000) {%>
-                    <img class="card-img-top img-thumbnail" src="data:image/png;base64,<%= b64 %>" alt="Card image cap" style="width: 300px;height: 218px" data-toggle="modal" data-target="#exampleModal">
+                    <img class="card-img-top img-thumbnail scaleup" src="data:image/png;base64,<%= b64 %>" alt="Card image cap" style="width: 300px;height: 217px" data-toggle="modal" data-target="#exampleModal">
                     <%}else if(blob != null && blob.length() > 1100000)  {%>
-                    <img class="card-img-top img-thumbnail" src="<%= b64 %>" alt="Card image cap" style="width: 300px;height: 218px">
+                    <img class="card-img-top img-thumbnail" src="<%= b64 %>" alt="Card image cap" style="width: 300px;height: 217px">
                     <%} else {%>
-                    <img class="card-img-top img-thumbnail" src="<%= b64 %>" alt="Card image cap" style="width: 300px;height: 218px">
+                    <img class="card-img-top img-thumbnail" src="<%= b64 %>" alt="Card image cap" style="width: 300px;height: 217px">
                     <%}%>
 
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-4">
 
                 <div style="margin-left: 2%">
                     <div class="card-body" style="height: 50px;">
@@ -76,6 +76,10 @@
                     <%--=offerById.getOfferDescription()--%>
                 </div>
 
+            </div>
+
+            <div class="col-2">
+                Цена: от 150$
             </div>
         </div>
 

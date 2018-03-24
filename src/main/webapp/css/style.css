@@ -18,6 +18,10 @@ body {
     flex-flow: row wrap;
 }
 
+.scaleup {
+    cursor: pointer;
+}
+
 .card-grid:after {
     content: "";
     flex: 1 1 80%;
