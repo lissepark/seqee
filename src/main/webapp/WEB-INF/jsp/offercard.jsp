@@ -54,7 +54,7 @@
 
         <div class="row">
             <div class="col">
-                <div class="wrapdiv rounded card_local">
+                <div class="wrapdiv rounded">
                     <%if (blob != null && blob.length() <= 1100000) {%>
                     <img class="card-img-top img-thumbnail scaleup" src="data:image/png;base64,<%= b64 %>" alt="Card image cap" style="width: 300px;height: 217px" data-toggle="modal" data-target="#exampleModal">
                     <%}else if(blob != null && blob.length() > 1100000)  {%>
@@ -79,21 +79,16 @@
             </div>
 
             <div class="col-2">
-                Цена: от 150$
+                Цена:
             </div>
         </div>
-
-
-
-
-
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content" style="background: none">
-                <div class="modal-header" style="margin:auto">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"><%=offerById.getOfferName()%></h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -107,12 +102,6 @@
             </div>
         </div>
     </div>
-
-
-
-
-
-
 
     <footer class="footer">
         <p>&copy; Family joinery workshop Sequoia 2017-2018</p>

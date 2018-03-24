@@ -20,6 +20,8 @@ body {
 
 .scaleup {
     cursor: pointer;
+    width: 400px;
+    height: 289px;
 }
 
 .card-grid:after {
