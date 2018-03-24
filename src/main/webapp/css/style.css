@@ -24,6 +24,13 @@ body {
     height: 289px;
 }
 
+@media (min-width: 860px) {
+    .modal-dialog {
+        max-width: 840px;
+        margin: 30px auto;
+    }
+}
+
 .card-grid:after {
     content: "";
     flex: 1 1 80%;
