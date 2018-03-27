@@ -51,21 +51,21 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="images/002.png" alt="...">
+                <img src="images/B_01.jpg" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h3 style="color: #0c5460">Type here what you want. Ex.: 'The first image'</h3>
                     <p style="color: #0c5460">image 1 will be changed</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="images/008.png" alt="...">
+                <img src="images/B_03.jpg" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h3 style="color: #0c5460">Type here what you want. Ex.: 'The second image'</h3>
                     <p style="color: #0c5460">image 2 will be changed</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="images/019.png" alt="...">
+                <img src="images/B_02.jpg" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h3 style="color: #0c5460">Type here what you want. Ex.: 'The third image'</h3>
                     <p style="color: #0c5460">image 3 will be changed</p>
