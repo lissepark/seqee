@@ -7,9 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6bab637c-c3bf-47ce-8296-4fd3ec37ee1b" name="Default" comment="add admin page">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/B_01.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/B_02.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/B_03.jpg" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" />
     </list>
@@ -35,9 +32,14 @@
       <file leaf-file-name="index.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="67" column="50" lean-forward="false" selection-start-line="67" selection-start-column="50" selection-end-line="67" selection-end-column="50" />
-              <folding />
+            <state relative-caret-position="-51">
+              <caret line="54" column="64" lean-forward="true" selection-start-line="54" selection-start-column="64" selection-end-line="54" selection-end-column="64" />
+              <folding>
+                <element signature="e#8940#8947#0#HTML" expanded="true" />
+                <element signature="e#9524#9531#0#HTML" expanded="true" />
+                <element signature="e#10148#10155#0#HTML" expanded="true" />
+                <element signature="e#10255#10261#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -65,12 +67,9 @@
       <file leaf-file-name="offercard.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/offercard.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
+            <state relative-caret-position="1003">
               <caret line="59" column="129" lean-forward="false" selection-start-line="59" selection-start-column="129" selection-end-line="59" selection-end-column="129" />
-              <folding>
-                <element signature="e#4199#4206#1#HTML" expanded="true" />
-                <element signature="e#4678#4684#0#HTML" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -282,6 +281,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -429,7 +429,6 @@
       </pane>
       <pane id="Scratches" />
       <pane id="Scope" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1250,7 +1249,8 @@
       <workItem from="1521899804047" duration="1197000" />
       <workItem from="1521901884949" duration="1962000" />
       <workItem from="1521905457963" duration="1072000" />
-      <workItem from="1522158614170" duration="685000" />
+      <workItem from="1522158614170" duration="1277000" />
+      <workItem from="1522160743656" duration="177000" />
     </task>
     <task id="LOCAL-00001" summary="commit id">
       <created>1504943768887</created>
@@ -1291,7 +1291,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="426836000" />
+    <option name="totallyTimeSpent" value="427605000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="3" y="474" width="1210" height="546" extended-state="1" />
@@ -1697,20 +1697,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/offercard.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
+        <state relative-caret-position="1003">
           <caret line="59" column="129" lean-forward="false" selection-start-line="59" selection-start-column="129" selection-end-line="59" selection-end-column="129" />
-          <folding>
-            <element signature="e#4199#4206#1#HTML" expanded="true" />
-            <element signature="e#4678#4684#0#HTML" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="67" column="50" lean-forward="false" selection-start-line="67" selection-start-column="50" selection-end-line="67" selection-end-column="50" />
-          <folding />
+        <state relative-caret-position="-51">
+          <caret line="54" column="64" lean-forward="true" selection-start-line="54" selection-start-column="64" selection-end-line="54" selection-end-column="64" />
+          <folding>
+            <element signature="e#8940#8947#0#HTML" expanded="true" />
+            <element signature="e#9524#9531#0#HTML" expanded="true" />
+            <element signature="e#10148#10155#0#HTML" expanded="true" />
+            <element signature="e#10255#10261#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
