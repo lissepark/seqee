@@ -39,16 +39,26 @@
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            ByteArrayInputStream bais = new ByteArrayInputStream(b);
-            //BufferedImage image = new BufferedImage(600,400,BufferedImage.TYPE_4BYTE_ABGR);
-            BufferedImage image = ImageIO.read(bais);
-
-            ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            ImageIO.write(image, "png", baos);
-            baos.flush();
-            byte[] imageInByteArray = baos.toByteArray();
-            baos.close();
-            String b64 = javax.xml.bind.DatatypeConverter.printBase64Binary(imageInByteArray);
+            ByteArrayInputStream bais = null;
+            ByteArrayOutputStream baos = null;
+            String b64 = "";
+            try {
+                bais = new ByteArrayInputStream(b);
+                //BufferedImage image = new BufferedImage(600,400,BufferedImage.TYPE_4BYTE_ABGR);
+                BufferedImage image = ImageIO.read(bais);
+                baos = new ByteArrayOutputStream();
+                ImageIO.write(image, "png", baos);
+                baos.flush();
+                byte[] imageInByteArray = baos.toByteArray();
+                b64 = javax.xml.bind.DatatypeConverter.printBase64Binary(imageInByteArray);
+            } finally {
+                if (bais != null) {
+                    bais.close();
+                }
+                if (baos != null) {
+                    baos.close();
+                }
+            }
         %>
         <div class="card rounded float-left" style="width: 18rem;">
             <img class="card-img-top img-thumbnail" src="data:image/png;base64,<%= b64 %>"

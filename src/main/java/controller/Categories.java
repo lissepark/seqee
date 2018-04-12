@@ -59,7 +59,6 @@ public class Categories extends HttpServlet {
             e.printStackTrace();
         }
 
-
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/categories.jsp");
         requestDispatcher.forward(req, resp);
     }
@@ -89,20 +88,20 @@ public class Categories extends HttpServlet {
                     item.write(file);
                     pathList.add(file.getPath());
                     System.out.println(file.getPath());
-                    InputStream input = new FileInputStream(file);
-                    System.out.println("file.length() " + file.length());
-
-                    OutputStream output = new FileOutputStream(System.getenv("HOME") + "/src/main/webapp/images/" + file.getName());
-                    byte[] bytes = new byte[BUFFER_LENGTH];
-                    int read = 0;
-                    while ((read = input.read(bytes, 0, BUFFER_LENGTH)) != -1) {
-                        output.write(bytes, 0, read);
+                    try (FileInputStream input = new FileInputStream(file);
+                         FileOutputStream output = new FileOutputStream(System.getenv("HOME") + "/src/main/webapp/images/" + file.getName())) {
+                        byte[] bytes = new byte[BUFFER_LENGTH];
+                        int read = 0;
+                        while ((read = input.read(bytes, 0, BUFFER_LENGTH)) != -1) {
+                            output.write(bytes, 0, read);
+                        }
+                        System.out.println("file.getName() " + file.getName());
+                        System.out.println("System.getenv(HOME) + file.getName() " + System.getenv("HOME") + "/images/" + file.getName());
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
                     }
-                    input.close();
-                    output.close();
-
-                    System.out.println("file.getName() " + file.getName());
-                    System.out.println("System.getenv(HOME) + file.getName() " + System.getenv("HOME") + "/images/" + file.getName());
                 }
             }
         } catch (FileUploadException e) {
@@ -111,7 +110,6 @@ public class Categories extends HttpServlet {
             ex.printStackTrace();
             System.out.println("Other Exception in doPost of Analysis servlet");
         }
-
         doGet(req,resp);
     }
 }

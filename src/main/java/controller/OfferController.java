@@ -79,19 +79,16 @@ public class OfferController extends HttpServlet{
                     item.write(file);
                     pathList.add(file.getPath());
                     System.out.println(file.getPath());
-                    InputStream input = new FileInputStream(file);
-                    System.out.println("file.length() " + file.length());
+                    try (FileInputStream input = new FileInputStream(file);
+                         OutputStream output = new FileOutputStream(System.getenv("HOME") + "/src/main/webapp/images/" + file.getName())) {
 
-                    OutputStream output = new FileOutputStream(System.getenv("HOME") + "/src/main/webapp/images/" + file.getName());
-                    byte[] bytes = new byte[(int) file.length()];
-                    int read = 0;
-                    while ((read = input.read(bytes, 0, (int) file.length())) != -1) {
-                        output.write(bytes, 0, read);
-                        //output.flush();
+                        byte[] bytes = new byte[(int) file.length()];
+                        int read = 0;
+                        while ((read = input.read(bytes, 0, (int) file.length())) != -1) {
+                            output.write(bytes, 0, read);
+                            //output.flush();
+                        }
                     }
-                    input.close();
-                    output.close();
-
                     System.out.println("file.getName() " + file.getName());
                     System.out.println("System.getenv(HOME) + file.getName() " + System.getenv("HOME") + "/images/" + file.getName());
                 }

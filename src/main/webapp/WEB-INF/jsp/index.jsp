@@ -100,16 +100,26 @@
                     } catch (SQLException e) {
                         e.printStackTrace();
                     }
-                    ByteArrayInputStream bais = new ByteArrayInputStream(b);
-                    //BufferedImage image = new BufferedImage(600,400,BufferedImage.TYPE_4BYTE_ABGR);
-                    BufferedImage image = ImageIO.read(bais);
-
-                    ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                    ImageIO.write(image, "png", baos);
-                    baos.flush();
-                    byte[] imageInByteArray = baos.toByteArray();
-                    baos.close();
-                    b64 = javax.xml.bind.DatatypeConverter.printBase64Binary(imageInByteArray);
+                    ByteArrayInputStream bais = null;
+                    ByteArrayOutputStream baos = null;
+                    try {
+                        bais = new ByteArrayInputStream(b);
+                        //BufferedImage image = new BufferedImage(600,400,BufferedImage.TYPE_4BYTE_ABGR);
+                        BufferedImage image = ImageIO.read(bais);
+                        baos = new ByteArrayOutputStream();
+                        ImageIO.write(image, "png", baos);
+                        baos.flush();
+                        byte[] imageInByteArray = baos.toByteArray();
+                        baos.close();
+                        b64 = javax.xml.bind.DatatypeConverter.printBase64Binary(imageInByteArray);
+                    } finally {
+                        if(bais != null) {
+                            bais.close();
+                        }
+                        if (baos != null) {
+                            baos.close();
+                        }
+                    }
                 }else {
                     b64 = "images/too_big_image.jpg";
                 }

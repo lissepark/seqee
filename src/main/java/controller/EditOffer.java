@@ -78,7 +78,7 @@ public class EditOffer extends HttpServlet{
             List<FileItem> items = upload.parseRequest(req);
             Iterator<FileItem> iter = items.iterator();
             File file = null;
-            InputStream input = null;
+            FileInputStream input = null;
             long leng = 0;
             while (iter.hasNext()) {
                 FileItem item = (FileItem) iter.next();
@@ -123,6 +123,10 @@ public class EditOffer extends HttpServlet{
                         System.out.println(leng);
                     } catch (SQLException e) {
                         e.printStackTrace();
+                    } finally {
+                        if (input != null) {
+                            input.close();
+                        }
                     }
                 }
             }

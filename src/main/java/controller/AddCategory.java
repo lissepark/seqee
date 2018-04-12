@@ -14,10 +14,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.sql.SQLException;
 import java.util.Iterator;
@@ -40,7 +37,7 @@ public class AddCategory extends HttpServlet {
             List<FileItem> items = upload.parseRequest(request);
             Iterator<FileItem> iter = items.iterator();
             File file = null;
-            InputStream input = null;
+            //InputStream input = null;
             long leng = 0;
             while (iter.hasNext()) {
                 FileItem item = (FileItem) iter.next();
@@ -71,15 +68,26 @@ public class AddCategory extends HttpServlet {
                             File uploadDir = new File("/opt/app-root/src/src/main/webapp/images");
                             file = File.createTempFile("img", ".png", uploadDir);
                             item.write(file);
-                            input = new FileInputStream(file);
+                            //input = new FileInputStream(file);
                             leng = file.length();
                         }
                     }
                     category.setCategoryName(name);
                     category.setCategoryDescription(description);
-                    try {
-                        success = offerDAO.insertCategory(category,input,leng,categId,isHide);
-                    } catch (SQLException e) {
+                    try (FileInputStream input = new FileInputStream(file)) {
+                        try {
+                            success = offerDAO.insertCategory(category, input, leng, categId, isHide);
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                        try {
+                            success = offerDAO.insertCategory(category, null, leng, categId, isHide);
+                        } catch (SQLException ex) {
+                            ex.printStackTrace();
+                        }
+                    } catch (IOException e) {
                         e.printStackTrace();
                     }
                 }

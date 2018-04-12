@@ -46,7 +46,7 @@ public class AddOffer extends HttpServlet {
             List<FileItem> items = upload.parseRequest(request);
             Iterator<FileItem> iter = items.iterator();
             File file = null;
-            InputStream input = null;
+            //InputStream input = null;
             long leng = 0;
             while (iter.hasNext()) {
                 FileItem item = (FileItem) iter.next();
@@ -72,17 +72,36 @@ public class AddOffer extends HttpServlet {
                             File uploadDir = new File("/opt/app-root/src/src/main/webapp/images");
                             file = File.createTempFile("img", ".png", uploadDir);
                             item.write(file);
-                            input = new FileInputStream(file);
+                            //input = new FileInputStream(file);
                             leng = file.length();
                         }
                     }
                     offer.setOfferName(name);
                     offer.setOfferDescription(description);
                     offer.setOfferCategory(Integer.parseInt(categId));
-                    try {
-                        success = offerDAO.insertOffer(offer,input,leng);
-                    } catch (SQLException e) {
+                    if (leng != 0) {
+                    try (FileInputStream input = new FileInputStream(file)) {
+                        try {
+                            success = offerDAO.insertOffer(offer, input, leng);
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+                    } catch (FileNotFoundException e) {
                         e.printStackTrace();
+                        try {
+                            success = offerDAO.insertOffer(offer);
+                        } catch (SQLException ex) {
+                            ex.printStackTrace();
+                        }
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    } else {
+                        try {
+                            success = offerDAO.insertOffer(offer);
+                        } catch (SQLException ex) {
+                            ex.printStackTrace();
+                        }
                     }
                 }
             }
