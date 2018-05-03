@@ -37,8 +37,8 @@
         }
     </style>
 </head>
-<body>
 
+<body>
 <div class="container">
     <jsp:include page="header.jsp"/>
     <sec:authorize access="authenticated" var="authenticated"/>
@@ -164,7 +164,8 @@
     </div>
     <div style="clear: both"></div>
 
-    <!-- Jumbotron -->
+<!--
+    <!-- Jumbotron >
     <div class="jumbotron">
         <h1>Family joinery workshop Sequoia</h1>
         <p class="lead">Резной декор, Мебель из дерева, Посуда из дерева, Торцевые разделочные доски, Рамки
@@ -172,7 +173,7 @@
         <p><a class="btn btn-lg btn-success" href="#" role="button">Get started</a></p>
     </div>
 
-    <!-- Example row of columns -->
+    <!-- Example row of columns >
     <div class="row">
         <div class="col-lg-4">
             <h2>Block 1</h2>
@@ -236,6 +237,7 @@
             <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
         </div>
     </div>
+-->
 
     <!-- Site footer -->
     <footer class="footer">
